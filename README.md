@@ -50,8 +50,9 @@ To decrypt, simply run the program again and enter the exact same answers.
 
 ## 🚀 Download
 
-🧷 [⬇️ **Download SecretML v1.05 (.exe)**](https://secretmemorylocker.com/download/SecretML_v1.05.zip)  
-📄 **SHA256:** `9dc947a2848744f4d4391ce912a59d8ade0358982cd9e48d36ca205cf9723481`
+🧷 Download from:
+- [✅ GitHub Release (v1.05)](https://github.com/SecretML/SecretMemoryLocker/releases/tag/v1.05)
+📄 **SHA256:** `2b9379a32d16f55480ae82aac5fd0d05ccd11937486ddf1c24f0da712b310b57`
 
 > ❗️ **Note:** Windows Defender may show a warning about an "unknown publisher" — this is expected for unsigned apps. The file is safe.
 
