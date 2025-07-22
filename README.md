@@ -10,7 +10,7 @@ Version 2.03 introduces a new `_info` field in `secret_data.json`, which contain
 All encrypted content is now stored under a unified `payload` field for better structure and future compatibility.
 
 New encryption methods have been added:
-# - ✅ **Lite-SML** — a patented encryption method that does not require memorizing a password phrase
+# ✅ **Lite-SML** — a patented encryption method that does not require memorizing a password phrase
 - 🔧 **SHA256** — in development
 - 🔧 **BlockchainMode** — in development
 - 🔧 **TimeLock** — in development
