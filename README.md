@@ -1,3 +1,30 @@
+# SecretMemoryLocker (SecretML v2.03)
+
+**Your personal digital vault – protected by your memories.**
+
+## 🆕 What's New in v2.03:
+
+Version 2.03 introduces a new `_info` field in `secret_data.json`, which contains metadata about the file format:  
+`"_info": "SecretMemoryLocker v2.03 / Lite-SML"`.
+
+All encrypted content is now stored under a unified `payload` field for better structure and future compatibility.
+
+New encryption methods have been added:
+# - ✅ **Lite-SML** — a patented encryption method that does not require memorizing a password phrase
+- 🔧 **SHA256** — in development
+- 🔧 **BlockchainMode** — in development
+- 🔧 **TimeLock** — in development
+
+# 📸 Interface Preview
+
+<img width="400" height="400" alt="v2 03" src="https://github.com/user-attachments/assets/64b5715b-6300-487d-a6fc-8ffe8dd709af" />
+
+# 🚀 Download
+
+🧷 Download from:
+✅ GitHub Release (v2.03) 📄 SHA256: e3cd00891acb3f7a25d112acc48bcdc4460aac019a37b8f62a00904f4a05998e
+[SecretML v2.03.zip](https://github.com/user-attachments/files/21366510/SecretML.v2.03.zip)
+
 # SecretMemoryLocker (SecretML v1.05)
 
 **Your personal digital vault – protected by your memories.**
