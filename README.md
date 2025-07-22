@@ -22,8 +22,11 @@ New encryption methods have been added:
 # 🚀 Download
 
 🧷 Download from:
-✅ GitHub Release (v2.03) 📄 SHA256: e3cd00891acb3f7a25d112acc48bcdc4460aac019a37b8f62a00904f4a05998e
+✅ GitHub Release (v2.03) 
+
 [SecretML v2.03.zip](https://github.com/user-attachments/files/21366510/SecretML.v2.03.zip)
+
+📄 SHA256: e3cd00891acb3f7a25d112acc48bcdc4460aac019a37b8f62a00904f4a05998e
 
 # SecretMemoryLocker (SecretML v1.05)
 
