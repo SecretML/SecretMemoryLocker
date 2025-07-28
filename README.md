@@ -1,6 +1,24 @@
-# SecretMemoryLocker (SecretML v2.11)
+# SecretMemoryLocker (SecretML v2.12)
 
 **Your personal digital vault – protected by your memories.**
+
+---
+
+🛠 Changelog – v2.12 (2025-07-28)
+Fixes & Improvements:
+
+🧩 Fixed UTF-8 filename issue when extracting files with non-Latin characters (e.g., Cyrillic).
+
+📐 Fixed window sizing bug for smaller screen resolutions and DPI settings.
+
+## 🚀 Download
+
+🧷 Download from:  
+✅ GitHub Release (v2.12)  
+
+[SecretML v2.12.zip](https://github.com/user-attachments/files/21474295/SecretML.v2.12.zip)
+
+📄 **SHA256:** `a5ad090870661094046fe8cf54cc502a1cab64e22ba1e338311968680194286f`
 
 ---
 
