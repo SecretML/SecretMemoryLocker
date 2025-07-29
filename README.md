@@ -1,8 +1,55 @@
-# SecretMemoryLocker (SecretML v2.12)
+# SecretMemoryLocker (SecretML v2.14)
 
 **Your personal digital vault – protected by your memories.**
 
 ---
+## 🆕 What's New in v2.14
+
+SecretMemoryLocker v2.14 introduces the first stage of integration with **AI-powered question generation** to protect your encrypted content even more securely and conveniently.
+
+### ✨ New Features:
+- 🧠 **Generate with AI (GPT)** — experimental feature to automatically create security questions using AI (coming soon).
+- 📝 **Question generation modes**:
+  - `( ) Manual Questions` — enter your own questions and answers.
+  - `( ) Generate Offline` — generate questions locally using offline templates.
+  - `(•) Generate with AI (GPT)` — let AI generate personalized memory-based questions (future integration).
+- 🌐 **Multilingual Support**: English, Español, Українська.
+- 🖼 Enhanced UI positioning — main window now opens centered without flickering.
+- 🧪 Infrastructure ready for connecting GPT (OpenAI API or local models).
+
+---
+
+## 🔧 Roadmap for AI Integration
+
+- [ ] Connect OpenAI GPT-4 or open-source local LLM.
+- [ ] Add fine-tuned prompts based on user language and selected theme (e.g., childhood, preferences, habits).
+- [ ] Enable export and preview of AI-generated questions.
+- [ ] Add fallback for offline or manual-only mode if no internet.
+---
+## 🚀 Download
+
+🧷 Download from:  
+✅ GitHub Release (v2.14)  
+
+[SecretML v2.14.zip](https://github.com/user-attachments/files/21482280/SecretML.v2.14.zip)
+
+📄 **SHA256:** `1b0c713ecd17109bd43360312b9ab954827a7d6b96fae73d5e71f1373b1ccd6b`
+
+
+## 📸 Interface Preview
+<img width="400" height="350" alt="v2 14" src="https://github.com/user-attachments/assets/6d939f62-c799-461e-b29e-dd8d23d40102" />
+
+---
+## 📜 Previous Versions
+
+SecretMemoryLocker v2.12 
+
+🧷 Download from:  
+✅ GitHub Release (v2.12)  
+
+[SecretML v2.14.zip](https://github.com/user-attachments/files/21482280/SecretML.v2.14.zip)
+
+📄 **SHA256:** `1b0c713ecd17109bd43360312b9ab954827a7d6b96fae73d5e71f1373b1ccd6b`
 
 🛠 Changelog – v2.12 (2025-07-28)
 Fixes & Improvements:
@@ -87,9 +134,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-## 📜 Previous Versions
-
----
 
 # SecretMemoryLocker (SecretML v2.03)
 
