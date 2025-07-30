@@ -44,13 +44,6 @@ SecretMemoryLocker v2.14 introduces the first stage of integration with **AI-pow
 
 SecretMemoryLocker v2.12 
 
-🧷 Download from:  
-✅ GitHub Release (v2.12)  
-
-[SecretML v2.14.zip](https://github.com/user-attachments/files/21482280/SecretML.v2.14.zip)
-
-📄 **SHA256:** `1b0c713ecd17109bd43360312b9ab954827a7d6b96fae73d5e71f1373b1ccd6b`
-
 🛠 Changelog – v2.12 (2025-07-28)
 Fixes & Improvements:
 
