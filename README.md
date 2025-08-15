@@ -1,6 +1,33 @@
 # SecretMemoryLocker (SecretML v2.14)
 
 **Your personal digital vault – protected by your memories.**
+---
+## 🚀 v2.22 – Offline AI Generation Mode  
+
+**Added**  
+- New AI-powered mode: `generate_offline`  
+  - Create security questions **locally** using world-class templates.  
+  - Pick from an **infinite pool** to build a unique, strongly encrypted archive.  
+
+**Improved**  
+- Full local processing — **no data leaves your device**.  
+- Flexible question selection & customizable templates.  
+- Backward compatibility with older SecretML archives.
+---
+## 🚀 Download
+
+🧷 Download from:  
+✅ GitHub Release (v2.22)  
+
+[SecretML v2.22.zip](https://github.com/user-attachments/files/21798748/SecretML.v2.22.zip)
+
+📄 **SHA256:** `1eb3ee4306e448f927e62f69eb2a19ef199152d0d4d78dc88bc7bdb823233dcb`
+---
+## 📸 Interface Preview
+<img width="400" height="350" alt="v2 22(1)" src="https://github.com/user-attachments/assets/f1ffc556-19bb-485e-9355-62da48619fa3" />
+
+<img width="400" height="350" alt="v2 22(2)" src="https://github.com/user-attachments/assets/494b2d1d-fd90-471e-a2e0-60ece07ea9a4" />
+<img width="600" height="500" alt="v2 22(3)" src="https://github.com/user-attachments/assets/0f9cfe36-8303-4306-bf17-1d5591e3772d" />
 
 ---
 ## 🆕 What's New in v2.14
