@@ -30,6 +30,7 @@
 <img width="600" height="500" alt="v2 22(3)" src="https://github.com/user-attachments/assets/0f9cfe36-8303-4306-bf17-1d5591e3772d" />
 
 ---
+## 📜 Previous Versions
 ## 🆕 What's New in v2.14
 
 SecretMemoryLocker v2.14 introduces the first stage of integration with **AI-powered question generation** to protect your encrypted content even more securely and conveniently.
@@ -67,7 +68,6 @@ SecretMemoryLocker v2.14 introduces the first stage of integration with **AI-pow
 <img width="400" height="350" alt="v2 14" src="https://github.com/user-attachments/assets/6d939f62-c799-461e-b29e-dd8d23d40102" />
 
 ---
-## 📜 Previous Versions
 
 SecretMemoryLocker v2.12 
 
