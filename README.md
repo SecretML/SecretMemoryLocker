@@ -1,4 +1,4 @@
-# SecretMemoryLocker (SecretML v2.14)
+# SecretMemoryLocker (SecretML v2.22)
 
 **Your personal digital vault – protected by your memories.**
 ---
