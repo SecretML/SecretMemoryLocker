@@ -23,8 +23,6 @@
 🧷 **Get the latest release:**  
 ✅ [Download SecretML v2.22.zip](https://github.com/user-attachments/files/21798748/SecretML.v2.22.zip)  
 
-
-
 - 📄 SHA256: 1eb3ee4306e448f927e62f69eb2a19ef199152d0d4d78dc88bc7bdb823233dcb
 ---
 
@@ -64,19 +62,18 @@ creating the **illusion of progress without touching real data**.
 
 ---
 
-### 🛡 **SML ChainSignal (BlockchainMode – SML)** 📡  
+### 🛡 **SML ChainSignal📡**  
 *Blockchain-integrated alert system.*  
 
-📩 Sends a **real-time email notification** to the archive owner (or predefined contact)  
-whenever blockchain sync and decryption launch is attempted.  
+📩 **Notification channel** (e.g., email, push, or other) is **securely stored inside the encrypted archive**.  
+It is **decrypted only during BlockchainMode activation** using a blockchain-derived key, ensuring **privacy and security**.  
 
-✅ Benefits:  
-- Early warning of unauthorized access attempts.  
-- Optional "silent mode" or "alert mode".  
-- Adds an additional **layer of trust and surveillance**.  
+✅ **Benefits**:  
+- Early warning of archive access or decryption attempts.  
+- Fully flexible notification methods — email is just one option.  
+- Adds an additional **layer of trust and surveillance** without exposing contact info.  
 
 ---
-
 ## 📜 Previous Versions
 - 🆕 [What's New in v2.14](#)  
 
