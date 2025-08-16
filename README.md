@@ -38,6 +38,44 @@
 <img width="600" height="500" alt="v2.22(3)" src="https://github.com/user-attachments/assets/0f9cfe36-8303-4306-bf17-1d5591e3772d" />
 
 ---
+# 🚧 Coming Soon  
+
+## ✨ New Features in SecretMemoryLocker
+
+---
+
+### 🌀 **SML MirageLoop (SML-ML)**  
+*Extended security mode – AI-powered illusion defense.*  
+
+🔐 **How it works**  
+When an incorrect answer is entered, instead of decrypting anything,  
+the system launches an **infinite loop of AI-generated questions** from a secure local base,  
+creating the **illusion of progress without touching real data**.  
+
+🤖 **AI-controlled functions**:  
+- Checks the **length** of the user's response.  
+- **Syllable-level analysis** for realistic reaction.  
+- Endless flow of **dynamic, template-based questions**.  
+
+💡 **Advantages**:  
+- Confuses and delays potential attackers.  
+- 100% local execution — no external data transfer.  
+- Highly **realistic illusion of progress** under AI control.  
+
+---
+
+### 🛡 **SML ChainSignal (BlockchainMode – SML)** 📡  
+*Blockchain-integrated alert system.*  
+
+📩 Sends a **real-time email notification** to the archive owner (or predefined contact)  
+whenever blockchain sync and decryption launch is attempted.  
+
+✅ Benefits:  
+- Early warning of unauthorized access attempts.  
+- Optional "silent mode" or "alert mode".  
+- Adds an additional **layer of trust and surveillance**.  
+
+---
 
 ## 📜 Previous Versions
 - 🆕 [What's New in v2.14](#)  
