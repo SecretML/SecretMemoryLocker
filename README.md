@@ -1,9 +1,39 @@
-# 💾 SecretMemoryLocker (SecretML v2.22)
+# 💾 SecretMemoryLocker (SecretML v2.23)
 
 > **Your personal digital vault – protected by your memories.**
 
 ---
+# 🚀 What's New in v2.23 — MirageLoop (SML-ML)
 
+**Secret Memory Locker v2.23** introduces the unique **MirageLoop (SML-ML)** feature.  
+This is not just an update — it’s a **new reality of protection**.  
+
+### 🔐 How it works
+- When a **wrong answer** to a security question is entered — **MirageLoop** activates.  
+- Instead of attempting to decrypt real data, the system launches an **infinite loop of AI-generated questions** from a secure local database.  
+- To the attacker, it looks like they are making progress by answering question after question.  
+- In reality, they are trapped in a **digital maze**, wasting time and resources while your true data remains **untouched and secure**.  
+
+### 🛡 Key Advantage
+MirageLoop creates an **illusion of progress** while ensuring that **no real data is ever exposed to risk**.  
+
+---
+👉 Try it yourself: enter a wrong answer and watch **SML MirageLoop** in action.
+
+## 📥 Download
+
+🧷 **Get the latest release:**  
+✅ [Download SecretML v2.23
+[SecretML v2.23.zip](https://github.com/user-attachments/files/21827181/SecretML.v2.23.zip)
+
+- 📄 SHA256: ab3a28045f082e3d04a1d6581a3026d56dc18327c0b3965ec14dc37a4d428cf3
+
+## 📸 Interface Preview
+<img width="400" height="350" alt="v2 23" src="https://github.com/user-attachments/assets/761732fb-6207-4382-9b47-2f3cd56a61c4" />
+
+
+---
+## 📜 Previous Versions
 ## 🚀 v2.22 – Offline AI Generation Mode  
 
 ### ✨ Added
@@ -74,7 +104,6 @@ It is **decrypted only during BlockchainMode activation** using a blockchain-der
 - Adds an additional **layer of trust and surveillance** without exposing contact info.  
 
 ---
-## 📜 Previous Versions
 - 🆕 [What's New in v2.14](#)  
 
 SecretMemoryLocker v2.14 introduces the first stage of integration with **AI-powered question generation** to protect your encrypted content even more securely and conveniently.
