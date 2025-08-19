@@ -28,7 +28,7 @@ $$
 Where:
 
 $$
-\mathrm{file\_hash} = \mathrm{SHA256}(\mathrm{selected\_file})
+\mathrm{file\_hash} = \mathrm{SHA256}(\mathrm{YourFile_archive})
 $$
 
 
