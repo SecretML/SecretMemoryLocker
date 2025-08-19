@@ -51,14 +51,6 @@ MirageLoop creates an **illusion of progress** while ensuring that **no real dat
 
 ---
 
-## 📥 Download
-
-🧷 **Get the latest release:**  
-✅ [Download SecretML v2.22.zip](https://github.com/user-attachments/files/21798748/SecretML.v2.22.zip)  
-
-- 📄 SHA256: 1eb3ee4306e448f927e62f69eb2a19ef199152d0d4d78dc88bc7bdb823233dcb
----
-
 ## 📸 Interface Preview
 
 <p float="left">
@@ -130,14 +122,6 @@ SecretMemoryLocker v2.14 introduces the first stage of integration with **AI-pow
 - [ ] Enable export and preview of AI-generated questions.
 - [ ] Add fallback for offline or manual-only mode if no internet.
 ---
-## 🚀 Download
-
-🧷 Download from:  
-✅ GitHub Release (v2.14)  
-
-[SecretML v2.14.zip](https://github.com/user-attachments/files/21482280/SecretML.v2.14.zip)
-
-📄 **SHA256:** `1b0c713ecd17109bd43360312b9ab954827a7d6b96fae73d5e71f1373b1ccd6b`
 
 
 ## 📸 Interface Preview
@@ -153,15 +137,6 @@ Fixes & Improvements:
 🧩 Fixed UTF-8 filename issue when extracting files with non-Latin characters (e.g., Cyrillic).
 
 📐 Fixed window sizing bug for smaller screen resolutions and DPI settings.
-
-## 🚀 Download
-
-🧷 Download from:  
-✅ GitHub Release (v2.12)  
-
-[SecretML v2.12.zip](https://github.com/user-attachments/files/21474295/SecretML.v2.12.zip)
-
-📄 **SHA256:** `a5ad090870661094046fe8cf54cc502a1cab64e22ba1e338311968680194286f`
 
 ---
 
@@ -196,16 +171,6 @@ With properly chosen answers (strong passwords), the method offers a high level 
 ## 📸 Interface Preview
 <img width="350" height="300" alt="v2 11" src="https://github.com/user-attachments/assets/16023cf3-392c-49f9-ab2f-aa91ad54b3ec" />
 
----
-
-## 🚀 Download
-
-🧷 Download from:  
-✅ GitHub Release (v2.11)  
-
-[**SecretML v2.11.zip**](https://github.com/user-attachments/files/21412514/SecretML.v2.11.zip)
-
-📄 **SHA256:** `00ac67d44d2542fa4b9b9b211e26ce5bf21b0f23c7db0e4625b7a760f5e11e58`
 
 ---
 
@@ -252,16 +217,6 @@ All encrypted content is now stored under a unified `payload` field for better s
 
 ## 📸 Interface Preview
 <img width="400" height="400" alt="v2 03" src="https://github.com/user-attachments/assets/64b5715b-6300-487d-a6fc-8ffe8dd709af" />
-
----
-
-## 🚀 Download
-🧷 Download from:  
-✅ GitHub Release (v2.03)  
-
-[**SecretML v2.03.zip**](https://github.com/user-attachments/files/21366510/SecretML.v2.03.zip)
-
-📄 **SHA256:** `e3cd00891acb3f7a25d112acc48bcdc4460aac019a37b8f62a00904f4a05998e`
 
 ---
 
@@ -312,12 +267,6 @@ To decrypt, simply run the program again and enter the exact same answers.
 - 🎯 **Most important:** No keys are ever saved. The key is computed in real-time only when the correct answers are provided.
 
 ---
-
-## 🚀 Download
-
-🧷 Download from:  
-- [✅ GitHub Release (v1.05)](https://github.com/SecretML/SecretMemoryLocker/releases/tag/v1.05)  
-📄 **SHA256:** `2b9379a32d16f55480ae82aac5fd0d05ccd11937486ddf1c24f0da712b310b57`
 
 > ❗ **Note:** Windows Defender may show a warning about an "unknown publisher" — this is expected for unsigned apps. The file is safe.
 
