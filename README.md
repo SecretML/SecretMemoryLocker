@@ -1,6 +1,9 @@
 # 💾 SecretMemoryLocker (SecretML v2.23)
 
 > **Your personal digital vault – protected by your memories.**
+> 
+**💡 Upcoming Feature:**  
+**SecretML-Seed (SML-Seed)** — your personal recovery key, coming soon and fully functional!
 
 ---
 # 🚀 What's New in v2.23 — MirageLoop (SML-ML)
