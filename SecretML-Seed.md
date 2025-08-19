@@ -25,8 +25,8 @@ The seed is deterministically derived from the user’s answers and a selected f
 $$
 \mathrm{Seed} = \mathrm{SHA256}\Big(
     \mathrm{SHA256}(\mathrm{question\_1} + \mathrm{answer\_1} + \mathrm{file\_hash}) +
-    \mathrm{SHA256}(\mathrm{answer\_2} + \mathrm{file\_hash}) +
-    \mathrm{SHA256}(\mathrm{answer\_3} + \mathrm{file\_hash}) + \dots
+    \mathrm{SHA256}(\mathrm{question\_2} + \mathrm{answer\_2} + \mathrm{file\_hash}) +
+    \mathrm{SHA256}(\mathrm{question\_3} + \mathrm{answer\_3} + \mathrm{file\_hash}) + \dots
 \Big)
 $$
 
