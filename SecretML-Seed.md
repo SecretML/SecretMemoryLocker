@@ -12,6 +12,9 @@ Instead:
 
 ✅ **Answers exist only in the user’s memory.**  
 
+⚡ **Separate storage of SecretML.json and SecretML.zip** — both can be safely stored in different locations (local drives, cloud, USB, etc.).
+
+
 Thus, even if the files fall into the wrong hands, they remain completely useless without the correct answers.  
 
 ## How the Seed is Generated
