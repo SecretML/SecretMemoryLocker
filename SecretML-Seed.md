@@ -15,7 +15,8 @@ Instead:
 ⚡ **Separate storage of SecretML.json and SecretML.zip** — both can be safely stored in different locations (local drives, cloud, USB, etc.).
 
 
-Thus, even if the files fall into the wrong hands, they remain completely useless without the correct answers.  
+Thus, even if both SecretML.json and SecretML.zip fall into the wrong hands at the same time, they remain completely useless without the correct answers in the user’s memory.
+
 
 ## How the Seed is Generated
 
