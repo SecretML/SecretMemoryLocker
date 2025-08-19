@@ -39,7 +39,7 @@ $$
 
 ## Key Features
 
-📂 **No physical seed** — no need to store paper or USB drives.  
+📂 **No physical seed** — no need to store paper, metal plates, or expensive safes. 
 
 🧠 **Mental key** — the user keeps only their answers in memory.  
 
