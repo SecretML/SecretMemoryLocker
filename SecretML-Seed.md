@@ -13,6 +13,10 @@ Instead:
 
 Thus, even if the files fall into the wrong hands, they remain completely useless without the correct answers.  
 
+## How the Seed is Generated
+
+The seed is deterministically derived from the user’s answers and a selected file:
+
 $$
 \mathrm{Seed} = \mathrm{SHA256}\Big(
     \mathrm{SHA256}(\mathrm{question\_1} + \mathrm{answer\_1} + \mathrm{file\_hash}) +
@@ -20,6 +24,8 @@ $$
     \mathrm{SHA256}(\mathrm{answer\_3} + \mathrm{file\_hash}) + \dots
 \Big)
 $$
+
+Where:
 
 $$
 \mathrm{file\_hash} = \mathrm{SHA256}(\mathrm{selected\_file})
