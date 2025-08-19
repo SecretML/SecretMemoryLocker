@@ -40,7 +40,7 @@ $$
 
 📂 **No physical seed** — no need to store paper, metal plates, or expensive safes. 
 
-🧠 **Mental key** — the user keeps only their answers in memory.  
+🧠 **Mental key** — the user keeps their answers in memory, with the option to flexibly share parts of the answers with trusted people, similar to Shamir’s Secret Sharing, for recovery if needed.
 
 🔑 **Dual protection** — JSON with questions + ZIP archive as an additional barrier.  
 
