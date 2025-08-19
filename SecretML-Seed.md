@@ -9,8 +9,7 @@ Instead:
 
 ✅ **SecretML.zip** — an encrypted archive containing any files you want to protect (documents, notes, videos, or other data) secured with a password.
 
-
-✅ **Answers exist only in the user’s memory.**  
+✅ **Answers exist only in the user’s memory** — they can also be shared with trusted family or friends and theoretically recovered if necessary.
 
 ⚡ **Separate storage of SecretML.json and SecretML.zip** — both can be safely stored in different locations (local drives, cloud, USB, etc.).
 
