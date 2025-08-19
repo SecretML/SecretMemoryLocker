@@ -7,7 +7,8 @@ Instead:
 
 ✅ **SecretML.json** — a set of encrypted security questions.  
 
-✅ **SecretML.zip** — an encrypted archive containing technical safeguards.  
+✅ **SecretML.zip** — an encrypted archive containing any files you want to protect (documents, notes, videos, or other data) secured with a password.
+
 
 ✅ **Answers exist only in the user’s memory.**  
 
