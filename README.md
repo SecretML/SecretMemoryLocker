@@ -1,4 +1,4 @@
-# 💾 SecretMemoryLocker (SecretML v2.26)
+# 💾 SecretMemoryLocker (SecretML v2.28)
 
 > **Your personal digital vault – protected by your memories.**
 > 
@@ -6,6 +6,26 @@
 **SecretML-Seed (SML-Seed)** — your personal recovery key, coming soon and fully functional!
 
 ---
+**Secret Memory Locker v2.28** introduces several key updates:
+
+### ✨ New Features
+- **Online question editing** — now you can edit AI-generated questions directly.  
+- **Pro version development started** — innovative features in progress.  
+- **Free basic version** — core functionality remains freely available.  
+
+### 🛠 Improvements
+- **Bug fixes** — several minor issues resolved, improving overall performance.  
+
+✅ Download SecretML v2.28  
+
+[SecretML v2.28.zip](https://github.com/user-attachments/files/22109737/SecretML.v2.28.zip)  
+
+<sub>📄 SHA256: 84d02198850e788c52ef6d7ca0cde6b2fa6b3e722d25fe70f40d99f6810336ef</sub>
+
+
+---
+## 📜 Previous Versions
+
 # 🚀 What's New in v2.26 — MirageLoop (SML-ML)
 
 **Secret Memory Locker v2.26** brings important improvements to **MirageLoop (SML-ML)**:
@@ -15,17 +35,8 @@
 - **Expanded offline question pool** — more AI-generated questions available locally.  
 - **Bug fixes** — several minor issues resolved for smoother operation.  
 
----
 👉 Experience the enhanced **SML MirageLoop** and stronger protection!
-
-✅ Download SecretML v2.26
-
-[SecretML v2.26.zip](https://github.com/user-attachments/files/22039888/SecretML.v2.26.zip)
-
-<sub>📄 SHA256: 84d02198850e788c52ef6d7ca0cde6b2fa6b3e722d25fe70f40d99f6810336ef</sub>
-
 ---
-## 📜 Previous Versions
 
 # 🚀 What's New in v2.23 — MirageLoop (SML-ML)
 
