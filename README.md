@@ -9,7 +9,7 @@
 **Secret Memory Locker v2.28** introduces several key updates:
 
 ### ✨ New Features
-- **Online question editing** — now you can edit AI-generated questions directly.  
+- **Offline question editing** — now you can edit AI-generated questions locally.
 - **Pro version development started** — innovative features in progress.  
 - **Free basic version** — core functionality remains freely available.  
 
