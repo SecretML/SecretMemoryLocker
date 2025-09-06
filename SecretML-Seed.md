@@ -1,5 +1,4 @@
 # SecretML-Seed (SML-Seed)
-
 **Seed without physical storage. Memory becomes the key.**
 
 SecretML-Seed is an innovative method for securing cryptocurrency wallets, where the seed phrase does **not require physical or digital storage**.  
