@@ -1,11 +1,50 @@
-# 💾 SecretMemoryLocker (SecretML v2.28)
+# 💾 SecretMemoryLocker (SecretML v3.02)
 
 > **Your personal digital vault – protected by your memories.**
-> 
+---
+# 🚀 What's New in v3.02
+
+### 🔑 PRO Mode
+- Added **PRO mode**, activated with a license key.  
+- A **test key** is included in the package (`license_key.txt`).  
+- Upcoming PRO-exclusive innovative features (see below).
+
+⚠️ **Coming very soon**:  
+The buttons for the new features are already available in the interface, but the functions are still under internal testing. Stay tuned for activation in the next updates!  
+
+### 🌱 SecretML-Seed
+- **Seed phrase generation from memory**:  
+  - 12 words (**SecretML-Seed 12**)  
+  - 24 words (**SecretML-Seed 24**)  
+- A simple and secure way to create recovery phrases without storing them in plain text.
+
+### 🔒 SML-PIN
+- New mode that adds a **salt** to the archive password, derived from your license key.  
+- Ensures each archive is unique and personalized.
+
+### 🌀 Memory Echo (concept, coming soon)
+- **Password generator from memory**.  
+- Your memory itself becomes the seed for password generation.  
+- Simple logic → endless stream of strong, unique passwords.
+
+---
+✅ Try **SecretML v3.02** — the first step into the **PRO** world!
+
+✅ Download SecretML v3.02  
+
+[SecretML v3.02.zip](https://github.com/user-attachments/files/22185969/SecretML.v3.02.zip)
+
+<sub>📄 SHA256: d26905992935d26e8de575829238aa7b51d58cbe2828432a8440597898132c41</sub>
+
+## 📸 Interface Preview
+<img width="600" height="500" alt="v3 02" src="https://github.com/user-attachments/assets/b76f36c4-25b4-48e1-8007-9c968d35c281" />
+
+---
+## 📜 Previous Versions
+
 **💡 Upcoming Feature:**  
 **SecretML-Seed (SML-Seed)** — your personal recovery key, coming soon and fully functional!
 
----
 **Secret Memory Locker v2.28** introduces several key updates:
 
 ### ✨ New Features
@@ -16,15 +55,7 @@
 ### 🛠 Improvements
 - **Bug fixes** — several minor issues resolved, improving overall performance.  
 
-✅ Download SecretML v2.28  
-
-[SecretML v2.28.zip](https://github.com/user-attachments/files/22109737/SecretML.v2.28.zip)  
-
-<sub>📄 SHA256: 84d02198850e788c52ef6d7ca0cde6b2fa6b3e722d25fe70f40d99f6810336ef</sub>
-
-
 ---
-## 📜 Previous Versions
 
 # 🚀 What's New in v2.26 — MirageLoop (SML-ML)
 
