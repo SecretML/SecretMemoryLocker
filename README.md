@@ -1,7 +1,39 @@
-# 💾 SecretMemoryLocker (SecretML v3.03)
+# 💾 SecretMemoryLocker (SecretML v3.05)
 
 > **Your personal digital vault – protected by your memories.**
 ---
+---
+# 🚀 What's New in v3.05 — Keyring & Upcoming AutoPIN
+
+**Secret Memory Locker v3.05** introduces important updates and upcoming features:
+
+### 🔑 Keyring Support
+- **Purchased key management** — activate or remove your PRO keys directly in the app.  
+- Full deletion of key data when removing a key.  
+- Improved stability and reliability for key handling.
+
+### 🛠 Improvements
+- Several minor bug fixes to enhance overall performance and user experience.
+
+### ⚡ Upcoming Feature: SML-AutoPIN
+- **Auto-generated archive passwords** — create encrypted archives without entering a password.  
+- Every archive gets a **unique, automatically generated password**.  
+- Functionality under internal testing, coming soon.
+
+---
+✅ Try the new **SecretML-Seed** and experience memory-based security!
+
+✅ Download SecretML v3.05  
+
+[SecretML v3.05.zip](https://github.com/user-attachments/files/22319545/SecretML.v3.05.zip)
+
+<sub>📄 SHA256: 8d886ac69217a486006162a65265c4c7781d0038287f6d31d7dd08c5b0f9f224</sub>
+
+
+
+---
+---
+## 📜 Previous Versions
 # 🚀 What's New in v3.03 — PRO Mode Upgrades
 
 **Secret Memory Locker v3.03** expands the **PRO mode** with groundbreaking features:
@@ -14,20 +46,10 @@
 Your **memories + your archive** generate the **final entropy**.  
 This means your security lives only in your head — not on paper, not on devices.  
 
----
-✅ Try the new **SecretML-Seed** and experience memory-based security!
-
-✅ Download SecretML v3.03  
-
-[SecretML v3.03.zip](https://github.com/user-attachments/files/22231645/SecretML.v3.03.zip)
-
-<sub>📄 SHA256: 290c1c4314b4e2412d2929828c1a9177b5cb4f3d1374f0e0e69e5db7786a771a</sub>
-
 ## 📸 Interface Preview
 <img width="600" height="500" alt="v3 02" src="https://github.com/user-attachments/assets/601166e3-fc0e-409a-b280-20a8f22a411b" />
 
 ---
-## 📜 Previous Versions
 
 # 🚀 What's New in v3.02
 
