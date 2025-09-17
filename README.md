@@ -1,8 +1,35 @@
-# 💾 SecretMemoryLocker (SecretML v3.05)
+---
+---
+# 💾 SecretMemoryLocker (SecretML v3.07)
 
 > **Your personal digital vault – protected by your memories.**
 ---
 ---
+
+# 🚀 What's New in v3.07 — SML-AutoPIN
+
+**Secret Memory Locker v3.07** introduces the groundbreaking **SML-AutoPIN** feature:  
+
+### 🔐 SML-AutoPIN
+- **Unlimited passwords** — no need to memorize or manage them manually.  
+- Simply **choose a file** — the app will securely archive it with a unique, automatically generated password.  
+- To decrypt, just **select the archive** and instantly recover your file.  
+
+This marks a new step towards effortless, memory-powered encryption.
+
+✅ Download SecretML v3.07  
+
+[SecretML v3.07.zip](https://github.com/user-attachments/files/22382303/SecretML.v3.07.zip)
+
+<sub>📄 SHA256: af7f83c0e17fdc8eae8847f065464f2a8e4077c1937c0819fe363367ac82cc85</sub>
+
+
+
+
+---
+---
+## 📜 Previous Versions
+
 # 🚀 What's New in v3.05 — Keyring & Upcoming AutoPIN
 
 **Secret Memory Locker v3.05** introduces important updates and upcoming features:
@@ -20,20 +47,11 @@
 - Every archive gets a **unique, automatically generated password**.  
 - Functionality under internal testing, coming soon.
 
----
 ✅ Try the new **SecretML-Seed** and experience memory-based security!
 
-✅ Download SecretML v3.05  
-
-[SecretML v3.05.zip](https://github.com/user-attachments/files/22319545/SecretML.v3.05.zip)
-
-<sub>📄 SHA256: 8d886ac69217a486006162a65265c4c7781d0038287f6d31d7dd08c5b0f9f224</sub>
-
-
 
 ---
----
-## 📜 Previous Versions
+
 # 🚀 What's New in v3.03 — PRO Mode Upgrades
 
 **Secret Memory Locker v3.03** expands the **PRO mode** with groundbreaking features:
