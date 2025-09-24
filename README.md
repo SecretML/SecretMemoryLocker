@@ -1,10 +1,67 @@
 ---
 ---
-# 💾 SecretMemoryLocker (SecretML v3.07)
+# 💾 SecretMemoryLocker (SecretML v3.09)
 
 > **Your personal digital vault – protected by your memories.**
 ---
 ---
+# 🚀 What's New in v3.09 — Memory Echo Password Generator (PRO)
+
+### 🧠 Memory Echo Password Generator (PRO)
+Generate infinite passwords dynamically — without ever storing them.  
+
+**How it works**:  
+- Combines your secret answers + the encrypted file hash (as salt).  
+- Produces unique, instantly reproducible passwords for any resource.  
+
+**Steps to use**:  
+1. Activate PRO mode.  
+2. Select your `*_SMLkey.json` key-file.  
+3. Answer your secret questions.  
+4. Enter the resource name (e.g. `GMAIL.COM`, `FACEBOOK.COM`).  
+5. Get your password instantly.  
+
+---
+
+### 🔐 Password Formats
+- **SHA-256 (64 chars)** — maximum entropy, hexadecimal string.  
+- **SML-Echo (32 chars)** — mix of uppercase, lowercase, numbers.  
+
+---
+
+### 📌 Key Rules for Resource Names
+- **Exact input matters** — same name = same password, even small changes break consistency.  
+- **Case insensitive** — `facebook.com` = `FACEBOOK.COM`.  
+- **Keep it simple** — e.g. use just `GMAIL.COM`.  
+
+---
+
+### 🛡 Why Memory Echo?
+- **On-the-fly** — passwords never stored, exist only during generation.  
+- **Offline mode** — once activated, no internet is needed.  
+- **Total control** — only you, with answers + key-file, can restore passwords.  
+
+💡 **Pro Tip**: Use Memory Echo to create your **master password** (e.g. for Google Account).  
+This ensures **guaranteed recovery** and **unbreakable security** for your entire digital life.
+
+---
+✅ Download SecretML v3.09 
+
+[SML v3.09.zip](https://github.com/user-attachments/files/22509955/SML.v3.09.zip)
+
+
+<sub>📄 SHA256: 86a860817dc46c588d89fa085cae36abc94b4dc5873a0ca5408c0db825c94459</sub>
+
+---
+
+## 📸 Interface Preview
+
+<img width="600" height="500" alt="v3 09" src="https://github.com/user-attachments/assets/6deb758c-538c-4f2a-9fcb-be515802d4ba" />
+
+---
+
+---
+## 📜 Previous Versions
 
 # 🚀 What's New in v3.07 — SML-AutoPIN
 
@@ -17,18 +74,7 @@
 
 This marks a new step towards effortless, memory-powered encryption.
 
-✅ Download SecretML v3.07  
-
-[SecretML v3.07.zip](https://github.com/user-attachments/files/22382303/SecretML.v3.07.zip)
-
-<sub>📄 SHA256: af7f83c0e17fdc8eae8847f065464f2a8e4077c1937c0819fe363367ac82cc85</sub>
-
-
-
-
 ---
----
-## 📜 Previous Versions
 
 # 🚀 What's New in v3.05 — Keyring & Upcoming AutoPIN
 
