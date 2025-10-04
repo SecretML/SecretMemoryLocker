@@ -5,6 +5,11 @@
 > **Your personal digital vault – protected by your memories.**
 ---
 ---
+## 🎥 Demo Video  
+**Your Mind is the Password | How to Encrypt Files Without Storing a Key (SML Demo)**  
+
+[![Watch the demo](https://img.youtube.com/vi/phjM9mlnKF8/0.jpg)](https://www.youtube.com/watch?v=phjM9mlnKF8)
+
 # 🚀 What's New in v3.09 — Memory Echo Password Generator (PRO)
 
 ### 🧠 Memory Echo Password Generator (PRO)
