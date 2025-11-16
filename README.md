@@ -1,6 +1,6 @@
 ---
 ---
-# 💾 SecretMemoryLocker (SecretML v3.09)
+# 💾 SecretMemoryLocker (SecretML v3.10)
 
 > **Your personal digital vault – protected by your memories.**
 ---
@@ -9,6 +9,44 @@
 **Your Mind is the Password | How to Encrypt Files Without Storing a Key (SML Demo)**  
 
 [![Watch the demo](https://img.youtube.com/vi/phjM9mlnKF8/0.jpg)](https://www.youtube.com/watch?v=phjM9mlnKF8)
+
+---
+
+# 🚀 What's New in v3.10 — Enhanced SML-Seed & AI Security Core
+
+### 🌱 Improved SML-Seed 24 Generation
+Your 24-word seed phrases are now stronger and more reliable.
+
+**Enhancements:**
+- Increased entropy when generating SML-Seed 24 from archive data.
+- More chaotic internal parameters for higher resistance to pattern analysis.
+- Fixed multiple bugs related to edge-case seed reconstruction.
+
+---
+
+### 🤖 Expanded AI Question Engine
+Security questions now provide deeper variability and stronger protection.
+
+**Upgrades:**
+- Larger internal AI dataset for question generation.
+- More unique and less predictable question patterns.
+- Better personalization without reducing security.
+
+---
+
+### 🛡 PRO Mode — Update Availability Checker
+PRO users now see **in-app version availability** and get notified when a new SML release is published.
+
+---
+✅ Download SecretML v3.10 
+
+[SML v3.10.zip](https://github.com/user-attachments/files/23565795/SML.v3.10.zip)
+
+
+<sub>📄 SHA256: eb1b3d7f30a77dcf38057ff9e68b2eb5ed196ba3f7fff4523d73cc0c4a9b2166</sub>
+
+---
+## 📜 Previous Versions
 
 # 🚀 What's New in v3.09 — Memory Echo Password Generator (PRO)
 
@@ -50,14 +88,6 @@ Generate infinite passwords dynamically — without ever storing them.
 This ensures **guaranteed recovery** and **unbreakable security** for your entire digital life.
 
 ---
-✅ Download SecretML v3.09 
-
-[SML v3.09.zip](https://github.com/user-attachments/files/22509955/SML.v3.09.zip)
-
-
-<sub>📄 SHA256: 86a860817dc46c588d89fa085cae36abc94b4dc5873a0ca5408c0db825c94459</sub>
-
----
 
 ## 📸 Interface Preview
 
@@ -65,8 +95,6 @@ This ensures **guaranteed recovery** and **unbreakable security** for your entir
 
 ---
 
----
-## 📜 Previous Versions
 
 # 🚀 What's New in v3.07 — SML-AutoPIN
 
