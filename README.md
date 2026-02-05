@@ -1,6 +1,6 @@
 ---
 ---
-# 💾 SecretMemoryLocker (SecretML v3.10)
+# 💾 SecretMemoryLocker (SecretML v3.15)
 
 > **Your personal digital vault – protected by your memories.**
 ---
@@ -9,6 +9,68 @@
 **Your Mind is the Password | How to Encrypt Files Without Storing a Key (SML Demo)**  
 
 [![Watch the demo](https://img.youtube.com/vi/phjM9mlnKF8/0.jpg)](https://www.youtube.com/watch?v=phjM9mlnKF8)
+
+---
+## 🚀 What's New in v3.15 — Memory-Sync & Chained Recovery
+
+### 🧠 Memory-Sync (Derived Access Key)
+SecretML can now **derive and securely store a session master key** based on your answers — without ever saving the answers themselves.
+
+- One **non-reversible 256-bit Master-Hash**
+- Stored securely in the system keyring
+- Enables instant access to multiple archives without re-entering answers
+
+---
+
+### 🔐 Per-Archive Unique Encryption
+Every encrypted file receives its **own unique password**, even within the same session.
+
+- Archive key = `SHA256(MasterHash + FileHash)`
+- File hash is stored in archive metadata (comment)
+- No two archives ever share the same encryption key
+
+---
+
+### ⛓ Chained Recovery (Memory Path Protection)
+Access to the Master-Key is protected by a **recursive question–answer chain**.
+
+- Each answer decrypts the next step
+- No visible structure or plaintext questions
+- Partial knowledge is useless
+
+You don’t enter a password —  
+**you unlock your own memory.**
+
+---
+
+### 🛡 Zero-Knowledge Security Model
+- Answers are **never stored**
+- Only derived hashes exist
+- Keyring data can be wiped instantly via UI
+
+---
+
+### 🧨 Instant Access Revocation
+Removing archive metadata immediately breaks access —  
+even if the Master-Key still exists.
+
+A true **cryptographic kill-switch**.
+
+---
+
+## 🧪 Status
+- Stable Windows build
+- No KDF (test version)
+- Ready for real-world usage & testing
+
+---
+
+## 📦 Download
+**SecretML v3.15.exe**
+>
+[SML v3.15.zip](https://github.com/user-attachments/files/25091231/SML.v3.15.zip)
+> Memory-based encryption.  
+> No passwords. No files. No traces.
 
 ---
 
