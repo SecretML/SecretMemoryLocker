@@ -68,7 +68,7 @@ A true **cryptographic kill-switch**.
 ## 📦 Download
 **SecretML v3.15.exe**
 >
-[SML v3.15.zip](https://github.com/user-attachments/files/25091231/SML.v3.15.zip)
+[SML v3.15.zip](https://github.com/user-attachments/files/25216234/SML.v3.15.zip)
 > Memory-based encryption.  
 > No passwords. No files. No traces.
 
