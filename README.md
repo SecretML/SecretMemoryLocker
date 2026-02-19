@@ -1,10 +1,61 @@
 ---
 ---
-# 💾 SecretMemoryLocker (SecretML v3.15)
+# 💾 SecretMemoryLocker (SecretML v4.01)
 
 > **Your personal digital vault – protected by your memories.**
 ---
 ---
+# 🚀 What's New in v4.01 — Phantom-Step Cascade Crypto Upgrade
+
+### 🛡 Phantom-Step Cascade — Argon2id + ChaCha20-Poly1305
+A new multi-layer encryption model delivering the highest level of cryptographic resilience.
+
+**Highlights:**
+- Multi-layer question encryption powered by Argon2id and ChaCha20-Poly1305.
+- Improved final key derivation and cascade logic.
+- Version-locked crypto parameters for deterministic and auditable security.
+
+---
+
+### 🎭 Decoy Trigger & Plausible Deniability (PRO)
+Build recovery workflows that protect both your data and your narrative.
+
+**Capabilities:**
+- Password trigger to activate decoy secret data.
+- Create recovery files with real and decoy layers.
+- Designed for high-risk and real-world threat scenarios.
+
+---
+
+### 📦 Secure `.psq` Recovery Container
+A protected container format with embedded vault capabilities.
+
+**Features:**
+- Secure PSQ container with encrypted payload.
+- Embedded protected data basement.
+- Deterministic structure for reliable recovery.
+
+Example structure:
+```psq
+ PSQC:{"nonce": "Obbe/L24JZ2VS0RZ", "ciphertext": "nUhxVfOiwESyCvKeCWor7Xva7kLpuYWFT/T7kBqeeueWlW4Qauv/eV3hD9rTNainjwa6Cx/215L7LmEI+TPaeLPW9tO3wglYzh605s2P9lHVBlrBTakK9/HZSobMxZCCDlN38Q6cOfDXFVjm6tWQCOfdRCcFdsmIPEhC4kwYQgrqiZPB3rmiZcSEUUx
+}
+```
+---
+
+### ⚙️ Security & Engine Improvements
+- Enhanced cascade processing reliability.
+- Refined cryptographic workflow for stronger protection.
+
+---
+
+💡 Generate robust recovery files with active decoy layers and a protected vault — built for serious security use cases.
+
+> SecretMemoryLocker v4.01 — When memory becomes a labyrinth and security an illusion.
+
+
+---
+## 📜 Previous Versions
+
 ## 🎥 Demo Video  
 **Your Mind is the Password | How to Encrypt Files Without Storing a Key (SML Demo)**  
 
@@ -108,7 +159,6 @@ PRO users now see **in-app version availability** and get notified when a new SM
 <sub>📄 SHA256: eb1b3d7f30a77dcf38057ff9e68b2eb5ed196ba3f7fff4523d73cc0c4a9b2166</sub>
 
 ---
-## 📜 Previous Versions
 
 # 🚀 What's New in v3.09 — Memory Echo Password Generator (PRO)
 
