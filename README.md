@@ -4,16 +4,16 @@
 
 > **Your personal digital vault – protected by your memories.**
 ---
----
-# 🚀 What's New in v4.01 — Phantom-Step Cascade Crypto Upgrade
+
+# 🚀 SecretMemoryLocker v4.01 Release Notes
 
 ### 🛡 Phantom-Step Cascade — Argon2id + ChaCha20-Poly1305
 A new multi-layer encryption model delivering the highest level of cryptographic resilience.
 
 **Highlights:**
-- Multi-layer question encryption powered by Argon2id and ChaCha20-Poly1305.
-- Improved final key derivation and cascade logic.
-- Version-locked crypto parameters for deterministic and auditable security.
+- **Multi-layer encryption:** Powered by Argon2id (KDF) and ChaCha20-Poly1305 (AEAD).
+- **Advanced Logic:** Improved final key derivation and cascade execution.
+- **Deterministic Security:** Version-locked crypto parameters for auditable and consistent recovery.
 
 ---
 
@@ -21,38 +21,38 @@ A new multi-layer encryption model delivering the highest level of cryptographic
 Build recovery workflows that protect both your data and your narrative.
 
 **Capabilities:**
-- Password trigger to activate decoy secret data.
-- Create recovery files with real and decoy layers.
-- Designed for high-risk and real-world threat scenarios.
+- **Decoy Activation:** Specific password triggers to reveal "dummy" secret data.
+- **Dual-Layer Recovery:** Create files containing both legitimate and decoy layers.
+- **Anti-Coercion:** Designed for high-risk environments and real-world threat scenarios.
 
 ---
 
 ### 📦 Secure `.psq` Recovery Container
-A protected container format with embedded vault capabilities.
+A robust container format with embedded vault capabilities.
 
 **Features:**
-- Secure PSQ container with encrypted payload.
-- Embedded protected data basement.
-- Deterministic structure for reliable recovery.
+- **Encrypted Payload:** Secure PSQ container using authenticated encryption.
+- **Protected Data Vault:** Embedded architecture for metadata and secret isolation.
+- **Deterministic Structure:** Ensures reliable recovery across different environments.
 
-Example structure:
-```psq
- PSQC:{"nonce": "Obbe/L24JZ2VS0RZ", "ciphertext": "nUhxVfOiwESyCvKeCWor7Xva7kLpuYWFT/T7kBqeeueWlW4Qauv/eV3hD9rTNainjwa6Cx/215L7LmEI+TPaeLPW9tO3wglYzh605s2P9lHVBlrBTakK9/HZSobMxZCCDlN38Q6cOfDXFVjm6tWQCOfdRCcFdsmIPEhC4kwYQgrqiZPB3rmiZcSEUUx
+**Example structure:**
+``` *.psq
+{
+  "PSQC": {
+    "nonce": "Obbe/L24JZ2VS0RZ",
+    "ciphertext": "nUhxVfOiwESyCvKeCWor7Xva7kLpuYWFT/T7kBqeeueWlW4Qauv/eV3hD9rTNainjwa6Cx/215L7LmEI+TPaeLPW9tO3wglYzh605s2P9lHVBlrBTakK9/HZSobMxZCCDlN38Q6cOfDXFVjm6tWQCOfdRCcFdsmIPEhC4kwYQgrqiZPB3rmiZcSEUUx"
+  }
 }
+
 ```
----
-
 ### ⚙️ Security & Engine Improvements
-- Enhanced cascade processing reliability.
-- Refined cryptographic workflow for stronger protection.
+- Enhanced Reliability: Refined cascade processing for fail-safe execution.
+- Hardened Workflow: Optimized cryptographic pipelines to prevent side-channel leaks.
 
+💡 Generate robust recovery files with active decoy layers and a protected vault — engineered for elite security requirements.
+
+> SecretMemoryLocker v4.01 — Where memory becomes a labyrinth and security is absolute.
 ---
-
-💡 Generate robust recovery files with active decoy layers and a protected vault — built for serious security use cases.
-
-> SecretMemoryLocker v4.01 — When memory becomes a labyrinth and security an illusion.
-
-
 ---
 ## 📜 Previous Versions
 
