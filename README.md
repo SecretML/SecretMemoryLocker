@@ -1,5 +1,3 @@
----
----
 # 💾 SecretMemoryLocker (SecretML v4.01)
 
 > **Your personal digital vault – protected by your memories.**
@@ -52,7 +50,6 @@ A robust container format with embedded vault capabilities.
 💡 Generate robust recovery files with active decoy layers and a protected vault — engineered for elite security requirements.
 
 > SecretMemoryLocker v4.01 — Where memory becomes a labyrinth and security is absolute.
----
 ---
 ## 📜 Previous Versions
 
