@@ -1,8 +1,11 @@
-# 💾 SecretMemoryLocker (SecretML v4.01)
+# 💾 SecretMemoryLocker (SecretML v4.02)
 
 > **Your personal digital vault – protected by your memories.**
 ---
-
+✅ Download SecretML v4.02 
+>
+[SecretML v4.02.zip](https://github.com/user-attachments/files/25515889/SecretML.v4.02.zip)
+>
 # 🚀 SecretMemoryLocker v4.01 Release Notes
 
 ### 🛡 Phantom-Step Cascade — Argon2id + ChaCha20-Poly1305
