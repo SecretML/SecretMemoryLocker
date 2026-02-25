@@ -2,9 +2,28 @@
 
 > **Your personal digital vault – protected by your memories.**
 ---
-✅ Download SecretML v4.02 
->
+✅ Download SecretML  ![Version](https://img.shields.io/badge/version-4.02-blue.svg)
+
 [SecretML v4.02.zip](https://github.com/user-attachments/files/25515889/SecretML.v4.02.zip)
+
+>### 🎭 New Feature: The Vault Quest
+We’ve included a pre-configured challenge to demonstrate our **Tri-State Security Logic**. Can you distinguish the truth from the mirage?
+
+**How to test:**
+1. **Download** the release and locate the `/Vault` folder.
+2. **Launch** the app and click the **"Decrypt"** button.
+3. **Select** `quest_protocol.json` and then select `SecretML_Vault.zip`.
+4. **Navigate** the three-step cognitive filter:
+    - **Truth Path:** Enter 100% accurate data to access the authentic `license.txt`.
+    - **Decoy Path:** Enter "plausible" decoy answers to trigger a **Plausible Deniability** event. You'll unlock a **Honey-pot** file, designed to mislead intruders.
+    - **MirageLoop:** Any other input leads to an infinite processing loop — wasting an attacker's time without giving away a single bit of error data.
+
+💡 *SecretMemoryLocker — Where memory becomes a labyrinth and security is absolute.*
+
+
+
+
+>## 📜 Previous Versions:
 >
 # 🚀 SecretMemoryLocker v4.01 Release Notes
 
@@ -54,7 +73,6 @@ A robust container format with embedded vault capabilities.
 
 > SecretMemoryLocker v4.01 — Where memory becomes a labyrinth and security is absolute.
 ---
-## 📜 Previous Versions
 
 ## 🎥 Demo Video  
 **Your Mind is the Password | How to Encrypt Files Without Storing a Key (SML Demo)**  
