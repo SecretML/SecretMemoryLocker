@@ -2,7 +2,7 @@
 
 > **Your personal digital vault – protected by your memories.**
 ---
-✅ Download SecretML  ![Version](https://img.shields.io/badge/version-4.02-blue.svg)
+✅ Download SecretML [![Version](https://img.shields.io/badge/version-4.02-blue.svg)](https://github.com/SecretML/SecretMemoryLocker/releases)
 
 [SecretML v4.02.zip](https://github.com/user-attachments/files/25515889/SecretML.v4.02.zip)
 
