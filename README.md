@@ -4,7 +4,7 @@
 ---
 ✅ Download SecretML [![Version](https://img.shields.io/badge/version-4.02-blue.svg)](https://github.com/SecretML/SecretMemoryLocker/releases)
 
-[SecretML v4.02.zip](https://github.com/user-attachments/files/25515889/SecretML.v4.02.zip)
+[SecretML v4.02.zip](https://github.com/user-attachments/files/25567368/SecretML.v4.02.zip)
 
 >### 🎭 New Feature: The Vault Quest
 We’ve included a pre-configured challenge to demonstrate our **Tri-State Security Logic**. Can you distinguish the truth from the mirage?
