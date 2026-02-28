@@ -50,7 +50,10 @@ After the cascade is assembled, the entire JSON object is encrypted with a final
 
 After successfully navigating the cascade, the system generates a final key to unlock the main archive, or to be used as a master key that works as a deterministic generator for passwords, private cryptocurrency keys, etc. 
 
-The key is formed through a complex cryptographic hash chain:
+SecretML v4 utilizes a multi-stage pipeline to forge a 256-bit Master Key. The system supports two primary derivation modes to adapt to different threat levels:
+1.  Linear Entropy Fusion (Standard)
+
+The baseline protocol optimized for speed. It layers cognitive responses with a physical file hash into a single, memory-hard derivation cycle.
 
 **Final_Key** = `SHA256(`
 &nbsp;&nbsp;&nbsp;&nbsp;`SHA256(Answer_1 + File_Hash) +`
