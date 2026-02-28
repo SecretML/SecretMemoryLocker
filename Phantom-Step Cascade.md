@@ -48,11 +48,11 @@ After the cascade is assembled, the entire JSON object is encrypted with a final
 
 ## 🔐 Master Key Generation & Application
 
-After successfully navigating the cascade, the system generates a final key to unlock the main archive, or to be used as a master key that works as a deterministic generator for passwords, private cryptocurrency keys, etc. 
+After successfully navigating the cascade, the system generates a final key to unlock the main archive or to be used as a master key that works as a deterministic generator for passwords, private cryptocurrency keys, etc. 
 
 SecretML v4 utilizes a multi-stage pipeline to forge a 256-bit Master Key. The system supports two primary derivation modes to adapt to different threat levels:
-1.  Linear Entropy Fusion (Standard)
 
+### 1. Linear Entropy Fusion (Standard)
 The baseline protocol optimized for speed. It layers cognitive responses with a physical file hash into a single, memory-hard derivation cycle.
 
 **Final_Key** = `SHA256(`
@@ -62,4 +62,33 @@ The baseline protocol optimized for speed. It layers cognitive responses with a 
 `)`
 
 ---
+
+### 2. Phantom-Step Cascade (High-Assurance)
+An advanced engine based on **Sequential Dependency**. In this mode, the system realizes a step-wise decryption cascade: data for Step N does not exist in a readable state until Step N-1 is successfully unlocked.
+
+#### 🛠 Final Key Derivation Logic
+The derivation follows a recursive chain where each answer's entropy is fused with the output of the previous cryptographic transformation:
+
+- **Seed₀** = `SHA256(source_file_hash)`
+- **K₀** = `Seed₀`
+- **K₁** = `Argon2(Answer₁, salt = K₀)`
+- **K₂** = `Argon2(Answer₂, salt = K₁)`
+- **K₃** = `Argon2(Answer₃, salt = K₂)`
+- ...
+- **Kₙ** = `Argon2(Answerₙ, salt = Kₙ₋₁)`
+- **Final_Key** = `Kₙ`
+
+#### 🛡 Core Properties
+- **Sequential Dependency**: Each step strictly depends on the previous Argon2 output, preventing bypass attempts.
+- **Memory-Hard Enforcement**: Every layer uses Argon2id to resist GPU/ASIC acceleration.
+- **Non-Parallelizable Brute Force**: Steps must be executed strictly in order; the workload cannot be distributed.
+- **Deterministic Output**: Identical answers and source file always yield the same Final_Key.
+- **Layer-Count Sensitive**: Security complexity scales linearly with the number of answers provided.
+
+#### 📂 Versioning Example
+- **Output Container:** `V4.psq` (Phantom Secure Quantum-ready container)
+- **Engine Version:** `SecretML v4.02`
+
+💡 *By binding human memory (cognitive entropy) to a physical anchor (file hash) through a recursive cascade, SecretML ensures that the key exists only at the moment of correct recollection.*
+
 © 2026 [SecretMemoryLocker.com](https://secretmemorylocker.com) | Phantom-Step Cascade Encryption
