@@ -87,8 +87,8 @@ The derivation follows a recursive chain where each answer's entropy is fused wi
 
 #### 📂 Versioning Example
 - **Output Container:** `V4.psq` (Phantom Secure Quantum-ready container)
-- **Engine Version:** `SecretML v4.02`
+- **Engine Version:** `SecretML v4.03`
 
 💡 *By binding human memory (cognitive entropy) to a physical anchor (file hash) through a recursive cascade, SecretML ensures that the key exists only at the moment of correct recollection.*
-
+---
 © 2026 [SecretMemoryLocker.com](https://secretmemorylocker.com) | Phantom-Step Cascade Encryption
