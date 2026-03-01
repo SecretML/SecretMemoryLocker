@@ -1,10 +1,49 @@
-# 💾 SecretMemoryLocker (SecretML v4.02)
+# 💾 SecretMemoryLocker (SecretML v4.03)
 
 > **Your personal digital vault – protected by your memories.**
 ---
-✅ Download SecretML [![Version](https://img.shields.io/badge/version-4.02-blue.svg)](https://github.com/SecretML/SecretMemoryLocker/releases)
+✅ Download SecretML [![Version](https://img.shields.io/badge/version-4.03-blue.svg)](https://github.com/SecretML/SecretMemoryLocker/releases)
 
-[SecretML v4.02.zip](https://github.com/user-attachments/files/25567368/SecretML.v4.02.zip)
+[SecretML v4.03.zip](https://github.com/user-attachments/files/25658161/SecretML.v4.03.zip)
+
+What's New in v4.03 — Phantom-Step Cascade Key Derivation
+
+### 🔑 Phantom-Step Cascade — Deterministic Final Key Generation
+
+SecretMemoryLocker v4.03 introduces an enhanced key derivation model based on a chained Argon2 cascade.
+
+**Core idea:**
+
+- Initial seed: `k = file_hash_seed`
+- Each secret answer is processed sequentially
+- Every step re-derives the key using the previous result as salt
+- Final output becomes the deterministic `final_key`
+
+**Conceptually:**
+
+```python
+k = file_hash_seed
+
+for answer in answers:
+    k = Argon2(answer, salt=k)
+
+final_key = k
+
+```
+
+### 🛡 What This Achieves
+- Multi-layer entropy amplification  
+- Order-dependent cryptographic strengthening  
+- No stored master key  
+- Deterministic and reproducible recovery  
+
+This update strengthens resistance against brute-force and structural attacks while preserving full recoverability.
+
+---
+
+>## 📜 Previous Versions:
+
+# 🚀 SecretMemoryLocker v4.02 — The Cognitive Challenge Update
 
 >### 🎭 New Feature: The Vault Quest
 We’ve included a pre-configured challenge to demonstrate our **Tri-State Security Logic**. Can you distinguish the truth from the mirage?
@@ -20,10 +59,6 @@ We’ve included a pre-configured challenge to demonstrate our **Tri-State Secur
 
 💡 *SecretMemoryLocker — Where memory becomes a labyrinth and security is absolute.*
 
-
-
-
->## 📜 Previous Versions:
 >
 # 🚀 SecretMemoryLocker v4.01 Release Notes
 
