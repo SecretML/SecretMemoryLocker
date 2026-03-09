@@ -1,5 +1,4 @@
 # 🛡️ Phantom-Step Cascade (`.psq`)
-**When your memory becomes a labyrinth, and security is an illusion.**
 
 **Phantom-Step Cascade** is a proprietary cascade encryption method developed by the **SecretMemoryLocker** team. This unique technology turns your personal memories into a dynamic security architecture, transforming an ordinary file into a recursive cryptographic labyrinth.
 
