@@ -59,4 +59,126 @@ Unlocking requires searching for the nonce that produces the stored hash:
 hash(candidate_nonce) == nonce_hash
 
 The size of the nonce search space defines the computational delay:
+time ≈ search_space / attempts_per_second
 
+Thus the nonce effectively becomes a **computational time source**.
+
+---
+
+## Key Derivation
+
+Once the correct nonce is found, it becomes the secret input for a memory-hard key derivation function:
+key = Argon2id(
+secret = nonce,
+salt = file_hash
+)
+
+The derived key decrypts the PSQC container.
+
+Algorithms used:
+
+- **KDF:** Argon2id  
+- **AEAD:** ChaCha20-Poly1305  
+- **Hash:** SHA-256  
+
+---
+
+## Memory-Hard Verification
+
+Every nonce candidate must pass through Argon2id.
+
+Example parameters:
+memory_cost = 512 MB – 1 GB
+time_cost = 2
+parallelism = 4
+
+This makes each verification expensive and significantly reduces the efficiency of large-scale GPU brute-force attacks.
+
+---
+
+## Layered Decryption
+
+PSQC containers may contain multiple sequential layers.
+
+Layer0 → Argon2 → decrypt
+↓
+Layer1 → Argon2 → decrypt
+↓
+Layer2 → final payload
+
+Each layer depends on the previous one, partially limiting parallelization and increasing total computational cost.
+
+---
+
+## Dynamic Salt
+
+To prevent precomputation attacks, salts can depend on ciphertext:
+salt = hash(ciphertext_chunk)
+
+This binds the key derivation process to the specific encrypted container.
+
+---
+
+## Optional Server Role
+
+A server may optionally store the real nonce and release it later.
+
+Two modes are possible:
+
+### 1. Server-assisted unlock
+
+The server releases the nonce after a time condition.
+
+### 2. Offline unlock
+
+The nonce is discovered by brute-force search.
+
+In both cases the server never stores:
+
+- ciphertext  
+- encryption keys  
+- plaintext data  
+
+Only nonce information may exist server-side.
+
+---
+
+## Security Properties
+
+This architecture provides:
+
+- no server-side storage of encrypted data  
+- no server access to encryption keys  
+- computational time-delay  
+- memory-hard verification  
+- fully offline operation  
+
+The encrypted payload can be stored anywhere:
+
+- locally  
+- cloud storage  
+- email  
+- decentralized storage  
+
+The PSQC container itself is sufficient for unlocking.
+
+---
+
+## Potential Use Cases
+
+- cryptographic time capsules  
+- delayed-release secrets  
+- privacy-focused digital vaults  
+- secure archival storage  
+- experimental time-lock encryption systems  
+
+---
+
+## Status
+
+This mechanism is experimental and requires further study regarding:
+
+- brute-force parallelization  
+- optimal Argon2 parameters  
+- time calibration across hardware  
+- practical nonce search spaces
