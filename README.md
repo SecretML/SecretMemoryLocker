@@ -1,10 +1,28 @@
-# 💾 SecretMemoryLocker (SecretML v4.03)
+# 💾 SecretMemoryLocker (v4.05)
 
 > **Your personal digital vault – protected by your memories.**
 ---
-✅ Download SecretML [![Version](https://img.shields.io/badge/version-4.03-blue.svg)](https://github.com/SecretML/SecretMemoryLocker/releases)
+### What's New in v4.05
 
-[SecretML v4.03.zip](https://github.com/user-attachments/files/25658161/SecretML.v4.03.zip)
+- 🖥 **New launcher interface** built with **PySide6**
+- ⏳ **TIMELOCK v1 — PSQC Chronos Protocol**
+  - Lock encrypted archives **until a specific future time**
+  - Designed for **digital inheritance and delayed access**
+  - Experimental time-based encryption layer
+
+ --- 
+ [![Windows 10+](https://img.shields.io/badge/OS-Windows%2010%2B-blue?logo=windows)](https://github.com/SecretML/SecretMemoryLocker/releases)
+> ✅ Download SecretMemoryLocker-4.05-Windows-Portable.exe
+
+> 📥 **SecretMemoryLocker-4.05-Windows.zip**  
+
+> https://github.com/SecretML/SecretMemoryLocker/releases/download/v4.05/SecretMemoryLocker-4.05-Windows.zip
+> 
+--- 
+--- 
+
+
+>## 📜 Previous Versions:
 
 What's New in v4.03 — Phantom-Step Cascade Key Derivation
 
@@ -40,8 +58,6 @@ final_key = k
 This update strengthens resistance against brute-force and structural attacks while preserving full recoverability.
 
 ---
-
->## 📜 Previous Versions:
 
 # 🚀 SecretMemoryLocker v4.02 — The Cognitive Challenge Update
 
