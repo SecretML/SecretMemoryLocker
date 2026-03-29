@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/655a0ba9-f1a6-4b44-a815-fa381a20cf62" width="80" />
+  <img src="logo-SecretMemoryLocker.png" width="80" />
 </p>
 
 <h1 align="center">SecretMemoryLocker</h1>
