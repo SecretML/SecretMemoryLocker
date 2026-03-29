@@ -1,6 +1,13 @@
-# 💾 SecretMemoryLocker (v4.05)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/655a0ba9-f1a6-4b44-a815-fa381a20cf62" width="80" />
+</p>
 
-> **Your personal digital vault – protected by your memories.**
+<h1 align="center">SecretMemoryLocker</h1>
+
+<p align="center">
+  Your personal digital vault – protected by your memories.
+</p>
+
 ---
 ### What's New in v4.05
 
