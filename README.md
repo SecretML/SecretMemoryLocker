@@ -7,7 +7,9 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/LICENSE">
   <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
+</a>
   <img src="https://img.shields.io/badge/Version-4.+-blue.svg" alt="Version">
   <img src="https://img.shields.io/badge/Security-Argon2id-orange.svg" alt="Security">
 </p>
