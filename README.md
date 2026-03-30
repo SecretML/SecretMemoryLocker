@@ -6,13 +6,18 @@
   <strong>The vault where your key doesn't exist until you need it.</strong>
 </p>
 
+
 <p align="center">
   <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/LICENSE">
-    <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
-  </a>
-  <img src="https://img.shields.io/badge/Version-4.05-blue?style=for-the-badge" alt="Version">
-  <img src="https://img.shields.io/badge/Security-Argon2id-orange?style=for-the-badge" alt="Security">
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
+      </a>
+  <a href="https://github.com/SecretML/SecretMemoryLocker/releases">
+  <img src="https://img.shields.io/badge/Version-4.+ -blue.svg" alt="Version">
+      </a>
+  <img src="https://img.shields.io/badge/Security-Argon2id-orange.svg" alt="Security">
 </p>
+
+---
 
 <p align="center">
   <strong>Core Technologies & Protocols</strong><br>
