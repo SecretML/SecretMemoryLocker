@@ -19,32 +19,30 @@
 
   <a href="#">
   <img src="https://img.shields.io/badge/Security-Argon2id-crimson.svg" alt="Security"></a>
-  
 </p>
 
-<p align="center">
+ <p align="center">
   <strong>Core Technologies & Protocols</strong><br>
 </p>
 
 <p align="center">
 
 <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/Memory%20Echo.md">
-    <img src="https://img.shields.io/badge/Memory--Echo-Dynamic%20Keys-9cf?logo=rss&logoColor=white" alt="Memory Echo"></a>
+<img src="https://img.shields.io/badge/Memory--Echo-Dynamic%20Keys-1f1f1f?logo=rss&logoColor=white" alt="Memory Echo"></a>
 
  <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/Memory-Sync.md">
-    <img src="https://img.shields.io/badge/Memory--Sync-Archive%20Control-00adb5?logo=KeeWeb&logoColor=white" alt="Memory Sync"></a>
+ <img src="https://img.shields.io/badge/Memory--Sync-Archive%20Control-1f1f1f?logo=KeeWeb&logoColor=white" alt="Memory Sync"></a>
     
  <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/SecretML-Seed.md">
-    <img src="https://img.shields.io/badge/SML--Seed-Physical--free%20Crypto-ff8c00?logo=bitcoin&logoColor=white" alt="SML-Seed"></a>
+ <img src="https://img.shields.io/badge/SML--Seed-Physical--free%20Crypto-1f1f1f?logo=bitcoin&logoColor=white" alt="SML-Seed"></a>
 
 <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/NONCE_TIMELOCK.md">
-  <img src="https://img.shields.io/badge/Time--Lock-Computational%20Delay-6c5ce7?logo=clockify&logoColor=white" alt="Time-Lock"></a>
+<img src="https://img.shields.io/badge/Time--Lock-Computational%20Delay-1f1f1f?logo=clockify&logoColor=white" alt="Time-Lock"></a>
     
-  <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/Phantom-Step%20Cascade.md">
-    <img src="https://img.shields.io/badge/Phantom--Step-Cascade%20Encryption-222831?logo=ghostery&logoColor=white" alt="Phantom-Step"></a>  
+<a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/Phantom-Step%20Cascade.md">
+<img src="https://img.shields.io/badge/Phantom--Step-Cascade%20Encryption-000000?style=flat-square&logo=ghostery&logoColor=white" alt="Phantom-Step"></a> 
     
 </p>
-
 
 ### 🧩 The Philosophy
 
