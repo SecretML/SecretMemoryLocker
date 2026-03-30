@@ -17,7 +17,6 @@
 
 <p align="center">
   <strong>Core Technologies & Protocols</strong><br>
-
 </p>
 
 <p align="center">
@@ -27,9 +26,7 @@
 
   <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/Memory-Sync.md">
     <img src="https://img.shields.io/badge/Memory--Sync-Archive%20Control-00adb5?logo=sync&logoColor=white" alt="Memory Sync"></a>
-</p>
 
-<p align="center">
   <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/Phantom-Step%20Cascade.md">
     <img src="https://img.shields.io/badge/Phantom--Step-Cascade%20Encryption-222831?logo=ghostery&logoColor=white" alt="Phantom-Step"></a>
   <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/NONCE_TIMELOCK.md">
