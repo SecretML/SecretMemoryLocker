@@ -37,8 +37,8 @@
  <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/SecretML-Seed.md">
     <img src="https://img.shields.io/badge/SML--Seed-Physical--free%20Crypto-ff8c00?logo=bitcoin&logoColor=white" alt="SML-Seed"></a>
 
-  <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/NONCE_TIMELOCK.md">
-    <img src="https://img.shields.io/badge/Time--Lock-Computational%20Delay-e23e57?logo=clockify&logoColor=white" alt="Time-Lock"></a>
+<a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/NONCE_TIMELOCK.md">
+  <img src="https://img.shields.io/badge/Time--Lock-Computational%20Delay-6c5ce7?logo=clockify&logoColor=white" alt="Time-Lock"></a>
     
   <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/Phantom-Step%20Cascade.md">
     <img src="https://img.shields.io/badge/Phantom--Step-Cascade%20Encryption-222831?logo=ghostery&logoColor=white" alt="Phantom-Step"></a>  
