@@ -25,26 +25,28 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/Memory%20Echo.md">
-    <img src="https://img.shields.io/badge/Memory--Echo-Dynamic%20Keys-9cf?style=flat-square&logo=cache&logoColor=white" alt="Memory Echo">
+
+<a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/Memory%20Echo.md">
+    <img src="https://img.shields.io/badge/Memory--Echo-Dynamic%20Keys-9cf?logo=cache&logoColor=white" alt="Memory Echo">
   </a>
+
   <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/Memory-Sync.md">
-    <img src="https://img.shields.io/badge/Memory--Sync-Archive%20Control-00adb5?style=flat-square&logo=sync&logoColor=white" alt="Memory Sync">
+    <img src="https://img.shields.io/badge/Memory--Sync-Archive%20Control-00adb5?logo=sync&logoColor=white" alt="Memory Sync">
   </a>
 </p>
 
 <p align="center">
   <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/Phantom-Step%20Cascade.md">
-    <img src="https://img.shields.io/badge/Phantom--Step-Cascade%20Encryption-222831?style=flat-square&logo=ghostery&logoColor=white" alt="Phantom-Step">
+    <img src="https://img.shields.io/badge/Phantom--Step-Cascade%20Encryption-222831?logo=ghostery&logoColor=white" alt="Phantom-Step">
   </a>
   <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/NONCE_TIMELOCK.md">
-    <img src="https://img.shields.io/badge/Time--Lock-Computational%20Delay-e23e57?style=flat-square&logo=clockify&logoColor=white" alt="Time-Lock">
+    <img src="https://img.shields.io/badge/Time--Lock-Computational%20Delay-e23e57?logo=clockify&logoColor=white" alt="Time-Lock">
   </a>
 </p>
 
 <p align="center">
   <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/SecretML-Seed.md">
-    <img src="https://img.shields.io/badge/SML--Seed-Physical--less%20Crypto-ff8c00?style=flat-square&logo=bitcoin&logoColor=white" alt="SML-Seed">
+    <img src="https://img.shields.io/badge/SML--Seed-Physical--less%20Crypto-ff8c00?logo=bitcoin&logoColor=white" alt="SML-Seed">
   </a>
 </p>
 
