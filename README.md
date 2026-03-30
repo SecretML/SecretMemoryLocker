@@ -1,12 +1,26 @@
 <p align="center">
   <img src="logo-SecretMemoryLocker.png" width="80" />
 </p>
-
 <h1 align="center">SecretMemoryLocker</h1>
+<p align="center">
+  <strong>The vault where your key doesn't exist until you need it.</strong>
+</p>
 
 <p align="center">
-  Your personal digital vault – protected by your memories.
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
+  <img src="https://img.shields.io/badge/Version-4.+-blue.svg" alt="Version">
+  <img src="https://img.shields.io/badge/Security-Argon2id-orange.svg" alt="Security">
 </p>
+
+<p align="center">
+  <a href="https://secretmemorylocker.com">Website</a> •
+  <a href="https://github.com/SecretML/SecretMemoryLocker/releases">Quick Start</a>
+</p>
+
+### 🧠 The Philosophy
+> "SecretMemoryLocker does not store secrets. It remembers how to remember."
+
+Forget master passwords. Our technology reconstructs access on the fly using your memories and computational work. No keys are ever stored on your disk or our servers, making them impossible to steal.
 
 ---
 ### What's New in v4.05
