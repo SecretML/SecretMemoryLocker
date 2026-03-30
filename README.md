@@ -39,7 +39,7 @@
 </p>
 
 
-### 🧠 The Philosophy
+### 🧩 The Philosophy
 > "SecretMemoryLocker does not store secrets. It remembers how to remember."
 
 Forget master passwords. Our technology reconstructs access on the fly using your memories and computational work. No keys are ever stored on your disk or our servers, making them impossible to steal.
