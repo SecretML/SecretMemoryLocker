@@ -18,7 +18,7 @@
 <img src="https://img.shields.io/badge/Release-Portable%20EXE-2ecc71?logo=windows&logoColor=white">
 
   <a href="#">
-  <img src="https://img.shields.io/badge/Security-Argon2id-orange.svg" alt="Security"></a>
+  <img src="https://img.shields.io/badge/Security-Argon2id-crimson.svg" alt="Security"></a>
   
 </p>
 
