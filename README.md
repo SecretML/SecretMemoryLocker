@@ -57,7 +57,7 @@ Access is reconstructed dynamically using:
 - computational work
 
 --- 
-### What's New in v4.05
+ What's New in v4.05
 
 - 🖥 **New launcher interface** built with **PySide6**
 - ⏳ **TIMELOCK v1 — PSQC Chronos Protocol**
