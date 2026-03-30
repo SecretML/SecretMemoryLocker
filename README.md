@@ -40,11 +40,19 @@
 
 
 ### 🧩 The Philosophy
+
 > "SecretMemoryLocker does not store secrets. It remembers how to remember."
 
-Forget master passwords. Our technology reconstructs access on the fly using your memories and computational work. No keys are ever stored on your disk or our servers, making them impossible to steal.
+- No master passwords  
+- No stored keys  
+- No server-side secrets  
 
----
+Access is reconstructed dynamically using:
+- your memory
+- computational work
+- deterministic key derivation
+
+--- 
 ### What's New in v4.05
 
 - 🖥 **New launcher interface** built with **PySide6**
