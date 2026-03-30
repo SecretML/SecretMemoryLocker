@@ -34,7 +34,7 @@
 
 
   <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/SecretML-Seed.md">
-    <img src="https://img.shields.io/badge/SML--Seed-Physical--less%20Crypto-ff8c00?logo=bitcoin&logoColor=white" alt="SML-Seed"></a>
+    <img src="https://img.shields.io/badge/SML--Seed-Physical--free%20Crypto-ff8c00?logo=bitcoin&logoColor=white" alt="SML-Seed"></a>
     
 </p>
 
