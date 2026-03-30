@@ -53,8 +53,8 @@
 
 Access is reconstructed dynamically using:
 - your memory
+- cryptography
 - computational work
-- deterministic key derivation
 
 --- 
 ### What's New in v4.05
