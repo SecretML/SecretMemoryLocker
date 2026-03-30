@@ -8,15 +8,39 @@
 
 <p align="center">
   <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/LICENSE">
-  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
-</a>
-  <img src="https://img.shields.io/badge/Version-4.+-blue.svg" alt="Version">
-  <img src="https://img.shields.io/badge/Security-Argon2id-orange.svg" alt="Security">
+    <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
+  </a>
+  <img src="https://img.shields.io/badge/Version-4.05-blue?style=for-the-badge" alt="Version">
+  <img src="https://img.shields.io/badge/Security-Argon2id-orange?style=for-the-badge" alt="Security">
 </p>
 
 <p align="center">
-  <a href="https://secretmemorylocker.com">Website</a> •
-  <a href="https://github.com/SecretML/SecretMemoryLocker/releases">Quick Start</a>
+  <strong>Core Technologies & Protocols</strong><br>
+  <i>Click to explore the technical documentation</i>
+</p>
+
+<p align="center">
+  <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/Memory%20Echo.md">
+    <img src="https://img.shields.io/badge/Memory--Echo-Dynamic%20Keys-9cf?style=flat-square&logo=cache&logoColor=white" alt="Memory Echo">
+  </a>
+  <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/Memory-Sync.md">
+    <img src="https://img.shields.io/badge/Memory--Sync-Archive%20Control-00adb5?style=flat-square&logo=sync&logoColor=white" alt="Memory Sync">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/Phantom-Step%20Cascade.md">
+    <img src="https://img.shields.io/badge/Phantom--Step-Cascade%20Encryption-222831?style=flat-square&logo=ghostery&logoColor=white" alt="Phantom-Step">
+  </a>
+  <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/NONCE_TIMELOCK.md">
+    <img src="https://img.shields.io/badge/Time--Lock-Computational%20Delay-e23e57?style=flat-square&logo=clockify&logoColor=white" alt="Time-Lock">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/SecretML-Seed.md">
+    <img src="https://img.shields.io/badge/SML--Seed-Physical--less%20Crypto-ff8c00?style=flat-square&logo=bitcoin&logoColor=white" alt="SML-Seed">
+  </a>
 </p>
 
 ### 🧠 The Philosophy
