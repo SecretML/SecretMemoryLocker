@@ -56,8 +56,10 @@ Access is reconstructed dynamically using:
 - your memory
 - cryptography
 - computational work
+> Your secrets, your rules — no data ever leaves your device.
 
 --- 
+
  What's New in v4.05
 
 - 🖥 **New launcher interface** built with **PySide6**
