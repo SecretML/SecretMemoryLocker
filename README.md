@@ -28,13 +28,13 @@
 <p align="center">
 
 <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/Memory%20Echo.md">
-<img src="https://img.shields.io/badge/Memory--Echo-Dynamic%20Keys-1f1f1f?logo=rss&logoColor=white" alt="Memory Echo"></a>
+<img src="https://img.shields.io/badge/Memory--Echo-Dynamic%20Keys-000000?logo=rss&logoColor=white" alt="Memory Echo"></a>
 
  <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/Memory-Sync.md">
  <img src="https://img.shields.io/badge/Memory--Sync-Archive%20Control-1f1f1f?logo=KeeWeb&logoColor=white" alt="Memory Sync"></a>
     
  <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/SecretML-Seed.md">
- <img src="https://img.shields.io/badge/SML--Seed-Physical--free%20Crypto-1f1f1f?logo=bitcoin&logoColor=white" alt="SML-Seed"></a>
+ <img src="https://img.shields.io/badge/SML--Seed-Physical--free%20Crypto-000000?logo=bitcoin&logoColor=white" alt="SML-Seed"></a>
 
 <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/NONCE_TIMELOCK.md">
 <img src="https://img.shields.io/badge/Time--Lock-Computational%20Delay-1f1f1f?logo=clockify&logoColor=white" alt="Time-Lock"></a>
