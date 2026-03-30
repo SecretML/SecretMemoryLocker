@@ -15,7 +15,7 @@
 <a href="#">
   <img src="https://img.shields.io/badge/OS-Windows%2010%2B-0078D6?logo=windows&logoColor=white" alt="Windows 10+"></a>
 
-<img src="https://img.shields.io/badge/Release-Portable%20EXE-2ecc71?logo=windows&logoColor=white">
+<img src="https://img.shields.io/badge/Build-Portable%20EXE-2ecc71?logo=windows&logoColor=white">
 
   <a href="#">
   <img src="https://img.shields.io/badge/Security-Argon2id-crimson.svg" alt="Security"></a>
