@@ -40,8 +40,6 @@ Forget master passwords. Our technology reconstructs access on the fly using you
 > https://github.com/SecretML/SecretMemoryLocker/releases/download/v4.05/SecretMemoryLocker-4.05-Windows.zip
 > 
 --- 
---- 
-
 
 >## 📜 Previous Versions:
 
