@@ -22,7 +22,7 @@
 <p align="center">
 
 <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/Memory%20Echo.md">
-    <img src="https://img.shields.io/badge/Memory--Echo-Dynamic%20Keys-9cf?logo=cache&logoColor=white" alt="Memory Echo"></a>
+    <img src="https://img.shields.io/badge/Memory--Echo-Dynamic%20Keys-9cf?logo=rss&logoColor=white" alt="Memory Echo"></a>
 
   <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/Memory-Sync.md">
     <img src="https://img.shields.io/badge/Memory--Sync-Archive%20Control-00adb5?logo=sync&logoColor=white" alt="Memory Sync"></a>
