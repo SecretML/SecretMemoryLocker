@@ -40,7 +40,7 @@
 <img src="https://img.shields.io/badge/Time--Lock-Computational%20Delay-1f1f1f?logo=clockify&logoColor=white" alt="Time-Lock"></a>
     
 <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/Phantom-Step%20Cascade.md">
-<img src="https://img.shields.io/badge/Phantom--Step-Cascade%20Encryption-000000?style=flat-square&logo=ghostery&logoColor=white" alt="Phantom-Step"></a> 
+<img src="https://img.shields.io/badge/Phantom--Step-Cascade%20Encryption-000000?logo=ghostery&logoColor=white" alt="Phantom-Step"></a> 
     
 </p>
 
