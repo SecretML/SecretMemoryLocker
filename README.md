@@ -41,6 +41,9 @@
     
 <a href="docs/features/Phantom-Step-Cascade.md">
 <img src="https://img.shields.io/badge/Phantom--Step-Cascade%20Encryption-000000?logo=ghostery&logoColor=white" alt="Phantom-Step"></a> 
+
+<a href="docs/features/myLifeEcho.md">
+<img src="https://img.shields.io/badge/myLifeEcho-Digital%20Legacy%20Map-1f1f1f?logo=mapillary&logoColor=white" alt="myLifeEcho"></a>
     
 </p>
 
