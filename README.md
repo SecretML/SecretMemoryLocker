@@ -30,16 +30,16 @@
 <a href="docs/features/Memory-Echo.md">
   <img src="https://img.shields.io/badge/Memory--Echo-Dynamic%20Keys-000000?logo=rss&logoColor=white" alt="Memory Echo"></a>
 
- <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/Memory-Sync.md">
+ <a href="docs/features/Memory-Sync.md">
  <img src="https://img.shields.io/badge/Memory--Sync-Archive%20Control-1f1f1f?logo=KeeWeb&logoColor=white" alt="Memory Sync"></a>
     
  <a href="docs/features/SML-Seed.md">
  <img src="https://img.shields.io/badge/SML--Seed-Physical--free%20Crypto-000000?logo=bitcoin&logoColor=white" alt="SML-Seed"></a>
 
-<a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/NONCE_TIMELOCK.md">
+<a href="docs/features/NONCE_TIMELOCK.md">
 <img src="https://img.shields.io/badge/Time--Lock-Computational%20Delay-1f1f1f?logo=clockify&logoColor=white" alt="Time-Lock"></a>
     
-<a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/Phantom-Step%20Cascade.md">
+<a href="docs/features/Phantom-Step-Cascade.md">
 <img src="https://img.shields.io/badge/Phantom--Step-Cascade%20Encryption-000000?logo=ghostery&logoColor=white" alt="Phantom-Step"></a> 
     
 </p>
