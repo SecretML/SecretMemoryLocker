@@ -1,6 +1,9 @@
 # ============================================================
 # SecretMemoryLocker PSQC Tool (nonce_hash_V1 recovery)
 #
+# Offline TimeLock recovery mode (manual / brute-force method)
+# Alternative to server-based unlocking
+#
 # Feature: NONCE TIMELOCK
 # https://github.com/SecretML/SecretMemoryLocker/blob/main/docs/features/NONCE_TIMELOCK.md
 #
