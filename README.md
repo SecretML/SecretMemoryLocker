@@ -62,6 +62,28 @@ Access is reconstructed dynamically using:
 > Your secrets, your rules — no data ever leaves your device.
 
 --- 
+New Version Available — v4.06
+
+A new version of **SecretMemoryLocker** is now available for download.
+
+###  Highlights
+- Improved shortcut icon design  
+- Bug fixes and minor improvements  
+- Enhanced overall stability  
+
+ --- 
+ [![Windows 10+](https://img.shields.io/badge/OS-Windows%2010%2B-blue?logo=windows)](https://github.com/SecretML/SecretMemoryLocker/releases)
+> ✅ Download SML-4.06-Windows-Portable.exe
+
+> 📥 **SML-4.06-Windows.zip**  
+
+> https://github.com/SecretML/SecretMemoryLocker/releases/download/v4.06/SML-4.06-Windows.zip
+> 
+
+
+--- 
+
+📜 Previous Versions:
 
  What's New in v4.05
 
@@ -80,8 +102,6 @@ Access is reconstructed dynamically using:
 > https://github.com/SecretML/SecretMemoryLocker/releases/download/v4.05/SecretMemoryLocker-4.05-Windows.zip
 > 
 --- 
-
->## 📜 Previous Versions:
 
 What's New in v4.03 — Phantom-Step Cascade Key Derivation
 
