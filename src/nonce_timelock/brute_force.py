@@ -1,8 +1,11 @@
 # ============================================================
 # SecretMemoryLocker PSQC Tool (nonce_hash_V1 recovery)
+#
+# Feature: NONCE TIMELOCK
+# https://github.com/SecretML/SecretMemoryLocker/blob/main/docs/features/NONCE_TIMELOCK.md
+#
 # © 2026 SecretMemoryLocker.com
 # ============================================================
-
 """
 USAGE:
 
