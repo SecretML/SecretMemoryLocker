@@ -61,7 +61,7 @@ k0 = file_hash_seed
 for each answer_i:
     k_i = Argon2(answer_i, salt = k_{i-1})
 
-final_seed = SHA256(k_N)
+Seed = SHA256(k_N)
 ```
 
 ### V5 Derivation
@@ -74,7 +74,7 @@ for each answer_i:
     salt_i  = SHA256(k_{i-1} || index || total_steps)
     k_i     = Argon2(input_i, salt_i)
 
-final_key = SHA256(HMAC(k_N, file_hash))
+Seed = SHA256(HMAC(k_N, file_hash))
 ```
 
 **Where:**
