@@ -24,14 +24,14 @@ The seed is no longer directly derived from raw Q/A pairs — instead it is gene
 
 ## 🔐 System Components
 
-### 📂 SecretML.json
+### 📂 SML.psq
 - Encrypted question set  
 - Defines deterministic memory structure  
 - Does NOT contain answers or secrets  
 
 ---
 
-### 📦 SecretML.zip
+### 📦 SML.zip
 - Encrypted archive of user data  
 - Protected via Memory-Derived Key (SML-Seed output)  
 - Can include:
@@ -71,7 +71,7 @@ Where:
   
 🧬 Evolution from Legacy Model
 
-❌ Old Model (Deprecated)
+❌ Old Model (V3)
 ```text
 Seed = SHA256(SHA256(Q1 + A1 + file_hash) + SHA256(Q2 + A2 + file_hash) + ...)
 ```
@@ -81,13 +81,13 @@ Seed = SHA256(SHA256(Q1 + A1 + file_hash) + SHA256(Q2 + A2 + file_hash) + ...)
 - Argon2-based memory hardness
 - Strong inter-step dependency
 - File-bound entropy initialization
-- Output Container:`V4.psq` (Phantom-Step Cascade container)
+- Output Container:`V4/V5.psq` (Phantom-Step Cascade container)
   
 🔑 Key Features
 
 🧠 Memory-Only Security
 
-No seed phrase storage anywhere — recovery exists only through structured memory.
+>No seed phrase storage anywhere — recovery exists only through structured memory.
 ---
 
 🔐 Phantom-Step Entropy Binding
