@@ -1,54 +1,157 @@
-# SecretML-Seed (SML-Seed)
-**Seed without physical storage. Memory becomes the key.**
+<img src="https://github.com/user-attachments/assets/655a0ba9-f1a6-4b44-a815-fa381a20cf62" width="60">
 
-SecretML-Seed is an innovative method for securing cryptocurrency wallets, where the seed phrase does **not require physical or digital storage**.  
-Instead:
+## 🌱 SecretML-Seed (SML-Seed)
+## Seed without physical storage. Memory becomes the key.
 
-✅ **SecretML.json** — a set of encrypted security questions.  
+**SecretML-Seed** is a memory-bound cryptographic seed generation model where the seed phrase is **not stored anywhere physically or digitally**, but reconstructed deterministically from user memory and system-bound cryptographic context.
 
-✅ **SecretML.zip** — an encrypted archive containing any files you want to protect (documents, notes, videos, or other data) secured with a password.
+---
 
-✅ **Answers exist only in the user’s memory** — they can also be shared with trusted family or friends and theoretically recovered if necessary.
+## 🧠 Core Idea (Updated Architecture)
 
-⚡ **Separate storage of SecretML.json and SecretML.zip** — both can be safely stored in different locations (local drives, cloud, USB, etc.).
+Unlike the original version (simple SHA256 aggregation), **SML-Seed now uses Phantom-Step V4/V5 key derivation as its entropy backbone**.
 
+The seed is no longer directly derived from raw Q/A pairs — instead it is generated from:
 
-Thus, even if both SecretML.json and SecretML.zip fall into the wrong hands at the same time, they remain completely useless without the correct answers in the user’s memory.
+- 🧩 Phantom-Step Master Key (V4/V5)
+- 🔐 file-bound cryptographic context (`file_hash`)
+- 🧠 ordered user answers (memory sequence)
+- ⚙️ internal KDF cascade (Argon2id-based)
 
+> Memory is no longer just input — it is a structured entropy layer.
 
-## How the Seed is Generated
+---
 
-The seed is deterministically derived from the user’s answers and a selected file:
+## 🔐 System Components
 
-$$
-\mathrm{Seed} = \mathrm{SHA256}\Big(
-    \mathrm{SHA256}(\mathrm{question\_1} + \mathrm{answer\_1} + \mathrm{file\_hash}) +
-    \mathrm{SHA256}(\mathrm{question\_2} + \mathrm{answer\_2} + \mathrm{file\_hash}) +
-    \mathrm{SHA256}(\mathrm{question\_3} + \mathrm{answer\_3} + \mathrm{file\_hash}) + \dots
-\Big)
-$$
+### 📂 SecretML.json
+- Encrypted question set  
+- Defines deterministic memory structure  
+- Does NOT contain answers or secrets  
 
+---
+
+### 📦 SecretML.zip
+- Encrypted archive of user data  
+- Protected via Memory-Derived Key (SML-Seed output)  
+- Can include:
+  - documents  
+  - notes  
+  - wallet backups  
+  - media files  
+
+---
+
+### 🧠 Memory Layer
+- User answers exist **only in human memory**
+- Can optionally be distributed among trusted parties (logical recovery model)
+- No persistent storage required
+
+---
+
+## ⚙️ Updated Seed Derivation Model (V5-based)
+
+SML-Seed is now derived through a **Phantom-Step Cascade dependency graph**:
+
+```text
+k0 = file_hash_seed
+
+for each answer_i:
+    k_i = Argon2(answer_i, salt = k_{i-1})
+
+final_seed = SHA256(k_n)
+```
 Where:
 
-$$
-\mathrm{file\_hash} = \mathrm{SHA256}(\mathrm{YourFile_archive})
-$$
+- file_hash_seed = SHA256(SecretML.zip)
+- each step strengthens entropy via stateful chaining
+- final output is deterministic and reproducible
+
+---
+  
+🧬 Evolution from Legacy Model
+
+❌ Old Model (Deprecated)
+```text
+Seed = SHA256(SHA256(Q1 + A1 + file_hash) + SHA256(Q2 + A2 + file_hash) + ...)
+```
+
+✅ New Model (Current)
+- Stateful cascade instead of parallel hashing
+- Argon2-based memory hardness
+- Strong inter-step dependency
+- File-bound entropy initialization
+  
+🔑 Key Features
+
+🧠 Memory-Only Security
+
+No seed phrase storage anywhere — recovery exists only through structured memory.
+---
+
+🔐 Phantom-Step Entropy Binding
+
+Seed depends on:
+
+- answer order
+- internal state transitions
+- file hash binding
+  
+📦 Dual-Layer Protection
+- SML.psq (structure)
+- SML.zip (data vault)
+
+Both are useless without memory-based reconstruction.
+---
+🌐 Offline-First Design
+- No network dependency
+- No external key servers
+- Fully deterministic local computation
+---
+🧪 Security Properties
+- Memory-hard derivation (Argon2id)
+- Sequential dependency (no parallel shortcut attacks)
+- File-bound entropy isolation
+- No stored seed or master key
+---
+📌 Threat Model
+Assumes attacker has:
+
+- full access to .zip and .json
+- full knowledge of algorithm
+- no access to correct memory answers
+
+Security depends on:
+
+- entropy of user memory
+- strength of answer unpredictability
+- computational cost of Argon2 cascade
+---
+
+⚠️ Important Notes
+- Weak or predictable answers reduce security significantly
+- SML-Seed is not a replacement for hardware wallets in high-risk custody scenarios
+Best used as:
+- recovery system
+- backup entropy layer
+- human-centric key reconstruction model
+---
+
+🧩 Use Cases
+
+Cryptocurrency wallet recovery without seed paper
 
 
-## Key Features
+🧠 Human-memory-based authentication systems
 
-📂 **No physical seed** — no need to store paper, metal plates, or expensive safes. 
+📦 Secure offline encrypted archives
 
-🧠 **Mental key** — the user keeps their answers in memory, with the option to flexibly share parts of the answers with trusted people, similar to Shamir’s Secret Sharing, for recovery if needed.
+🎓 Educational cryptography systems
 
-🔑 **Dual protection** — JSON with questions + ZIP archive as an additional barrier.  
+---
 
-🔒 **AES-256 + SHA256** — modern cryptography for strong security.  
+🌀 Design Philosophy
 
-🌐 **Offline mode** — zero risk of leaks via network.  
+>“A seed is not written. A seed is reconstructed.”
 
-## Use Cases
-
-- Cryptocurrency wallet owners who do not want to rely on seed paper.  
-- Services offering psychologically-secured recovery access.  
-- Educational platforms teaching crypto literacy.
+SML-Seed transforms cryptographic ownership into a memory-bound deterministic system, eliminating dependency on physical seed storage entirely.
