@@ -1,9 +1,9 @@
 <img src="https://github.com/user-attachments/assets/655a0ba9-f1a6-4b44-a815-fa381a20cf62" width="60">
 
-## 🌱 SecretML-Seed (SML-Seed)
+## 🌱 SecretMemoryLocker-Seed (SML-Seed)
 ## Seed without physical storage. Memory becomes the key.
 
-**SecretML-Seed** is a memory-bound cryptographic seed generation model where the seed phrase is **not stored anywhere physically or digitally**, but reconstructed deterministically from user memory and system-bound cryptographic context.
+**SML-Seed** is a memory-bound cryptographic seed generation model where the seed phrase is **not stored anywhere physically or digitally**, but reconstructed deterministically from user memory and system-bound cryptographic context.
 
 ---
 
@@ -81,6 +81,7 @@ Seed = SHA256(SHA256(Q1 + A1 + file_hash) + SHA256(Q2 + A2 + file_hash) + ...)
 - Argon2-based memory hardness
 - Strong inter-step dependency
 - File-bound entropy initialization
+- Output Container:`V4.psq` (Phantom-Step Cascade container)
   
 🔑 Key Features
 
