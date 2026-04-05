@@ -1,3 +1,5 @@
+<img src="https://github.com/user-attachments/assets/655a0ba9-f1a6-4b44-a815-fa381a20cf62" width="60">
+
 ### myLifeEcho  
 *Encrypted map of your digital life.*
 
