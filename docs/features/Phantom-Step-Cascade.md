@@ -1,4 +1,6 @@
-# 🛡️ Phantom-Step Cascade (`.psq`)
+<img src="https://github.com/user-attachments/assets/655a0ba9-f1a6-4b44-a815-fa381a20cf62" width="60">
+
+#  Phantom-Step Cascade (`.psq`)
 
 **Phantom-Step Cascade** is a proprietary cascade encryption method developed by the **SecretMemoryLocker** team. This unique technology turns your personal memories into a dynamic security architecture, transforming an ordinary file into a recursive cryptographic labyrinth.
 
@@ -68,14 +70,30 @@ An advanced engine based on **Sequential Dependency**. In this mode, the system 
 #### 🛠 Final Key Derivation Logic
 The derivation follows a recursive chain where each answer's entropy is fused with the output of the previous cryptographic transformation:
 
-- **Seed₀** = `SHA256(source_file_hash)`
-- **K₀** = `Seed₀`
-- **K₁** = `Argon2(Answer₁, salt = K₀)`
-- **K₂** = `Argon2(Answer₂, salt = K₁)`
-- **K₃** = `Argon2(Answer₃, salt = K₂)`
-- ...
-- **Kₙ** = `Argon2(Answerₙ, salt = Kₙ₋₁)`
-- **Final_Key** = `Kₙ`
+### V4 Derivation
+
+```text
+k0 = file_hash_seed
+
+for each answer_i:
+    k_i = Argon2(answer_i, salt = k_{i-1})
+
+final_seed = SHA256(k_N)
+```
+
+### V5 Derivation
+
+```text
+k0 = HMAC(user_salt, "init")
+
+for each answer_i:
+    input_i = HMAC(k_{i-1}, STEP || index || answer_i)
+    salt_i  = SHA256(k_{i-1} || index || total_steps)
+    k_i     = Argon2(input_i, salt_i)
+
+final_key = SHA256(HMAC(k_N, file_hash))
+```
+
 
 #### 🛡 Core Properties
 - **Sequential Dependency**: Each step strictly depends on the previous Argon2 output, preventing bypass attempts.
