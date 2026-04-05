@@ -78,7 +78,7 @@ k0 = file_hash_seed
 for each answer_i:
     k_i = Argon2(answer_i, salt = k_{i-1})
 
-final_seed = SHA256(k_N)
+final_key = SHA256(k_N)
 ```
 
 ### V5 Derivation
