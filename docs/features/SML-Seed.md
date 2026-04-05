@@ -103,6 +103,37 @@ Seed = SHA256(SHA256(Q1 + A1 + file_hash) + SHA256(Q2 + A2 + file_hash) + ...)
 
 -----
 
+## ⏳ Time-Lock Concept (PSQC Containers)
+
+> **A nonce effectively becomes a source of time.**
+
+Traditional “digital time capsule” services rely on a trusted server that stores encrypted data and releases it after a specific date. This approach has critical weaknesses:
+
+  - The server stores sensitive data.
+  - Long-term availability of the service is uncertain.
+  - Users must trust the provider not to access the data.
+
+### The SML Approach (Computational Time-Lock)
+
+The **PSQC container model** used in SecretMemoryLocker explores a trustless architecture:
+
+  - **No stored secrets:** The server does **not** store encrypted data or keys — only a nonce (or information derived from it).
+  - **Computational delay:** The delay before decryption is enforced by **computational difficulty**, not by server policy.
+
+### PSQC Container Structure
+
+A PSQC file contains a small JSON structure prefixed with `PSQC:`.
+
+```text
+PSQC:{
+  "nonce_hint": "LEdWTvvka9******",
+  "nonce_hash_V1": "48d49beb8cbb82c65d1009fbcbc22c70c1a3dad87a7558b932dfb97ec4f3b928",
+  "ciphertext": "..."
+}
+```
+
+-----
+
 ## 🔑 Key Features
 
 ### 🧠 Memory-Only Security
@@ -116,6 +147,10 @@ Seed depends on:
   - Answer order.
   - Internal state transitions.
   - File hash binding.
+
+### ⏳ Trustless Time-Lock
+
+  - Nonce-based computational delay allows locking the crypto seed by time without physical access to the seed itself or reliance on trusted third parties.
 
 ### 📦 Dual-Layer Protection
 
@@ -145,7 +180,7 @@ Seed depends on:
 
 **Assumes attacker has:**
 
-  - Full access to `SML.zip` and `SML.psq`.
+  - Full access to `SML.zip` and `SML.psq` (or PSQC container).
   - Full knowledge of the algorithm.
   - No access to the correct memory answers.
 
@@ -173,6 +208,7 @@ Seed depends on:
 ## 🧩 Use Cases
 
   - 🪙 **Cryptocurrency wallet recovery** without seed paper.
+  - ⏳ **Trustless digital time capsules** for crypto assets (via PSQC computational delay).
   - 🧠 **Human-memory-based authentication** systems.
   - 📦 **Secure offline encrypted archives**.
   - 🎓 **Educational cryptography systems**.
