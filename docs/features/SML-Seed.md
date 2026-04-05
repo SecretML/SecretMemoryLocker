@@ -108,20 +108,21 @@ Seed = SHA256(SHA256(Q1 + A1 + file_hash) + SHA256(Q2 + A2 + file_hash) + ...)
 > **A nonce effectively becomes a source of time.**
 
 Traditional “digital time capsule” services rely on a trusted server that stores encrypted data and releases it after a specific date. This approach has critical weaknesses:
+- The server stores sensitive data.
+- Long-term availability of the service is uncertain.
+- Users must trust the provider not to access the data.
 
-  - The server stores sensitive data.
-  - Long-term availability of the service is uncertain.
-  - Users must trust the provider not to access the data.
+### The SML Approach: Unbreakable Seed Locking
+The **PSQC container model** allows you to generate a seed phrase and securely lock it for yourself or a beneficiary for a predefined period. Once locked, **it is theoretically impossible to recover the seed early**, even for the creator.
 
-### The SML Approach (Computational Time-Lock)
-
-The **PSQC container model** used in SecretMemoryLocker explores a trustless architecture:
-
-  - **No stored secrets:** The server does **not** store encrypted data or keys — only a nonce (or information derived from it).
-  - **Computational delay:** The delay before decryption is enforced by **computational difficulty**, not by server policy.
+This trustless architecture relies on a missing piece of entropy: the **nonce**.
+- **No stored secrets:** The server does **not** store your encrypted data or keys — it only holds the full nonce until the target date.
+- **Guaranteed Lockout:** Without the full nonce, decryption is mathematically impossible. 
+- **Dual Recovery Paths:** The delay before decryption is strictly enforced, but guarantees eventual access:
+  1. **Server Release (Time-Based):** At the predefined time, the server reveals the complete nonce to unlock the container instantly.
+  2. **Computational Brute-Force (Fail-Safe):** If the server disappears, the seed isn't lost. Users can use the `nonce_hint` and `nonce_hash_V1` to mathematically guess the missing characters. The difficulty of this computation *is* the time-lock.
 
 ### PSQC Container Structure
-
 A PSQC file contains a small JSON structure prefixed with `PSQC:`.
 
 ```text
@@ -131,6 +132,7 @@ PSQC:{
   "ciphertext": "..."
 }
 ```
+*(In this structure, the `nonce_hint` masks the final characters, dictating the exact computational effort required to brute-force the lock if the server is unavailable).*
 
 -----
 
