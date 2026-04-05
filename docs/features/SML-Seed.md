@@ -49,11 +49,13 @@ The seed is no longer directly derived from raw Q/A pairs — instead it is gene
 
 ---
 
-## ⚙️ Updated Seed Derivation Model (V5-based)
+## ⚙️ Updated Seed Derivation Model (V4/V5-based)
 
 SML-Seed is now derived through a **Phantom-Step Cascade dependency graph**:
 
 ```text
+V4
+
 k0 = file_hash_seed
 
 for each answer_i:
@@ -61,15 +63,29 @@ for each answer_i:
 
 final_seed = SHA256(k_n)
 ```
+```text
+V5
+
+k0 = HMAC(user_salt, "init")
+
+for each answer_i:
+    input_i = HMAC(k_{i-1}, STEP || index || answer_i)
+    salt_i  = SHA256(k_{i-1} || index || total_steps)
+    k_i     = Argon2(input_i, salt_i)
+
+final_key = SHA256(HMAC(k_N, file_hash))
+```
+
+
 Where:
 
-- file_hash_seed = SHA256(SecretML.zip)
+- file_hash_seed = SHA256(SML.zip)
 - each step strengthens entropy via stateful chaining
 - final output is deterministic and reproducible
 
 ---
   
-🧬 Evolution from Legacy Model
+## 🧬 Evolution from Legacy Model
 
 ❌ Old Model (V3)
 ```text
