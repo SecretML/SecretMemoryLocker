@@ -1,4 +1,7 @@
-# 🔐 Secret Memory Locker — Memory-Sync & Chained Recovery
+<img src="https://github.com/user-attachments/assets/655a0ba9-f1a6-4b44-a815-fa381a20cf62" width="60">
+
+
+#  Secret Memory Locker — Memory-Sync & Chained Recovery
 
 **Secret Memory Locker** introduces **Memory-Sync**, a cryptographically secure mechanism that allows users to create and manage an unlimited number of encrypted archives **without re-entering personal answers**.
 
