@@ -81,7 +81,7 @@ class AppState:
         self.psq_available = True
         
         # Keys info
-        self.ver_final_key = "v4.+"
+        self.ver_final_key = "v4.0+"
         # Static mock key representing the result of the derivation above
         self.final_key = "ab7ca58e35427da7ce5e927252e65c745ede2ee5d38253e1c66ad31392b02574"
         
@@ -134,6 +134,12 @@ def show_seed_window(mode="12"):
     dialog.withdraw()
     dialog.title(f"SecretML-Seed ({mode} words)")
     dialog.geometry("600x420")
+
+    def on_close():
+        dialog.destroy()
+        root.destroy()  
+
+    dialog.protocol("WM_DELETE_WINDOW", on_close)
 
     try:
         dialog.iconbitmap(resource_path("assets/icon.ico"))
@@ -266,13 +272,12 @@ def show_seed_window(mode="12"):
         btn_frame,
         text="Close",
         font=("Arial", 10),
-        command=dialog.destroy
+        command=on_close  
     ).pack(side="right", padx=5)
 
     dialog.deiconify()
     dialog.grab_set()
     dialog.focus_set()
-
 
 # ==========================================
 # CRYPTOGRAPHY & SEED GENERATION
