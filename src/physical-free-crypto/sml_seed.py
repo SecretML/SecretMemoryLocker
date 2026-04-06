@@ -84,7 +84,12 @@ class AppState:
         self.ver_final_key = "v4.+"
         # Static mock key representing the result of the derivation above
         self.final_key = "ab7ca58e35427da7ce5e927252e65c745ede2ee5d38253e1c66ad31392b02574"
-        
+
+        # --- Data Persistence Strategy ---
+        # In the real SML workflow:
+        # 1. Questions are stored ENCRYPTED within the *.PSQ container.
+        # 2. Answers are NEVER stored; they exist only in RAM during the session.
+       
         # Mock Questions & Answers for local demo
         self.questions = [(f"q{i}", f"Secret Question {i}") for i in range(1, 6)]
         self.answers = [f"Answer {i}" for i in range(1, 6)]
