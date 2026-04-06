@@ -73,7 +73,7 @@ The derivation follows a recursive chain where each answer's entropy is fused wi
 ### V4 Derivation
 
 ```text
-k0 = file_hash_seed
+k0 = file_hash
 
 for each answer_i:
     k_i = Argon2(answer_i, salt = k_{i-1})
