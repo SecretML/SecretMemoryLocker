@@ -81,7 +81,7 @@ class AppState:
         self.psq_available = True
         
         # Keys info
-        self.ver_final_key = "v4.0+"
+        self.ver_final_key = "v4.+"
         # Static mock key representing the result of the derivation above
         self.final_key = "ab7ca58e35427da7ce5e927252e65c745ede2ee5d38253e1c66ad31392b02574"
         
