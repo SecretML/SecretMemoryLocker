@@ -1,3 +1,37 @@
+# ============================================================
+# SecretMemoryLocker SML-Seed Tool
+#
+# Physical-free Crypto: Deterministic BIP39 Seed Generation
+# Generates 12/24-word phrases from mental secrets & file entropy
+#
+# Feature: SecretMemoryLocker-Seed (SML-Seed)
+# https://github.com/SecretML/SecretMemoryLocker/blob/main/docs/features/SML-Seed.md
+#
+# © 2026 SecretMemoryLocker.com
+# ============================================================
+
+"""
+DESCRIPTION:
+This standalone tool allows you to recover or generate a cryptocurrency 
+seed phrase (BIP39) and ETH address without storing them physically.
+It uses a combination of:
+1. Your memorized answers to secret questions.
+2. Digital entropy from a source file (*.PSQ).
+
+USAGE:
+1. Ensure you have the 'bip_utils' library installed:
+   pip install bip_utils
+
+2. (Optional) Place your *.PSQ vault file in the same folder 
+   to enable PSQ-specific seed generation.
+
+3. Run the script:
+   python sml_seed.py
+
+4. Follow the GUI prompts to enter your secrets and view 
+   the generated mnemonic phrase.
+"""
+
 import sys
 import os
 import tkinter as tk
@@ -13,37 +47,48 @@ from bip_utils import (
 )
 
 # ==========================================
-# STATIC APP STATE (FOR STANDALONE EXECUTION)
+# STATIC APP STATE & DERIVATION DOCS
 # ==========================================
 class AppState:
+    """
+    In the full SML PRO version, 'final_key' is not static. 
+    It is derived using a recursive cryptographic chain (V4/V5).
+    
+    V4 DERIVATION LOGIC:
+    -------------------
+    k[0] = source_file_hash
+    for i, answer in enumerate(answers):
+        k[i] = Argon2(answer, salt=k[i-1])
+    final_key = SHA256(k[N])
+
+    V5 DERIVATION LOGIC (Enhanced):
+    -------------------
+    k[0] = HMAC(user_salt, "init")
+    for i, answer in enumerate(answers):
+        input_i = HMAC(k[i-1], STEP || index || answer)
+        salt_i  = SHA256(k[i-1] || index || total_steps)
+        k[i]    = Argon2(input_i, salt_i)
+    final_key = SHA256(HMAC(k[N], source_file_hash))
+    """
+
     def __init__(self):
-        self.SML_ver = "SecretML-Seed v1.0.0 (Open Source Edition)"
+        self.SML_ver = "SecretML-Seed v4.+ (Open Source Edition)"
         self.root = None
         
-        # File info
+        # File info (Entropy source)
         self.source_file_path = "dummy_vault.psq"
         self.source_file_hash = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
         self.psq_available = True
         
-        # Keys
-        self.ver_final_key = "v1.0"
-        self.final_key = "1234567890"  # Static mock key for PSQ mode
+        # Keys info
+        self.ver_final_key = "v4.+"
+        # Static mock key representing the result of the derivation above
+        self.final_key = "ab7ca58e35427da7ce5e927252e65c745ede2ee5d38253e1c66ad31392b02574"
         
-        # Mock Questions & Answers
-        self.questions = [
-            ("q1", "Question 1"),
-            ("q2", "Question 2"),
-            ("q3", "Question 3"),
-            ("q4", "Question 4"),
-            ("q5", "Question 5")
-        ]
-        self.answers = [
-            "Answer 1", 
-            "Answer 2", 
-            "Answer 3", 
-            "Answer 4", 
-            "Answer 5"
-        ]
+        # Mock Questions & Answers for local demo
+        self.questions = [(f"q{i}", f"Secret Question {i}") for i in range(1, 6)]
+        self.answers = [f"Answer {i}" for i in range(1, 6)]
+
 
 app_state = AppState()
 WINDOW_TITLE = app_state.SML_ver
@@ -280,12 +325,27 @@ def generate_24_word_seed_psq(state):
 # ENTRY POINT
 # ==========================================
 if __name__ == "__main__":
-    # Initialize the invisible root Tkinter window
-    app_state.root = tk.Tk()
-    app_state.root.withdraw()
-    
-    # Start the application flow
-    prompt_seed_generation()
-    
-    # Run the event loop
-    app_state.root.mainloop()
+    try:
+        # Initialize the invisible root Tkinter window
+        app_state.root = tk.Tk()
+        app_state.root.withdraw()
+        
+        # Start the application flow
+        prompt_seed_generation()
+        
+        # Run the event loop
+        app_state.root.mainloop()
+        
+    except KeyboardInterrupt:
+        # Graceful exit on Ctrl+C
+        print("\n[!] Application interrupted by user. Closing safely...")
+        try:
+            app_state.root.destroy()
+        except:
+            pass
+        sys.exit(0)
+        
+    except Exception as e:
+        # Catch any other unexpected errors
+        print(f"\n[!] Unexpected error: {e}")
+        sys.exit(1)
