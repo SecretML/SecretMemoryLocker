@@ -62,6 +62,35 @@ Access is reconstructed dynamically using:
 > Your secrets, your rules — no data ever leaves your device.
 
 --- 
+<img src="https://github.com/user-attachments/assets/655a0ba9-f1a6-4b44-a815-fa381a20cf62" width="60">
+
+### 🧪 Experimental: FakeSeed (Blind Shuffle Mapping)
+
+> A stolen seed is not always a usable seed.
+
+**Protect your paper backups from prying eyes.**
+FakeSeed is an experimental **Zero-Knowledge Paper Backup** approach that lets you store a "scrambled" version of your seed phrase — without ever entering your private words into a computer.
+
+* **How it works:**
+  Generates a deterministic "shuffling map" from your SML secret or key. You manually reorder your seed words on paper using this map.
+
+* **Security model:**
+  This is **not encryption**, but an obfuscation layer.
+  If someone finds your paper backup, they will see a valid set of words — but in the wrong order.
+
+* **Privacy-first:**
+  Your BIP39 words **never** touch the digital world.
+
+* **Important:**
+  Designed for **24-word seeds only** and should be used as an **additional layer**, not a standalone protection.
+
+👉 **[Try the Experimental Script](https://github.com/SecretML/SecretMemoryLocker/blob/main/src/physical-free-crypto/sml_fakeseed.py)**
+
+---
+
+
+
+
 New Version Available — v4.06
 
 A new version of **SecretMemoryLocker** is now available for download.
