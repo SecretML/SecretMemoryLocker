@@ -35,7 +35,7 @@ FILE_PATH = "path/to/your/confidential_file.txt"
 MANUAL_FILE_HASH = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
 # The answers provided during container creation.
-# Must be in the exact order and format (case-sensitive, spaces matter).
+# Add your answers here in the exact order. The number of answers is UNLIMITED.
 USER_ANSWERS = [
     'first answer',
     'second answer',
