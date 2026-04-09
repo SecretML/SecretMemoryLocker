@@ -1,5 +1,5 @@
 # ============================================================
-# SecretMemoryLocker V4 — Sequential Argon2 Chain (AC-AKDF)
+# SML PSQC Memory-Derived Key Recovery Tool
 #
 # Master Key Recovery Mode (Phantom-Step Cascade V4 logic)
 # Offline Answer-Chained Argon2 Key Derivation
@@ -11,7 +11,7 @@
 # ============================================================
 
 """
-This script implements the core master key (v4) generation logic for Secret Memory Locker.
+This script implements the core memory-derived key (v4) generation logic for Secret Memory Locker.
 It uses a Sequential Argon2 approach (AC-AKDF):
 Iterative memory-hard hashing linked directly to the sequence of user answers,
 where the output of the previous step acts as the salt for the next.
@@ -67,12 +67,12 @@ def calculate_file_sha256(file_path):
 # CORE CRYPTO LOGIC
 # ============================================================
 
-def generate_master_key_v4(answers, file_hash):
+def generate_memory_derived_key_v4(answers, file_hash):
     """
     Phantom-Step Cascade V4 Logic:
     1. Seed: k = SHA256(file_hash_string)
     2. Chain: k = Argon2(answer, salt=k_prev)
-    3. Final: MasterKey = SHA256(k_final)
+    3. Final: MemoryDerivedKey = SHA256(k_final)
     """
     
     # --- PHASE 1: INITIAL SEEDING ---
@@ -101,7 +101,7 @@ def generate_master_key_v4(answers, file_hash):
 
 if __name__ == "__main__":
     print("-" * 60)
-    print("SML PSQC V4 - MASTER KEY RECOVERY")
+    print("SML PSQC V4 - MEMORY-DERIVED KEY RECOVERY")
     print("-" * 60)
     
     # Attempt to read from file, fallback to manual hash if file missing
@@ -116,12 +116,12 @@ if __name__ == "__main__":
         sys.exit(1)
 
     try:
-        final_key = generate_master_key_v4(USER_ANSWERS, SOURCE_FILE_HASH)
+        final_key = generate_memory_derived_key_v4(USER_ANSWERS, SOURCE_FILE_HASH)
         
         print("\n" + "=" * 60)
         print("GENERATION SUCCESSFUL")
         print("-" * 60)
-        print(f"Master Key: {final_key}")
+        print(f"Memory-Derived Key: {final_key}")
         print("=" * 60)
         print("Offline mode: verified.")
         
