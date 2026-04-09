@@ -36,7 +36,12 @@ MANUAL_FILE_HASH = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852
 
 # The answers provided during container creation.
 # Must be in the exact order and format (case-sensitive, spaces matter).
-USER_ANSWERS = ['answer 1', 'answer 2', 'answer 3', 'answer 4', 'answer 5']
+USER_ANSWERS = [
+    'first answer',
+    'second answer',
+    'third answer',
+    # 'fourth answer', ... you can continue the chain here
+]
 
 # Argon2 Parameters (Must match V4 App Settings exactly)
 ARGON2_PARAMS = {
