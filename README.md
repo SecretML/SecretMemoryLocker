@@ -87,7 +87,8 @@ FakeSeed is an experimental **Zero-Knowledge Paper Backup** approach that lets y
 👉 **[Try the Experimental Script](https://github.com/SecretML/SecretMemoryLocker/blob/main/src/physical-free-crypto/sml_fakeseed.py)**
 
 ---
-## New Version Available — v4.07
+
+### New Version Available — v4.07
 
 A new version of **SecretMemoryLocker** is now available.
 
