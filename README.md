@@ -92,11 +92,11 @@ FakeSeed is an experimental **Zero-Knowledge Paper Backup** approach that lets y
 A new version of **SecretMemoryLocker** is now available.
 
 ### ✨ Highlights
-- Hidden master password output in **MemoryEcho**  
+- Secure derived key display in **MemoryEcho**  
 - New **PassEcho Mode** — standalone key generation container  
 - Encrypted & obfuscated **decoy layers**  
-- Selectable key reconstruction modes (**V4 / V5**)
-- Experimental: **FakeSeed (Blind Shuffle Mapping)** — deceptive seed obfuscation layer for enhanced security
+- Selectable key reconstruction modes (**V4 / V5**)  
+- Experimental: **FakeSeed (Blind Shuffle Mapping)** — deceptive seed obfuscation layer for enhanced security  
   
 --- 
 [![Windows 10+](https://img.shields.io/badge/OS-Windows%2010%2B-blue?logo=windows)](https://github.com/SecretML/SecretMemoryLocker/releases)
