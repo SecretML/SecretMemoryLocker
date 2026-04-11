@@ -92,7 +92,7 @@ FakeSeed is an experimental **Zero-Knowledge Paper Backup** approach that lets y
 A new version of **SecretMemoryLocker** is now available.
 
 ### ✨ Highlights
-- Secure derived key display in **MemoryEcho**  
+- Secure handling of the memory-derived key in **MemoryEcho**
 - New **PassEcho Mode** — standalone key generation container  
 - Encrypted & obfuscated **decoy layers**  
 - Selectable key reconstruction modes (**V4 / V5**)  
