@@ -87,8 +87,29 @@ FakeSeed is an experimental **Zero-Knowledge Paper Backup** approach that lets y
 👉 **[Try the Experimental Script](https://github.com/SecretML/SecretMemoryLocker/blob/main/src/physical-free-crypto/sml_fakeseed.py)**
 
 ---
+## New Version Available — v4.07
 
+A new version of **SecretMemoryLocker** is now available.
 
+### ✨ Highlights
+- Hidden master password output in **MemoryEcho**  
+- New **PassEcho Mode** — standalone key generation container  
+- Encrypted & obfuscated **decoy layers**  
+- Selectable key reconstruction modes (**V4 / V5**)
+- Experimental: **FakeSeed (Blind Shuffle Mapping)** — deceptive seed obfuscation layer for enhanced security
+  
+--- 
+[![Windows 10+](https://img.shields.io/badge/OS-Windows%2010%2B-blue?logo=windows)](https://github.com/SecretML/SecretMemoryLocker/releases)
+
+> ✅ Download **SML-4.07-Windows-Portable.exe**
+
+> 📥 **SML-4.07-Windows.zip**  
+
+> https://github.com/SecretML/SecretMemoryLocker/releases/download/v4.07/SML-4.07-Windows.zip
+>
+--- 
+
+📜 Previous Versions:
 
 
 New Version Available — v4.06
@@ -112,7 +133,6 @@ A new version of **SecretMemoryLocker** is now available for download.
 
 --- 
 
-📜 Previous Versions:
 
  What's New in v4.05
 
