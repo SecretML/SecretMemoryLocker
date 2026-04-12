@@ -1,23 +1,30 @@
 # ============================================================
 # Secret Memory Locker (SML)
-# Memory-Derived Identity Module — PSQC Recovery Engine
-#
-# Stateless Deterministic Credential System
+# ------------------------------------------------------------
+# Target Use Case (Apple Ecosystem)
 # ------------------------------------------------------------
 #
-# This module implements a memory-derived identity system that
-# regenerates deterministic credentials from a single master key.
+# This module is designed for deterministic recovery of
+# Apple ecosystem credentials, including:
+# - iPhone passcodes
+# - Apple ID passwords
+# - macOS FileVault recovery keys
 #
-# Core concept:
-# Human memory -> PSQC reconstruction -> Master Key ->
-# HMAC-based deterministic identity derivation.
+# It enables offline identity reconstruction for Apple devices
+# without relying on iCloud, backups, or password storage.
 #
-# ------------------------------------------------------------
-# Key Properties:
-# - Stateless (no storage required).
-# - Deterministic (same input -> same output).
-# - Domain-separated derivation (HMAC-SHA256).
-# - Optional user-controlled modifier layer.
+# Core Concept Flow:
+# Human Memory
+#     ↓
+# PSQC Reconstruction
+#     ↓
+# Master Key (256-bit)
+#     ↓
+# HMAC-based Deterministic Identity Derivation
+#
+# NOTE:
+# This is an experimental cryptographic identity model and is
+# NOT affiliated with Apple Inc.
 # ------------------------------------------------------------
 #
 # © 2026 SecretMemoryLocker.com
