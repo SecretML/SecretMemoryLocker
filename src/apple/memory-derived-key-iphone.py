@@ -62,11 +62,13 @@ import sys
 # Toggle between PSQC Key or Manual Secret
 USE_SML_KEY = False
 
-# The primary entropy source reconstructed from human memory.
-# This 256-bit hex string is the result of the PSQC process.
+# PRIMARY ENTROPY SOURCE:
+# This 256-bit hex string is reconstructed from human memory using
+# Master Key Recovery Mode (Phantom-Step Cascade logic).
 SML_FINAL_KEY = "16ef72c7c5759f257b8fc17d32baffea8540d43d31c93f853aa01bf888239ec8"
 
-# Fallback/Alternative: Simple high-entropy string
+# SECONDARY ENTROPY SOURCE: 
+# Manual high-entropy string (fallback or non-PSQC use)
 USER_SECRET   = "CHANGE_ME_USE_HIGH_ENTROPY_SECRET"
 
 # Custom Overrides
