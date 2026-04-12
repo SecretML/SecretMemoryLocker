@@ -1,137 +1,181 @@
 # ============================================================
-# SML PSQC Memory-Derived Key Recovery Tool
+# Secret Memory Locker (SML)
+# Memory-Derived Identity Module — PSQC Recovery Engine
 #
-# Master Key Recovery Mode (Phantom-Step Cascade V4 logic)
-# Offline Answer-Chained Argon2 Key Derivation
+# Deterministic Credential Regeneration from Human Memory
+# ------------------------------------------------------------
 #
-# Feature: MEMORY-BASED KEY DERIVATION
-# https://github.com/SecretML/SecretMemoryLocker/blob/main/docs/features/memory-based-key-derivation.md
+# This module defines a stateless, memory-derived identity system
+# capable of regenerating multiple independent credentials from
+# a single master key reconstructed via PSQC.
 #
+# Instead of storing secrets, SML leverages cognitively anchored
+# entropy (human memory) and transforms it into a high-entropy
+# master key using the Phantom-Step Q&A Cascade (AC-AKDF).
+#
+# From this master key, the system deterministically derives:
+#   - iOS passcodes (numeric)
+#   - Apple ID passwords (ergonomic, high-entropy)
+#   - macOS FileVault-style recovery passwords
+#
+# ------------------------------------------------------------
+# Core Design Principles
+# ------------------------------------------------------------
+#
+# 1. Stateless Recovery
+#    No secrets are stored. All credentials are reproducible
+#    on demand from memory-derived input.
+#
+# 2. Strong Domain Separation
+#    Each credential is derived via HMAC-SHA256 with structured
+#    labels, ensuring strict cryptographic isolation.
+#
+# 3. Deterministic Identity Model
+#    One master key → multiple independent identities and services.
+#
+# 4. Human-Centric Cryptography
+#    Output formats are optimized for real-world usability:
+#      - No ambiguous characters (O/0, I/l)
+#      - iOS-friendly symbol set
+#      - High entropy with predictable structure
+#
+# 5. Offline-First Security
+#    All operations are local. No network interaction is required.
+#
+# ------------------------------------------------------------
+# ⚠ Security Notes
+# ------------------------------------------------------------
+#
+# - The security of the system fully depends on the entropy of
+#   the reconstructed master key (PSQC output).
+#
+# - This module assumes that the upstream AC-AKDF process
+#   (Argon2-based answer chaining) produces a strong 256-bit key.
+#
+# - This implementation uses fast primitives (HMAC-SHA256).
+#   For high-security deployments, an additional KDF layer
+#   (Argon2 / PBKDF2) is recommended for seed hardening.
+#
+# ------------------------------------------------------------
+# Conceptual Flow
+# ------------------------------------------------------------
+#
+# Human Memory
+#     ↓
+# Q&A Reconstruction (PSQC)
+#     ↓
+# SML_FINAL_KEY (256-bit)
+#     ↓
+# HMAC(label) → Service-Specific Seed
+#     ↓
+# Deterministic Credential Output
+#
+# ------------------------------------------------------------
 # © 2026 SecretMemoryLocker.com
 # ============================================================
 
-"""
-This script implements the core memory-derived key (v4) generation logic for Secret Memory Locker.
-It uses a Sequential Argon2 approach (AC-AKDF):
-Iterative memory-hard hashing linked directly to the sequence of user answers,
-where the output of the previous step acts as the salt for the next.
-"""
 
 import hashlib
+import hmac
 import sys
-import os
-from argon2.low_level import hash_secret_raw, Type
 
-# ============================================================
-# USER CONFIGURATION (Static inputs for recovery)
-# ============================================================
+# ==========================================
+# CONFIGURATION & ENTROPY SOURCE
+# ==========================================
 
-# Your important or confidential file that was used as the seed.
-# It should be located in your archive (SML.zip) along with the password.
-FILE_PATH = "path/to/your/confidential_file.txt"
+# Replace this with the actual final_key from your SML Q&A/PSQ process
+# This is a 256-bit hex string.
+SML_FINAL_KEY_EXAMPLE = "56ef72c7c5759f257b8fc17d32baffea8540d43d31c93f853aa01bf888239ec8"
 
-# Fallback: The SHA-256 hash of the source file (hex string).
-# Used if the file at FILE_PATH cannot be read directly.
-MANUAL_FILE_HASH = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+# ==========================================
+# CORE DERIVATION FUNCTIONS
+# ==========================================
 
-# The answers provided during container creation.
-# Add your answers here in the exact order. The number of answers is UNLIMITED.
-USER_ANSWERS = [
-    'first answer',
-    'second answer',
-    'third answer',
-    # 'fourth answer', ... you can continue the chain here
-]
-
-# Argon2 Parameters (Must match V4 App Settings exactly)
-ARGON2_PARAMS = {
-    "time_cost": 2,
-    "memory_cost": 524288,  # 512 MB per step
-    "parallelism": 4,
-    "hash_len": 32,
-    "type": Type.ID
-}
-
-# =====================================================================
-# HELPER FUNCTIONS
-# =====================================================================
-
-def calculate_file_sha256(file_path):
-    """Calculates the SHA-256 hash of a file dynamically."""
-    if not os.path.exists(file_path):
-        return None
-    
-    sha256_hash = hashlib.sha256()
-    with open(file_path, "rb") as f:
-        for byte_block in iter(lambda: f.read(4096), b""):
-            sha256_hash.update(byte_block)
-            
-    return sha256_hash.hexdigest()
-
-# ============================================================
-# CORE CRYPTO LOGIC
-# ============================================================
-
-def generate_memory_derived_key_v4(answers, file_hash):
+def derive_seed(master_key_hex: str, label: str) -> bytes:
     """
-    Phantom-Step Cascade V4 Logic:
-    1. Seed: k = SHA256(file_hash_string)
-    2. Chain: k = Argon2(answer, salt=k_prev)
-    3. Final: MemoryDerivedKey = SHA256(k_final)
+    Generates a unique deterministic seed for a specific service using HMAC-SHA256.
+    Ensures domain separation between different passwords.
     """
-    
-    # --- PHASE 1: INITIAL SEEDING ---
     try:
-        k = hashlib.sha256(file_hash.encode("utf-8")).digest()
-    except Exception as e:
-        print(f"[!] Error encoding file hash: {e}")
-        return None
-
-    # --- PHASE 2: ARGON2 CHAINING ---
-    for i, answer in enumerate(answers):
-        print(f"[*] Step {i+1}/{len(answers)}: Hardening answer...")
+        key_bytes = bytes.fromhex(master_key_hex)
+    except ValueError:
+        raise ValueError("Master key must be a valid hex string.")
         
-        k = hash_secret_raw(
-            secret=answer.encode("utf-8"),
-            salt=k,  # Chained salt from previous step
-            time_cost=ARGON2_PARAMS["time_cost"],
-            memory_cost=ARGON2_PARAMS["memory_cost"],
-            parallelism=ARGON2_PARAMS["parallelism"],
-            hash_len=ARGON2_PARAMS["hash_len"],
-            type=ARGON2_PARAMS["type"]
-        )
+    return hmac.new(
+        key_bytes, 
+        label.encode('utf-8'), 
+        hashlib.sha256
+    ).digest()
 
-    # --- PHASE 3: FINAL STABILIZATION ---
-    return hashlib.sha256(k).hexdigest()
+
+def generate_numeric_passcode(master_key_hex: str, label: str, length: int = 6) -> str:
+    """
+    Generates a numeric passcode for iOS Screen Lock or Screen Time.
+    """
+    seed = derive_seed(master_key_hex, label)
+    seed_int = int.from_bytes(seed, byteorder='big')
+    
+    modulus = 10**length
+    passcode_int = seed_int % modulus
+    
+    return f"{passcode_int:0{length}d}"
+
+
+def generate_apple_complex_password(master_key_hex: str, label: str, length: int = 16) -> str:
+    """
+    Generates a complex Apple ID password with high ergonomics:
+    - Guaranteed: 1 Upper, 1 Lower, 1 Digit, 1 Special character.
+    - Special character restricted to '-' for easy iOS keyboard entry.
+    - Ambiguous characters (O, 0, I, l) removed.
+    """
+    seed = derive_seed(master_key_hex, label)
+    seed_int = int.from_bytes(seed, byteorder='big')
+    
+    # Character pools (Ergonomic & Safe)
+    uppers = "ABCDEFGHJKLMNPQRSTUVWXYZ"
+    lowers = "abcdefghijkmnopqrstuvwxyz"
+    digits = "123456789"
+    specials = "-" # Best for iOS keyboard (123-page)
+    
+    all_chars = uppers + lowers + digits + specials
+    password_chars = []
+    
+    # 1. Force requirement fulfillment
+    password_chars.append(uppers[seed_int % len(uppers)]); seed_int //= len(uppers)
+    password_chars.append(lowers[seed_int % len(lowers)]); seed_int //= len(lowers)
+    password_chars.append(digits[seed_int % len(digits)]); seed_int //= len(digits)
+    password_chars.append(specials[seed_int % len(specials)]); seed_int //= len(specials)
+    
+    # 2. Fill the rest of the length
+    for _ in range(length - 4):
+        password_chars.append(all_chars[seed_int % len(all_chars)])
+        seed_int //= len(all_chars)
+        
+    # 3. Deterministic Shuffle (Fisher-Yates)
+    result = []
+    while password_chars:
+        idx = seed_int % len(password_chars)
+        result.append(password_chars.pop(idx))
+        seed_int //= (len(password_chars) or 1)
+        
+    return "".join(result)
+
+# ==========================================
+# CLI / TESTING
+# ==========================================
+
+def run_test_suite(key: str):
+    print(f"--- SML Apple Module Test ---")
+    print(f"Input Key: {key[:12]}...{key[-8:]}\n")
+    
+    print(f"1. iPhone Passcode (v1)   : {generate_numeric_passcode(key, 'ios_pass_v1', 6)}")
+    print(f"2. Screen Time (v1)       : {generate_numeric_passcode(key, 'ios_st_v1', 4)}")
+    print(f"3. Apple ID Password (v1) : {generate_apple_complex_password(key, 'apple_id_v1', 16)}")
+    print(f"4. Apple ID Password (v2) : {generate_apple_complex_password(key, 'apple_id_v2', 16)}")
+    print(f"5. Mac FileVault (v1)     : {generate_apple_complex_password(key, 'mac_fv_v1', 24)}")
+    print("-" * 30)
 
 if __name__ == "__main__":
-    print("-" * 60)
-    print("SML PSQC V4 - MEMORY-DERIVED KEY RECOVERY")
-    print("-" * 60)
-    
-    # Attempt to read from file, fallback to manual hash if file missing
-    SOURCE_FILE_HASH = calculate_file_sha256(FILE_PATH)
-    if not SOURCE_FILE_HASH:
-        print(f"[!] File not found at '{FILE_PATH}'.")
-        print("[*] Using MANUAL_FILE_HASH fallback.")
-        SOURCE_FILE_HASH = MANUAL_FILE_HASH
-    
-    if not USER_ANSWERS or not SOURCE_FILE_HASH:
-        print("[!] Error: Configuration missing (Answers or Hash).")
-        sys.exit(1)
-
-    try:
-        final_key = generate_memory_derived_key_v4(USER_ANSWERS, SOURCE_FILE_HASH)
-        
-        print("\n" + "=" * 60)
-        print("GENERATION SUCCESSFUL")
-        print("-" * 60)
-        print(f"Memory-Derived Key: {final_key}")
-        print("=" * 60)
-        print("Offline mode: verified.")
-        
-    except MemoryError:
-        print("\n[!] FATAL ERROR: RAM limit exceeded.")
-        print(f"This process requires at least {ARGON2_PARAMS['memory_cost'] // 1024} MB of free RAM per step.")
-    except Exception as e:
-        print(f"\n[!] Unexpected Error: {e}")
+    # Check for CLI argument or use example
+    master_key = sys.argv[1] if len(sys.argv) > 1 else SML_FINAL_KEY_EXAMPLE
+    run_test_suite(master_key)
