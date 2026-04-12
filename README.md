@@ -62,6 +62,7 @@ Access is reconstructed dynamically using:
 > Your secrets, your rules — no data ever leaves your device.
 
 --- 
+
 <img src="https://github.com/user-attachments/assets/655a0ba9-f1a6-4b44-a815-fa381a20cf62" width="60">
 
 ### 🧪 Experimental: Memory-Derived Apple Identity (MDAI)  
@@ -69,7 +70,7 @@ Access is reconstructed dynamically using:
 >Your memory can recover what was never stored.
 
 
-Deterministically regenerate Apple credentials (iPhone passcode, Apple ID, FileVault) from a single memory-derived key — no backups, no storage, no cloud.
+Regenerate Apple credentials (iPhone passcode, Apple ID, FileVault) deterministically from a single memory-derived key — no backups, no storage, no cloud.
 
 👉 **[Try the Experimental Script](https://github.com/SecretML/SecretMemoryLocker/blob/main/src/apple/memory-derived-key-iphone.py)**
 
