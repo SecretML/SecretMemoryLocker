@@ -1,27 +1,78 @@
 # ============================================================
-# SML PSQC Memory-Derived Key Recovery Tool
+# Secret Memory Locker (SML)
+# Memory-Derived Identity Module — PSQC Recovery Engine
 #
-# Master Key Recovery Mode (Phantom-Step Cascade logic)
-# Offline Answer-Chained Argon2 Key Derivation
+# Deterministic Credential Regeneration from Human Memory
+# ------------------------------------------------------------
 #
-# Feature: MEMORY-BASED KEY DERIVATION (Apple Ecosystem)
+# This module defines a stateless, memory-derived identity system
+# capable of regenerating multiple independent credentials from
+# a single master key reconstructed via PSQC.
 #
+# Instead of storing secrets, SML leverages cognitively anchored
+# entropy (human memory) and transforms it into a high-entropy
+# master key using the Phantom-Step Q&A Cascade (AC-AKDF).
+#
+# From this master key, the system deterministically derives:
+#   - iOS passcodes (numeric)
+#   - Apple ID passwords (ergonomic, high-entropy)
+#   - macOS FileVault-style recovery passwords
+#
+# ------------------------------------------------------------
+# Core Design Principles
+# ------------------------------------------------------------
+#
+# 1. Stateless Recovery
+#    No secrets are stored. All credentials are reproducible
+#    on demand from memory-derived input.
+#
+# 2. Strong Domain Separation
+#    Each credential is derived via HMAC-SHA256 with structured
+#    labels, ensuring strict cryptographic isolation.
+#
+# 3. Deterministic Identity Model
+#    One master key → multiple independent identities and services.
+#
+# 4. Human-Centric Cryptography
+#    Output formats are optimized for real-world usability:
+#      - No ambiguous characters (O/0, I/l)
+#      - iOS-friendly symbol set
+#      - High entropy with predictable structure
+#
+# 5. Offline-First Security
+#    All operations are local. No network interaction is required.
+#
+# ------------------------------------------------------------
+# ⚠ Security Notes
+# ------------------------------------------------------------
+#
+# - The security of the system fully depends on the entropy of
+#   the reconstructed master key (PSQC output).
+#
+# - This module assumes that the upstream AC-AKDF process
+#   (Argon2-based answer chaining) produces a strong 256-bit key.
+#
+# - This implementation uses fast primitives (HMAC-SHA256).
+#   For high-security deployments, an additional KDF layer
+#   (Argon2 / PBKDF2) is recommended for seed hardening.
+#
+# ------------------------------------------------------------
+# Conceptual Flow
+# ------------------------------------------------------------
+#
+# Human Memory
+#     ↓
+# Q&A Reconstruction (PSQC)
+#     ↓
+# SML_FINAL_KEY (256-bit)
+#     ↓
+# HMAC(label) → Service-Specific Seed
+#     ↓
+# Deterministic Credential Output
+#
+# ------------------------------------------------------------
 # © 2026 SecretMemoryLocker.com
 # ============================================================
-
-"""
-This script implements the core memory-derived key (v4) generation logic for Secret Memory Locker.
-It uses a Sequential Argon2 approach (AC-AKDF):
-Iterative memory-hard hashing linked directly to the sequence of user answers,
-where the output of the previous step acts as the salt for the next.
-
-The resulting SML_FINAL_KEY is used as high-entropy entropy for deterministic 
-derivation of Apple ID, iOS Passcodes, and FileVault recovery keys.
-
-Dependencies:
-- hashlib, hmac (standard library)
-- argon2-cffi (recommended for PSQC core)
-"""
 
 import hashlib
 import hmac
