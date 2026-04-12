@@ -64,6 +64,19 @@ Access is reconstructed dynamically using:
 --- 
 <img src="https://github.com/user-attachments/assets/655a0ba9-f1a6-4b44-a815-fa381a20cf62" width="60">
 
+### 🧪 Experimental: Memory-Derived Apple Identity (MDAI)  
+
+>Your memory can recover what was never stored.
+
+
+Deterministically regenerate Apple credentials (iPhone passcode, Apple ID, FileVault) from a single memory-derived key — no backups, no storage, no cloud.
+
+👉 **[Try the Experimental Script](https://github.com/SecretML/SecretMemoryLocker/blob/main/src/apple/memory-derived-key-iphone.py)**
+
+--- 
+
+<img src="https://github.com/user-attachments/assets/655a0ba9-f1a6-4b44-a815-fa381a20cf62" width="60">
+
 ### 🧪 Experimental: FakeSeed (Blind Shuffle Mapping)
 
 > A stolen seed is not always a usable seed.
