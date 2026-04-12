@@ -1,10 +1,26 @@
+# ============================================================
+# SML PSQC Memory-Derived Key Recovery Tool
+#
+# Master Key Recovery Mode (Phantom-Step Cascade logic)
+# Offline Answer-Chained Argon2 Key Derivation
+#
+# Feature: MEMORY-BASED KEY DERIVATION (Apple Ecosystem)
+#
+# © 2026 SecretMemoryLocker.com
+# ============================================================
+
 """
-Secret Memory Locker (SML) 2026 - Apple Ecosystem Module
--------------------------------------------------------
-File: memory-derived-key-iphone.py
-Description: Deterministic derivation of Apple-specific passwords 
-             from a high-entropy master key (SML Final Key).
-Logic: Stateless, Memory-Based, Ergonomic.
+This script implements the core memory-derived key (v4) generation logic for Secret Memory Locker.
+It uses a Sequential Argon2 approach (AC-AKDF):
+Iterative memory-hard hashing linked directly to the sequence of user answers,
+where the output of the previous step acts as the salt for the next.
+
+The resulting SML_FINAL_KEY is used as high-entropy entropy for deterministic 
+derivation of Apple ID, iOS Passcodes, and FileVault recovery keys.
+
+Dependencies:
+- hashlib, hmac (standard library)
+- argon2-cffi (recommended for PSQC core)
 """
 
 import hashlib
