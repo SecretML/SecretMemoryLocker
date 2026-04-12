@@ -2,179 +2,222 @@
 # Secret Memory Locker (SML)
 # Memory-Derived Identity Module — PSQC Recovery Engine
 #
-# Deterministic Credential Regeneration from Human Memory
+# Stateless Deterministic Credential System
 # ------------------------------------------------------------
 #
-# This module defines a stateless, memory-derived identity system
-# capable of regenerating multiple independent credentials from
-# a single master key reconstructed via PSQC.
+# This module implements a memory-derived identity system that
+# regenerates deterministic credentials from a single master key.
 #
-# Instead of storing secrets, SML leverages cognitively anchored
-# entropy (human memory) and transforms it into a high-entropy
-# master key using the Phantom-Step Q&A Cascade (AC-AKDF).
-#
-# From this master key, the system deterministically derives:
-#   - iOS passcodes (numeric)
-#   - Apple ID passwords (ergonomic, high-entropy)
-#   - macOS FileVault-style recovery passwords
+# Core concept:
+# Human memory -> PSQC reconstruction -> Master Key ->
+# HMAC-based deterministic identity derivation.
 #
 # ------------------------------------------------------------
-# Core Design Principles
+# Key Properties:
+# - Stateless (no storage required).
+# - Deterministic (same input -> same output).
+# - Domain-separated derivation (HMAC-SHA256).
+# - Optional user-controlled modifier layer.
 # ------------------------------------------------------------
 #
-# 1. Stateless Recovery
-#    No secrets are stored. All credentials are reproducible
-#    on demand from memory-derived input.
-#
-# 2. Strong Domain Separation
-#    Each credential is derived via HMAC-SHA256 with structured
-#    labels, ensuring strict cryptographic isolation.
-#
-# 3. Deterministic Identity Model
-#    One master key → multiple independent identities and services.
-#
-# 4. Human-Centric Cryptography
-#    Output formats are optimized for real-world usability:
-#      - No ambiguous characters (O/0, I/l)
-#      - iOS-friendly symbol set
-#      - High entropy with predictable structure
-#
-# 5. Offline-First Security
-#    All operations are local. No network interaction is required.
-#
-# ------------------------------------------------------------
-# ⚠ Security Notes
-# ------------------------------------------------------------
-#
-# - The security of the system fully depends on the entropy of
-#   the reconstructed master key (PSQC output).
-#
-# - This module assumes that the upstream AC-AKDF process
-#   (Argon2-based answer chaining) produces a strong 256-bit key.
-#
-# - This implementation uses fast primitives (HMAC-SHA256).
-#   For high-security deployments, an additional KDF layer
-#   (Argon2 / PBKDF2) is recommended for seed hardening.
-#
-# ------------------------------------------------------------
-# Conceptual Flow
-# ------------------------------------------------------------
-#
-# Human Memory
-#     ↓
-# Q&A Reconstruction (PSQC)
-#     ↓
-# SML_FINAL_KEY (256-bit)
-#     ↓
-# HMAC(label) → Service-Specific Seed
-#     ↓
-# Deterministic Credential Output
-#
-# ------------------------------------------------------------
 # © 2026 SecretMemoryLocker.com
 # ============================================================
+
+"""
+SML (Secret Memory Locker) - Operating Instructions:
+
+1. MASTER SOURCE: 
+   - Set 'USE_SML_KEY = True' to use the 256-bit PSQC key (reconstructed from memory).
+   - Set 'USE_SML_KEY = False' to use 'USER_SECRET' (manual high-entropy string).
+
+2. CUSTOM OVERRIDES & ENTROPY BRANCHING:
+   - 'CUSTOM_IPHONE_PASS' & 'CUSTOM_SCREENTIME_PIN': 
+     If left empty (""), the system generates these codes deterministically.
+     If you enter a value (e.g., "9999"), the system:
+        a) Returns this value as-is for that specific field.
+        b) Uses this value as 'salt' to mathematically branch the Final Key.
+     WARNING: Changing a custom PIN will change ALL derived complex passwords.
+
+3. SECURITY:
+   - This script is stateless. It does not store your secrets. 
+   - All operations are local and offline.
+"""
 
 import hashlib
 import hmac
 import sys
 
-# ==========================================
-# CONFIGURATION & ENTROPY SOURCE
-# ==========================================
 
-# Replace this with the actual final_key from your SML Q&A/PSQ process
-# This is a 256-bit hex string.
-SML_FINAL_KEY_EXAMPLE = "56ef72c7c5759f257b8fc17d32baffea8540d43d31c93f853aa01bf888239ec8"
+# ============================================================
+# CONFIGURATION
+# ============================================================
 
-# ==========================================
-# CORE DERIVATION FUNCTIONS
-# ==========================================
+# Toggle between PSQC Key or Manual Secret
+USE_SML_KEY = False
+
+# Sources
+SML_FINAL_KEY = "16ef72c7c5759f257b8fc17d32baffea8540d43d31c93f853aa01bf888239ec8"
+USER_SECRET   = "CHANGE_ME_USE_HIGH_ENTROPY_SECRET"
+
+# Custom Overrides
+# Entering a value here replaces the generated PIN and modifies global entropy.
+CUSTOM_IPHONE_PASS    = ""    # e.g., "123456"
+CUSTOM_SCREENTIME_PIN = ""    # e.g., "9999"
+
+
+# ============================================================
+# MASTER KEY RESOLUTION
+# ============================================================
+
+def get_master_key() -> str:
+    """
+    Resolves base master key from either PSQC output or local user secret.
+    """
+    if USE_SML_KEY:
+        return SML_FINAL_KEY
+
+    return hashlib.sha256(
+        USER_SECRET.encode("utf-8")
+    ).hexdigest()
+
+
+# ============================================================
+# ENTROPY MODIFIER LAYER
+# ============================================================
+
+def apply_modifier(master_key_hex: str, modifier: str = "") -> str:
+    """
+    Applies user-controlled modifier using HMAC-SHA256.
+    This creates a unique 'branch' of entropy for all derived credentials.
+    """
+    if not modifier:
+        return master_key_hex
+
+    # Convert hex to bytes to utilize full 256-bit entropy
+    key_bytes = bytes.fromhex(master_key_hex)
+    
+    return hmac.new(
+        key_bytes,
+        modifier.encode("utf-8"),
+        hashlib.sha256
+    ).hexdigest()
+
+
+def build_modifier() -> str:
+    """
+    Combines custom user inputs into a single salt string.
+    """
+    parts = [m for m in [CUSTOM_IPHONE_PASS, CUSTOM_SCREENTIME_PIN] if m]
+    return "::".join(parts)
+
+
+# ============================================================
+# CORE DERIVATION
+# ============================================================
 
 def derive_seed(master_key_hex: str, label: str) -> bytes:
     """
-    Generates a unique deterministic seed for a specific service using HMAC-SHA256.
-    Ensures domain separation between different passwords.
+    Derives service-specific seed using HMAC-SHA256 with domain separation.
     """
-    try:
-        key_bytes = bytes.fromhex(master_key_hex)
-    except ValueError:
-        raise ValueError("Master key must be a valid hex string.")
-        
+    key_bytes = bytes.fromhex(master_key_hex)
     return hmac.new(
-        key_bytes, 
-        label.encode('utf-8'), 
+        key_bytes,
+        label.encode("utf-8"),
         hashlib.sha256
     ).digest()
 
 
-def generate_numeric_passcode(master_key_hex: str, label: str, length: int = 6) -> str:
+# ============================================================
+# CREDENTIAL GENERATORS
+# ============================================================
+
+def generate_numeric_code(master_key_hex: str, label: str, length: int = 6, override: str = "") -> str:
     """
-    Generates a numeric passcode for iOS Screen Lock or Screen Time.
+    Generates a deterministic numeric code. Returns override if provided.
     """
+    if override:
+        return override
+
     seed = derive_seed(master_key_hex, label)
-    seed_int = int.from_bytes(seed, byteorder='big')
-    
-    modulus = 10**length
-    passcode_int = seed_int % modulus
-    
-    return f"{passcode_int:0{length}d}"
+    value = int.from_bytes(seed, "big")
+
+    return str(value % (10 ** length)).zfill(length)
 
 
-def generate_apple_complex_password(master_key_hex: str, label: str, length: int = 16) -> str:
+def generate_apple_password(master_key_hex: str, label: str, length: int = 16) -> str:
     """
-    Generates a complex Apple ID password with high ergonomics:
-    - Guaranteed: 1 Upper, 1 Lower, 1 Digit, 1 Special character.
-    - Special character restricted to '-' for easy iOS keyboard entry.
-    - Ambiguous characters (O, 0, I, l) removed.
+    Generates an ergonomic Apple-style password.
+    Includes at least: 1 Upper, 1 Lower, 1 Digit, 1 Symbol (-).
+    Ambiguous characters (0, O, I, l) are excluded.
     """
     seed = derive_seed(master_key_hex, label)
-    seed_int = int.from_bytes(seed, byteorder='big')
+    value = int.from_bytes(seed, "big")
+
+    # Ergonomic pools
+    uppers   = "ABCDEFGHJKLMNPQRSTUVWXYZ"
+    lowers   = "abcdefghijkmnopqrstuvwxyz"
+    digits   = "123456789"
+    specials = "-"
+    pool     = uppers + lowers + digits + specials
     
-    # Character pools (Ergonomic & Safe)
-    uppers = "ABCDEFGHJKLMNPQRSTUVWXYZ"
-    lowers = "abcdefghijkmnopqrstuvwxyz"
-    digits = "123456789"
-    specials = "-" # Best for iOS keyboard (123-page)
-    
-    all_chars = uppers + lowers + digits + specials
-    password_chars = []
-    
-    # 1. Force requirement fulfillment
-    password_chars.append(uppers[seed_int % len(uppers)]); seed_int //= len(uppers)
-    password_chars.append(lowers[seed_int % len(lowers)]); seed_int //= len(lowers)
-    password_chars.append(digits[seed_int % len(digits)]); seed_int //= len(digits)
-    password_chars.append(specials[seed_int % len(specials)]); seed_int //= len(specials)
-    
-    # 2. Fill the rest of the length
+    chars = []
+
+    # Ensure requirements are met
+    chars.append(uppers[value % len(uppers)]);   value //= len(uppers)
+    chars.append(lowers[value % len(lowers)]);   value //= len(lowers)
+    chars.append(digits[value % len(digits)]);   value //= len(digits)
+    chars.append(specials[value % len(specials)]); value //= len(specials)
+
+    # Fill remaining length
     for _ in range(length - 4):
-        password_chars.append(all_chars[seed_int % len(all_chars)])
-        seed_int //= len(all_chars)
-        
-    # 3. Deterministic Shuffle (Fisher-Yates)
+        chars.append(pool[value % len(pool)])
+        value //= len(pool)
+
+    # Deterministic Shuffle (Fisher-Yates)
     result = []
-    while password_chars:
-        idx = seed_int % len(password_chars)
-        result.append(password_chars.pop(idx))
-        seed_int //= (len(password_chars) or 1)
-        
+    while chars:
+        idx = value % len(chars)
+        result.append(chars.pop(idx))
+        value //= (len(chars) or 1)
+
     return "".join(result)
 
-# ==========================================
-# CLI / TESTING
-# ==========================================
 
-def run_test_suite(key: str):
-    print(f"--- SML Apple Module Test ---")
-    print(f"Input Key: {key[:12]}...{key[-8:]}\n")
+# ============================================================
+# TEST SUITE
+# ============================================================
+
+def run_test():
+    base_key = get_master_key()
+    modifier = build_modifier()
     
-    print(f"1. iPhone Passcode (v1)   : {generate_numeric_passcode(key, 'ios_pass_v1', 6)}")
-    print(f"2. Screen Time (v1)       : {generate_numeric_passcode(key, 'ios_st_v1', 4)}")
-    print(f"3. Apple ID Password (v1) : {generate_apple_complex_password(key, 'apple_id_v1', 16)}")
-    print(f"4. Apple ID Password (v2) : {generate_apple_complex_password(key, 'apple_id_v2', 16)}")
-    print(f"5. Mac FileVault (v1)     : {generate_apple_complex_password(key, 'mac_fv_v1', 24)}")
-    print("-" * 30)
+    # Calculate Final Key based on custom modifications
+    final_key = apply_modifier(base_key, modifier)
+
+    print("\n" + "="*50)
+    print(" SML MEMORY-DERIVED IDENTITY SYSTEM")
+    print("="*50)
+    
+    print(f"Base Source  : {'PSQC (SML_FINAL_KEY)' if USE_SML_KEY else 'Manual (USER_SECRET)'}")
+    print(f"Base Key     : {base_key[:12]}...{base_key[-8:]}")
+
+    if modifier:
+        print(f"Modifier Active: '{modifier}'")
+        print(f"Branch Key   : {final_key[:12]}...{final_key[-8:]}")
+    else:
+        print("Modifier     : None (Using default entropy)")
+
+    print("\nDERIVED CREDENTIALS:")
+    print(f"1. iPhone Passcode    : {generate_numeric_code(final_key, 'ios_pass_v1', 6, CUSTOM_IPHONE_PASS)}")
+    print(f"2. Screen Time PIN    : {generate_numeric_code(final_key, 'ios_st_v1', 4, CUSTOM_SCREENTIME_PIN)}")
+    print(f"3. Apple ID Password  : {generate_apple_password(final_key, 'apple_id_v1', 16)}")
+    print(f"4. Mac FileVault Key  : {generate_apple_password(final_key, 'mac_fv_v1', 24)}")
+    print("="*50 + "\n")
+
+
+# ============================================================
+# ENTRY POINT
+# ============================================================
 
 if __name__ == "__main__":
-    # Check for CLI argument or use example
-    master_key = sys.argv[1] if len(sys.argv) > 1 else SML_FINAL_KEY_EXAMPLE
-    run_test_suite(master_key)
+    run_test()
