@@ -77,6 +77,13 @@ USER_SECRET   = "CHANGE_ME_USE_HIGH_ENTROPY_SECRET"
 CUSTOM_IPHONE_PASS    = ""    # e.g., "123456"
 CUSTOM_SCREENTIME_PIN = ""    # e.g., "9999"
 
+# DOMAIN LABELS (Domain Separation Identifiers)
+# Changing these will completely alter the derived passwords for that specific service.
+LABEL_IOS_PASS = "ios_pass_v1"
+LABEL_IOS_ST   = "ios_st_v1"
+LABEL_APPLE_ID = "apple_id_v1"
+LABEL_MAC_FV   = "mac_fv_v1"
+
 
 # ============================================================
 # MASTER KEY RESOLUTION
@@ -221,12 +228,11 @@ def run_test():
         print("Modifier     : None (Using default entropy)")
 
     print("\nDERIVED CREDENTIALS:")
-    print(f"1. iPhone Passcode    : {generate_numeric_code(final_key, 'ios_pass_v1', 6, CUSTOM_IPHONE_PASS)}")
-    print(f"2. Screen Time PIN    : {generate_numeric_code(final_key, 'ios_st_v1', 4, CUSTOM_SCREENTIME_PIN)}")
-    print(f"3. Apple ID Password  : {generate_apple_password(final_key, 'apple_id_v1', 16)}")
-    print(f"4. Mac FileVault Key  : {generate_apple_password(final_key, 'mac_fv_v1', 24)}")
+    print(f"1. iPhone Passcode    : {generate_numeric_code(final_key, LABEL_IOS_PASS, 6, CUSTOM_IPHONE_PASS)}")
+    print(f"2. Screen Time PIN    : {generate_numeric_code(final_key, LABEL_IOS_ST, 4, CUSTOM_SCREENTIME_PIN)}")
+    print(f"3. Apple ID Password  : {generate_apple_password(final_key, LABEL_APPLE_ID, 16)}")
+    print(f"4. Mac FileVault Key  : {generate_apple_password(final_key, LABEL_MAC_FV, 24)}")
     print("="*50 + "\n")
-
 
 # ============================================================
 # ENTRY POINT
