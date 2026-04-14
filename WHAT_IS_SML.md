@@ -1,209 +1,79 @@
 <img src="https://github.com/user-attachments/assets/655a0ba9-f1a6-4b44-a815-fa381a20cf62" width="60">
 
-##  What is SML in one sentence?
 
-SecretMemoryLocker is a deterministic cryptographic system that derives keys and secrets from your memory — without storing anything.
+# SecretMemoryLocker (SML)
+> **A zero-storage cryptographic system that turns your memory into a secure foundation for keys.**
 
-It combines:
-
-- a **Memory Key** (what you know)
--  an optional **PSQ Key / external entropy source (what you have)** — a structured encrypted container that stores the question cascade without answers
-
-to create a secure, recoverable, zero-storage system.
-
-This allows you to regenerate access to your data anytime — using only your memory and optional external input.
+SecretMemoryLocker is a deterministic system that derives keys and secrets directly from your answers and external entropy. The core principle: **nothing is stored**. Your keys exist only when you compute them.
 
 ---
 
- ## 🔑 Core Concepts
+## 🔑 The Dual-Key Concept
 
- ## Memory-Derived Key (Brain Key)
+SML utilizes a multi-layered access model, separating "what you know" from "what you have."
 
-**Memory Key** is a key that:
+### 1. Memory Key (Identity Key)
+A base key generated **exclusively** from your memory.
+* **Source:** User-provided answers only.
+* **Purpose:** Identity verification, deterministic password generation, and basic recovery.
+* **Security:** Protected by an **Argon2** chain (memory-hard), making brute-force attacks computationally expensive.
+* **UI Safety:** In the interface, the key value is always **masked (***)** to prevent visual interception (shoulder surfing).
 
-* is generated **purely from user answers**
-* is always identical for the same inputs
-* is **independent of files, containers, or external storage**
-* is fully deterministic
+### 2. PSQ Key (Secure Access Key / 2FA)
+A high-entropy cryptographic key built on a two-factor authentication model.
+* **Formula:** $PSQ\_Key = KDF(Answers + Container\_Nonce + External\_Entropy)$
+* **External Entropy:** Can include biometric data (Face ID / Touch ID), hardware tokens, license keys, or any user-provided binary file.
+* **Purpose:** Encrypting highly sensitive data. Without the second factor (the container or biometrics), the key cannot be reconstructed even if the answers are known.
+
+---
+
+## 🌀 Phantom-Step Cascade Method
+
+At the heart of SML lies a unique architecture for cascading computation.
+
+
+
+The **PSQ Container** is not just storage; it is a structured object that:
+1.  **Stores an encrypted question cascade.**
+2.  **Contains a Cryptographic Nonce** (a unique salt) to harden the PSQ Key.
+3.  **Implements the Phantom-Step algorithm:** Each computation step is "phantom"—it leaves no digital footprint on the disk and exists only in RAM at the moment of derivation.
 
 ```text
-Memory Key = Argon2_chain(answers)
+[Answers] + [Nonce] + [Biometrics] 
+      ↓ 
+[Phantom-Step Cascade (Argon2)] 
+      ↓ 
+[Final PSQ Key]
 ```
 
 ---
 
-## ✔ Properties
+## 🛠 Technical Advantages
 
-* 🔁 **Deterministic** — can be reconstructed anytime
-* ☁️ **Stateless** — nothing is stored
-* 🧩 **Universal** — can act as a seed for any feature
-* 🔐 **Memory-hard** — protected against brute-force via Argon2
-
----
-
-###  Use Cases
-
-Memory Key can be used as:
-
-* a seed for password generation
-* a root key for cryptographic systems
-* an entropy source for offline secret generation
-* a recovery mechanism
-
----
-
-## 📦 PSQ Key (Phantom-Step Key)
-
-**PSQ Key** is derived from:
-
-* user answers
-* **and an additional entropy source**
-
----
-
-```text
-Final Key = KDF(answers + external_entropy)
-```
-
----
-
-## ✔ External Entropy Sources
-
-Instead of relying solely on a container, SML allows flexible second-factor inputs:
-
-* `.psq` container (with encrypted question cascade)
-* user-provided file (any binary data)
-* license key (`key_pro`)
-* biometric-derived input (e.g. Face ID abstraction)
-* hardware token / electronic key
-* any secret known or owned by the user
-
----
-
-## ✔ Properties
-
-* 🔐 **2FA model**:
-
-  * something you know → answers
-  * something you have → external entropy
-
-* ❌ **Cannot be reconstructed without the second factor**
-
-* 🔄 Supports multiple entropy strategies
-
-* 🧱 Uses Phantom-Step Cascade structure
-
----
-
-## 🧠 Concept
-
-Even if an attacker knows the answers:
-
-```text
-without external entropy → final key cannot be derived
-```
-
----
-
-## 🧩 Memory Echo — System Core
-
-**Memory Echo** is the central interface for working with keys.
-
----
-
-## 🔍 Features
-
-* 🔒 Hidden display of:
-
-  * Memory Key
-  * PSQ Key
-
-* 🔄 Real-time key updates when answers change
-
-* 🧠 Generates **entropy matrices** for:
-
-  * offline password generation
-  * deterministic secret derivation
-  * recovery workflows
+* **Stateless:** The application has no password database. If you delete the app, not a single bit of information regarding your keys remains on the device.
+* **Air-Gap Ready:** Designed for fully offline operation.
+* **Entropy Matrices:** Generates character grids that allow you to derive complex passwords for various services deterministically without needing to memorize them.
 
 ---
 
 ## ⚙️ Design Principles
 
-* no keys are stored
-* everything is computed on demand
-* fully offline-capable
+* **No Keys Stored:** Everything is computed on demand.
+* **Memory-Hard:** High-iteration KDF prevents GPU/ASIC acceleration for cracking.
+* **Flexible 2FA:** Supports multiple external entropy strategies (Files, Hardware, Biometrics).
 
 ---
 
-## 🔐 Security Model
+## ⚠️ Security Notice
 
-SML uses a layered approach:
-
----
-
-## 🧠 Memory Layer
-
-* based on user answers
-* deterministic
-* recoverable
-
----
-
-## 📦 Entropy Layer
-
-* adds a second factor
-* binds key derivation to external input
-* prevents compromise from answers alone
-
----
-
-```text
-Memory Key → identity / entropy source  
-PSQ Key    → secure access key (2FA)
-```
-
----
-
-## 💡 What This Enables
-
-* ❌ No password storage
-* ❌ No cloud dependency
-* ❌ No traditional master password
-
----
-
-* ✔ Memory-based recovery
-* ✔ Deterministic key generation
-* ✔ Strong protection via Argon2 + cascade
-* ✔ Fully offline operation
-
----
-
-## Philosophy
-
-> Human memory is a high-entropy source that cannot be extracted like a file.
-
-SML turns that idea into a practical cryptographic system.
-
----
-
-## ⚠️ Important
-
-Security depends on answer quality:
-
-* use long and unique answers
-* avoid public or easily guessable information
+The strength of the system depends entirely on the quality of your input:
+* **Answer Quality:** Use long, unique phrases. Avoid public or easily guessable information.
+* **The 2FA Reality:** Losing your PSQ container or changing your biometric profile will render the PSQ Key unrecoverable. This is a deliberate security feature of a true 2FA system.
 
 ---
 
 ## 🧩 Summary
 
-**SecretMemoryLocker** is:
-
-* deterministic cryptography without storage
-* memory + external entropy combined
-* a new approach to secret management
+**SecretMemoryLocker** is more than a manager; it is a philosophy of **deterministic cryptography**. By combining human memory with external entropy through the **Phantom-Step Cascade**, it provides a secure way to manage secrets without relying on cloud providers or vulnerable local databases.
 
 ---
-
