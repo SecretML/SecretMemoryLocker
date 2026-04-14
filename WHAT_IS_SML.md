@@ -12,9 +12,9 @@ to create a secure, recoverable, zero-storage system.
 
 ---
 
-# 🔑 Core Concepts
+ ## 🔑 Core Concepts
 
-## 🧠 Memory-Derived Key (Brain Key)
+ ## Memory-Derived Key (Brain Key)
 
 **Memory Key** is a key that:
 
@@ -29,7 +29,7 @@ Memory Key = Argon2_chain(answers)
 
 ---
 
-### ✔ Properties
+## ✔ Properties
 
 * 🔁 **Deterministic** — can be reconstructed anytime
 * ☁️ **Stateless** — nothing is stored
@@ -38,7 +38,7 @@ Memory Key = Argon2_chain(answers)
 
 ---
 
-### 🚀 Use Cases
+###  Use Cases
 
 Memory Key can be used as:
 
@@ -64,7 +64,7 @@ Final Key = KDF(answers + external_entropy)
 
 ---
 
-### ✔ External Entropy Sources
+## ✔ External Entropy Sources
 
 Instead of relying solely on a container, SML allows flexible second-factor inputs:
 
@@ -77,7 +77,7 @@ Instead of relying solely on a container, SML allows flexible second-factor inpu
 
 ---
 
-### ✔ Properties
+## ✔ Properties
 
 * 🔐 **2FA model**:
 
@@ -92,7 +92,7 @@ Instead of relying solely on a container, SML allows flexible second-factor inpu
 
 ---
 
-### 🧠 Concept
+## 🧠 Concept
 
 Even if an attacker knows the answers:
 
@@ -102,13 +102,13 @@ without external entropy → final key cannot be derived
 
 ---
 
-# 🧩 Memory Echo — System Core
+## 🧩 Memory Echo — System Core
 
 **Memory Echo** is the central interface for working with keys.
 
 ---
 
-### 🔍 Features
+## 🔍 Features
 
 * 🔒 Hidden display of:
 
@@ -125,7 +125,7 @@ without external entropy → final key cannot be derived
 
 ---
 
-### ⚙️ Design Principles
+## ⚙️ Design Principles
 
 * no keys are stored
 * everything is computed on demand
@@ -133,13 +133,13 @@ without external entropy → final key cannot be derived
 
 ---
 
-# 🔐 Security Model
+## 🔐 Security Model
 
 SML uses a layered approach:
 
 ---
 
-### 🧠 Memory Layer
+## 🧠 Memory Layer
 
 * based on user answers
 * deterministic
@@ -147,7 +147,7 @@ SML uses a layered approach:
 
 ---
 
-### 📦 Entropy Layer
+## 📦 Entropy Layer
 
 * adds a second factor
 * binds key derivation to external input
@@ -162,7 +162,7 @@ PSQ Key    → secure access key (2FA)
 
 ---
 
-# 💡 What This Enables
+## 💡 What This Enables
 
 * ❌ No password storage
 * ❌ No cloud dependency
@@ -177,7 +177,7 @@ PSQ Key    → secure access key (2FA)
 
 ---
 
-# 🚀 Philosophy
+## Philosophy
 
 > Human memory is a high-entropy source that cannot be extracted like a file.
 
@@ -185,7 +185,7 @@ SML turns that idea into a practical cryptographic system.
 
 ---
 
-# ⚠️ Important
+## ⚠️ Important
 
 Security depends on answer quality:
 
@@ -194,7 +194,7 @@ Security depends on answer quality:
 
 ---
 
-# 🧩 Summary
+## 🧩 Summary
 
 **SecretMemoryLocker** is:
 
