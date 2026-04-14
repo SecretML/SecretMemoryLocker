@@ -7,7 +7,7 @@ SecretMemoryLocker is a deterministic cryptographic system that derives keys and
 It combines:
 
 - a **Memory Key** (what you know)
-- an optional **PSQ Key / external entropy** (what you have)
+-  an optional **PSQ Key / external entropy source (what you have)** — a structured encrypted container that stores the question cascade without answers
 
 to create a secure, recoverable, zero-storage system.
 
