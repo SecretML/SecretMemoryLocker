@@ -2,78 +2,73 @@
 
 
 # SecretMemoryLocker (SML)
-> **A zero-storage cryptographic system that turns your memory into a secure foundation for keys.**
+> **A zero-storage, deterministic cryptographic system that transforms human memory into a high-entropy security foundation.**
 
-SecretMemoryLocker is a deterministic system that derives keys and secrets directly from your answers and external entropy. The core principle: **nothing is stored**. Your keys exist only when you compute them.
-
----
-
-## 🔑 The Dual-Key Concept
-
-SML utilizes a multi-layered access model, separating "what you know" from "what you have."
-
-### 1. Memory Key (Identity Key)
-A base key generated **exclusively** from your memory.
-* **Source:** User-provided answers only.
-* **Purpose:** Identity verification, deterministic password generation, and basic recovery.
-* **Security:** Protected by an **Argon2** chain (memory-hard), making brute-force attacks computationally expensive.
-* **UI Safety:** In the interface, the key value is always **masked (***)** to prevent visual interception (shoulder surfing).
-
-### 2. PSQ Key (Secure Access Key / 2FA)
-A high-entropy cryptographic key built on a two-factor authentication model.
-* **Formula:** $PSQ\_Key = KDF(Answers + Container\_Nonce + External\_Entropy)$
-* **External Entropy:** Can include biometric data (Face ID / Touch ID), hardware tokens, license keys, or any user-provided binary file.
-* **Purpose:** Encrypting highly sensitive data. Without the second factor (the container or biometrics), the key cannot be reconstructed even if the answers are known.
+SecretMemoryLocker (SML) allows you to derive cryptographic keys and secrets from your memory and external factors without storing a single byte of sensitive data. It eliminates the need for master passwords, cloud databases, and local vaults.
 
 ---
 
-## 🌀 Phantom-Step Cascade Method
+## 🔑 The Dual-Key Model
 
-At the heart of SML lies a unique architecture for cascading computation.
+SML splits security into two distinct layers, separating **Identity** from **Secure Access**.
 
+### 1. Memory Key (The Identity Layer)
+* **Source:** Generated purely from user answers.
+* **Logic:** $Memory\_Key = Argon2id(answers)$
+* **Security:** Masked in the UI (`***`) to prevent visual theft.
+* **Use Case:** A "root" for offline password generation and recovery.
 
-
-The **PSQ Container** is not just storage; it is a structured object that:
-1.  **Stores an encrypted question cascade.**
-2.  **Contains a Cryptographic Nonce** (a unique salt) to harden the PSQ Key.
-3.  **Implements the Phantom-Step algorithm:** Each computation step is "phantom"—it leaves no digital footprint on the disk and exists only in RAM at the moment of derivation.
-
-```text
-[Answers] + [Nonce] + [Biometrics] 
-      ↓ 
-[Phantom-Step Cascade (Argon2)] 
-      ↓ 
-[Final PSQ Key]
-```
+### 2. PSQ Key (The 2FA Layer)
+* **Source:** Combines answers with an external entropy source (file, biometric data, or hardware token).
+* **Logic:** $PSQ\_Key = KDF(answers + external\_entropy + nonce)$
+* **Use Case:** Secure encryption of high-value data where knowledge alone isn't enough.
 
 ---
 
-## 🛠 Technical Advantages
+## 🌀 Technical Architecture: Phantom-Step Cascade
 
-* **Stateless:** The application has no password database. If you delete the app, not a single bit of information regarding your keys remains on the device.
-* **Air-Gap Ready:** Designed for fully offline operation.
-* **Entropy Matrices:** Generates character grids that allow you to derive complex passwords for various services deterministically without needing to memorize them.
+The core of SML is the **Phantom-Step** mechanism, implemented through a **"Reverse Matryoshka"** encryption structure.
 
----
+### 1. Cryptographic Stack
+* **Data Encryption:** `ChaCha20Poly1305 (AEAD)` — Provides high-speed encryption with built-in ciphertext authentication.
+* **Key Derivation (KDF):** `Argon2id` — The industry standard for memory-hard hashing, resistant to GPU/ASIC cracking.
+* **Dynamic Salting:** Every derivation step uses a dynamic salt generated via `SHA-256` of the previous answer or the source file's hash.
 
-## ⚙️ Design Principles
+### 2. The "Reverse Matryoshka" Structure
+The `.psq` file is built from the inside out, creating a multi-layered cascade:
 
-* **No Keys Stored:** Everything is computed on demand.
-* **Memory-Hard:** High-iteration KDF prevents GPU/ASIC acceleration for cracking.
-* **Flexible 2FA:** Supports multiple external entropy strategies (Files, Hardware, Biometrics).
+* **Core Payload:** Contains the actual keys/secrets alongside **Decoy Data** (honey-data).
+* **Encapsulated Layers:** Each user answer acts as a "key" to peel off one layer. Each layer contains:
+    1.  The encrypted payload of the next level.
+    2.  The text/metadata of the next question.
+    3.  **Cryptographic Noise (Padding):** Random data that obfuscates the real size of the payload, making it impossible for an attacker to guess how many layers exist.
 
----
 
-## ⚠️ Security Notice
-
-The strength of the system depends entirely on the quality of your input:
-* **Answer Quality:** Use long, unique phrases. Avoid public or easily guessable information.
-* **The 2FA Reality:** Losing your PSQ container or changing your biometric profile will render the PSQ Key unrecoverable. This is a deliberate security feature of a true 2FA system.
 
 ---
 
-## 🧩 Summary
+## 🛡️ Security Model & Principles
 
-**SecretMemoryLocker** is more than a manager; it is a philosophy of **deterministic cryptography**. By combining human memory with external entropy through the **Phantom-Step Cascade**, it provides a secure way to manage secrets without relying on cloud providers or vulnerable local databases.
+* **Zero Storage:** No keys, plain-text answers, or master passwords ever touch the disk.
+* **Stateless Operation:** The system computes the state on the fly. No database = no database leaks.
+* **Anti-Brute Force:** By using `Argon2id` for *every* step in the cascade, the time required to brute-force a multi-question container grows exponentially.
+* **Plausible Deniability:** Thanks to noise padding and decoy data, an attacker cannot prove if they have reached the "real" core or just a trap layer.
 
 ---
+
+## 🛠️ Use Cases
+
+* **Seed Generation:** Create deterministic seeds for BIP39/cryptocurrency wallets.
+* **Stateless Passwords:** Generate unique, complex passwords for any service using your memory as the only source of truth.
+* **Secure Recovery:** Use a `.psq` file as a recovery factor that is useless without the specific sequence of memories.
+
+---
+
+## ⚠️ Important
+
+The security of the **Phantom-Step Cascade** relies on:
+1.  **Entropy:** Your answers should be long and non-obvious.
+2.  **Factor Integrity:** If you use a physical file as an entropy source, losing that file renders the **PSQ Key** unrecoverable.
+
+---
+
