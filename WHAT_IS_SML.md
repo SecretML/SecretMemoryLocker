@@ -2,13 +2,16 @@
 
 ##  What is SML in one sentence?
 
-SecretMemoryLocker is a deterministic key and password generator that derives secrets from your memory — without storing anything.
+SecretMemoryLocker is a deterministic cryptographic system that derives keys and secrets from your memory — without storing anything.
 
 It combines:
+
 - a **Memory Key** (what you know)
 - an optional **PSQ Key / external entropy** (what you have)
 
 to create a secure, recoverable, zero-storage system.
+
+This allows you to regenerate access to your data anytime — using only your memory and optional external input.
 
 ---
 
