@@ -1,10 +1,14 @@
 <img src="https://github.com/user-attachments/assets/655a0ba9-f1a6-4b44-a815-fa381a20cf62" width="60">
 
-##  SecretMemoryLocker — Memory-Derived Cryptography
+##  What is SML in one sentence?
 
-**SecretMemoryLocker (SML)** is a cryptographic system that uses **human memory as a source of entropy**.
+SecretMemoryLocker is a deterministic key and password generator that derives secrets from your memory — without storing anything.
 
-Instead of storing secrets, SML allows you to **reconstruct them deterministically from your answers** — with no cloud, no saved keys, and no traditional master password.
+It combines:
+- a **Memory Key** (what you know)
+- an optional **PSQ Key / external entropy** (what you have)
+
+to create a secure, recoverable, zero-storage system.
 
 ---
 
