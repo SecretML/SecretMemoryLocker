@@ -81,9 +81,17 @@ The `.psq` file is built from the inside out, creating a multi-layered cascade:
 
 ## 🛠️ Use Cases
 
-* **Seed Generation:** Create deterministic seeds for BIP39/cryptocurrency wallets.
-* **Stateless Passwords:** Generate unique, complex passwords for any service using your memory as the only source of truth.
-* **Secure Recovery:** Use a `.psq` file as a recovery factor that is useless without the specific sequence of memories.
+* **Stateless Passwords:** Generate unique, high-entropy passwords for any service without storing credentials, using memory as the single source of truth.
+
+* **Secure Recovery:** Use a `.psq` container as a recovery factor that remains cryptographically useless without the exact sequence of user answers.
+
+* **Time-Locked Access (Nonce as Time Source):** Support delayed or conditional access using time-derived hints (e.g. partial nonce disclosure), enabling controlled unlocking scenarios without revealing the full key.
+
+* **Split Secret Architecture:** Separate critical secrets across multiple components (e.g. `.psq` container + encrypted archive), where neither part alone is sufficient for recovery.
+
+* **Controlled Inheritance:** Enable secure transfer of access by distributing different factors (memory + container + external file) across parties or time, supporting verifiable and controlled secret inheritance.
+
+* **Seed Generation:** Create deterministic seeds for cryptocurrency wallets and other cryptographic systems, reproducible solely from memory-derived entropy.
 
 ---
 
