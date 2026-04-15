@@ -98,8 +98,14 @@ The `.psq` file is built from the inside out, creating a multi-layered cascade:
 ## ⚠️ Important
 
 The security of the **Phantom-Step Cascade** relies on:
-1.  **Entropy:** Your answers should be long and non-obvious.
-2.  **Factor Integrity:** If you use a physical file as an entropy source, losing that file renders the **PSQ Key** unrecoverable.
+
+1. **Entropy:** Security depends on the total entropy of user answers. This can be achieved through different strategies:
+   - a small number of long, complex, and highly unique answers  
+   - or a larger set of moderately complex answers, where the total number and sequence remain unknown to an attacker  
+
+2. **Factor Integrity:** If an external entropy source (e.g. file, hardware token, or other secret) is used, its loss makes the corresponding **PSQ Key** unrecoverable.
+
+3. **Sequence Sensitivity:** The exact order and structure of answers are part of the key derivation process. Any deviation (reordering, formatting differences, or missing elements) results in a completely different key.
 
 ---
 
