@@ -26,6 +26,25 @@ SML splits security into two distinct layers, separating **Identity** from **Sec
 * **Logic:** `PSQKey = KDF(answers || external_entropy)`
 * **Representation:** Exposed as a concealed 256-bit hash (no raw key material is directly displayed).
 * **Use Case:** A high-entropy deterministic key for secure encryption, capable of protecting high-value data where knowledge alone is insufficient.
+
+### 📦 PSQ Container Modes
+
+SML supports two operational modes for the PSQ Key, both based on a layered `.psq` container:
+
+#### Mode 1 — Self-Contained Recovery Capsule
+- Generates a standalone encrypted `.psq` file (typically a few kilobytes).
+- The container stores a cascade of encrypted questions and hints.
+- Each layer corresponds to one answer step.
+- Total layers = number of questions + 1 (core payload).
+- The container enables deterministic recovery without storing any answers.
+
+#### Mode 2 — Bound Secure Archive
+- Generates the same `.psq` recovery capsule.
+- Additionally creates an encrypted archive (e.g. ZIP), protected by the PSQ Key.
+- The archive contains a secret file whose hash is required to unlock the first layer of the `.psq` container.
+- This creates a strict dependency between:
+  - the user’s memory (answers)
+  - and the external secret (file-based entropy)
   
 ---
 
