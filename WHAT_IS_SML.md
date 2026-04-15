@@ -21,10 +21,12 @@ SML splits security into two distinct layers, separating **Identity** from **Sec
   
 
 ### 2. PSQ Key (The 2FA Layer)
-* **Source:** Combines answers with an external entropy source (file, biometric data, or hardware token).
-* **Logic:** $PSQ\_Key = KDF(answers + external\_entropy + nonce)$
-* **Use Case:** Secure encryption of high-value data where knowledge alone isn't enough.
 
+* **Source:** Derived from user answers combined with an external entropy source (e.g. file, hardware token, or other user-controlled secret).
+* **Logic:** `PSQKey = KDF(answers || external_entropy)`
+* **Representation:** Exposed as a concealed 256-bit hash (no raw key material is directly displayed).
+* **Use Case:** A high-entropy deterministic key for secure encryption, capable of protecting high-value data where knowledge alone is insufficient.
+  
 ---
 
 ## 🌀 Technical Architecture: Phantom-Step Cascade
