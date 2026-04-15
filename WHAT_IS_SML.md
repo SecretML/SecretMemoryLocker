@@ -109,3 +109,7 @@ The security of the **Phantom-Step Cascade** relies on:
 
 ---
 
+© 2026 SecretMemoryLocker. All rights reserved.  
+Website: https://secretmemorylocker.com  
+Contact: secretmemorylocker@gmail.com
+
