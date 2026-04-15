@@ -13,10 +13,12 @@ SecretMemoryLocker (SML) allows you to derive cryptographic keys and secrets fro
 SML splits security into two distinct layers, separating **Identity** from **Secure Access**.
 
 ### 1. Memory Key (The Identity Layer)
-* **Source:** Generated purely from user answers.
-* **Logic:** $Memory\_Key = Argon2id(answers)$
-* **Security:** Masked in the UI (`***`) to prevent visual theft.
-* **Use Case:** A "root" for offline password generation and recovery.
+
+* **Source:** Derived purely from user-provided answers.
+* **Logic:** `MemoryKey = Argon2id(answers)`
+* **Representation:** Exposed as a concealed 256-bit hash (no raw key material is directly displayed).
+* **Use Case:** A deterministic, recoverable entropy source for offline password generation, key derivation, and cryptographic recovery workflows.
+  
 
 ### 2. PSQ Key (The 2FA Layer)
 * **Source:** Combines answers with an external entropy source (file, biometric data, or hardware token).
