@@ -7,6 +7,14 @@
 SecretMemoryLocker (SML) allows you to derive cryptographic keys and secrets from your memory and external factors without storing a single byte of sensitive data. It eliminates the need for master passwords, cloud databases, and local vaults.
 
 ---
+SML v5+ introduces a simple, memory-based interface for creating and opening encrypted capsules.  
+It focuses on minimal design, deterministic key generation, and local-only operation.
+
+Below is a preview of the main application window.
+
+<img width="850" alt="SML-V5+" src="https://github.com/user-attachments/assets/042f4cad-3c48-496e-8fa5-9a5290d66dcd" />
+
+---
 
 ## 🔑 The Dual-Key Model
 
