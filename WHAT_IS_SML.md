@@ -12,7 +12,7 @@ It focuses on minimal design, deterministic key generation, and local-only opera
 
 Below is a preview of the main application window.
 
-<img width="850" alt="SML-V5+" src="https://github.com/user-attachments/assets/042f4cad-3c48-496e-8fa5-9a5290d66dcd" />
+<img width="850" alt="SecretMemoryLocker-2026-v5" src="https://github.com/user-attachments/assets/bba7606b-f832-4bc6-b46d-7347ba212548" />
 
 ---
 
