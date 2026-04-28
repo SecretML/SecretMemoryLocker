@@ -12,7 +12,8 @@ It focuses on minimal design, deterministic key generation, and local-only opera
 
 Below is a preview of the main application window.
 
-<img width="850" alt="SecretMemoryLocker 2026 v5" src="https://github.com/user-attachments/assets/850e5fa5-477a-4de1-b99c-6215fbda3331" />
+<img width="850" alt="SecretMemoryLocker 2026 v5" src="https://github.com/user-attachments/assets/3fc0279f-73b5-4d19-b5d6-9db425816c82" />
+
 
 ---
 
