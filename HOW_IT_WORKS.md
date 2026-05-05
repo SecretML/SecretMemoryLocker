@@ -29,10 +29,16 @@ Once the key (Memory or PSQ) is restored, the Memory Echo mechanism is activated
 
 This process is **fully deterministic**: the same key combined with the same resource name will always produce the same password. However, without the key, it is computationally impossible to reconstruct the password.
 
+<img width="550" alt="Feature-Memory-Echo" src="https://github.com/user-attachments/assets/864f1fea-1eb1-4b9b-b24c-afb76d4441a9" />
+
+
 ---
 
 ## 3. Secure Transport Layer (SML-TL)
 Once a password is generated, it must be moved to the target device (e.g., a smartphone) with maximum security. This is handled by the **SML-TL (Time-Lock)** protocol.
+
+<img width="300"  alt="SML-TL" src="https://github.com/user-attachments/assets/23a2456a-4113-46a3-a4f3-e4e75c235ab1" />
+
 
 ### How the Handoff Works:
 1.  **Encryption (AES-GCM):** The desktop app encrypts the generated password and resource name.
@@ -40,6 +46,9 @@ Once a password is generated, it must be moved to the target device (e.g., a sma
     $$k1 = SHA256(domain\hash \parallel bucket)$$
 3.  **QR Handoff (Air-Gapped):** The encrypted payload (ciphertext + Nonce) is encoded into a single QR code. **No data is transmitted via Wi-Fi, Bluetooth, or cables.** The transfer occurs over an optical channel (phone camera reading the PC screen).
 4.  **Decryption & Time-Lock:** The mobile browser scans the QR code. It fetches only the public part of the $k1$ key from a Cloudflare Worker (relevant to the current time bucket). If the link hasn't expired (the bucket is still active), the browser decrypts the data locally.
+
+<img width="300" alt="SML-Time-Lock" src="https://github.com/user-attachments/assets/3510cca9-d35d-494d-b6df-fad626b08288" />
+
 
 ---
 
