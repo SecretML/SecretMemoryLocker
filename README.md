@@ -44,7 +44,10 @@
 
 <a href="docs/features/myLifeEcho.md">
 <img src="https://img.shields.io/badge/myLifeEcho-Digital%20Legacy%20Map-1f1f1f?logo=mapillary&logoColor=white" alt="myLifeEcho"></a>
-    
+
+<a href="docs/features/sml-timelock-transport.md">
+  <img src="https://img.shields.io/badge/Optical--Bridge-Air--Gapped%20Sync-000000?logo=quicklook&logoColor=white" alt="Optical Bridge"></a>
+  
 </p>
 
 ### 🧩 The Philosophy
