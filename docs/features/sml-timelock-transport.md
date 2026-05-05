@@ -71,11 +71,4 @@ Since $k1$ is tied to the bucket $B$, once the 2-minute window passes, the serve
 ## 5. Implementation Status: Experimental
 This protocol is currently implemented as part of the **Secret Memory Locker (SML)** suite. It is designed for high-security environments where the user wants to move secrets from a secure PC to a mobile device without trusting the underlying network or clipboard sync services.
 
----
 
-### Чому це важливо для твого GitHub:
-1.  **Пріоритет:** Ти чітко заявляєш: "Це мій протокол, ось як він працює".
-2.  **Формули:** Використання LaTeX ($$ ... $$) показує, що за проектом стоїть криптографічна логіка, а не просто "скрипт".
-3.  **Термінологія:** Використання термінів як *Dual-Entropy Reconstruction* та *Optical Air-Gap* піднімає проект на рівень серйозних досліджень (Whitepaper).
-
-**Порада:** Додай цей текст у файл `docs/SML_TL_V2_SPEC.md` і посилайся на нього з головного README. Це закриє питання "а чим це відрізняється від звичайного QR?".
