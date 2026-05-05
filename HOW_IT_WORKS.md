@@ -13,10 +13,16 @@ SML separates security into two independent layers. Users run the offline deskto
 *   **Logic:** $$MemoryKey = Argon2id(answers)$$
 *   **Essence:** A deterministic entropy source. If you remember the answers, you hold the key. It is never stored; it is recalculated from scratch every time.
 
+<img width="400"  alt="Memory Key (Identity Layer)" src="https://github.com/user-attachments/assets/f64de187-9c17-44c6-9988-ad46bfc06052" />
+
+
 ### B. PSQ Key (2FA / Secure Access Layer)
 *   **Source:** Memory answers combined with an external factor (file-key, hardware token, or secondary secret).
 *   **Logic:** $$PSQKey = KDF(answers \parallel external\_entropy)$$
 *   **Essence:** A high-entropy key designed to protect high-value data. Knowledge of the answers alone is insufficient without the physical or external factor.
+
+<img width="400" alt="PSQ Key (2FA  Secure Access Layer)" src="https://github.com/user-attachments/assets/41cd2548-3960-400a-a390-afa50a5d31de" />
+
 
 ---
 
