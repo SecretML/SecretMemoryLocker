@@ -1,8 +1,7 @@
 <img src="https://github.com/user-attachments/assets/655a0ba9-f1a6-4b44-a815-fa381a20cf62" width="60">
 
-
-
-#  SML-TL: Secure Time-Locked Transport Layer
+#  SML-TL: Optical-Bridge & Air-Gapped Transport
+### Experimental Hybrid Time-Locked Transfer Protocol (v2)
 
 ## Abstract
 **SML-TL v2** (Secret Memory Locker - Time Locked, version 2) is an experimental hybrid protocol designed for the secure, stateless transfer of high-entropy data between two air-gapped devices. It eliminates the need for shared clipboards, cloud-based vaults, or persistent network connections, utilizing a **Dual-Entropy Reconstruction** model.
