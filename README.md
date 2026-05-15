@@ -64,6 +64,15 @@ Access is reconstructed dynamically using:
 - computational work
 > Your secrets, your rules — no data ever leaves your device.
 
+### SML in Action
+> **What doesn't exist cannot be stolen.**
+
+
+
+https://github.com/user-attachments/assets/a46b6019-49b3-4364-8e97-b9b95364d8fb
+
+
+
 --- 
 
 <img src="https://github.com/user-attachments/assets/655a0ba9-f1a6-4b44-a815-fa381a20cf62" width="60">
