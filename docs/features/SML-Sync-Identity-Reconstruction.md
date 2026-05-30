@@ -187,6 +187,18 @@ without exposing the Memory-Derived Key or permanently storing the generated sec
 
 ---
 
+## Identity Layer Separation
+
+SML-Sync intentionally separates browser identities from actual secret storage.
+
+Compromising a browser profile does not automatically expose the deterministic secrets produced by SecretMemoryLocker. The browser layer remains a source of resource identities, while secrets are reconstructed only when all required components are available.
+
+This architecture enables SML-Sync to operate on top of existing browser workflows without relying on stored passwords, synchronized secret databases, or cloud vaults.
+
+The separation also provides a degree of plausible deniability, as browser data contains only identity references rather than the actual SecretMemoryLocker secret layer.
+
+---
+
 ## Experimental Status
 
 SML-Sync is an experimental feature exploring:
