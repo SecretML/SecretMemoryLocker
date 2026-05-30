@@ -103,7 +103,7 @@ Identity anchors can also act as lightweight metadata containers.
 For example:
 
 ```text
-facebook.com<_>user@gmail.com
+facebook.com<comment>user@gmail.com
 ```
 
 contains both:
