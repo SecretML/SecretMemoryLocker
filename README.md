@@ -6,44 +6,49 @@
   <strong>The vault where your key doesn't exist until you need it.</strong>
 </p>
 
+
 <p align="center">
   <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/LICENSE">
   <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
   <a href="https://github.com/SecretML/SecretMemoryLocker/releases">
   <img src="https://img.shields.io/badge/Version-5.+ -blue.svg" alt="Version"></a>
-  <a href="#">
+<a href="#">
   <img src="https://img.shields.io/badge/OS-Windows%2010%2B-0078D6?logo=windows&logoColor=white" alt="Windows 10+"></a>
-  <a href="#">
-  <img src="https://img.shields.io/badge/Build-Portable%20EXE-2ecc71?logo=windows&logoColor=white" alt="Portable EXE"></a>
+<a href="#">
+<img src="https://img.shields.io/badge/Build-Portable%20EXE-2ecc71?logo=windows&logoColor=white"></a>
+
   <a href="#">
   <img src="https://img.shields.io/badge/Security-Argon2id-crimson.svg" alt="Security"></a>
-  <a href="https://secretmemorylocker.com/docs/en/security-notice">
-  <img src="https://img.shields.io/badge/Notice-Security%20%26%20Risks-FF453A?logo=securityscorecard&logoColor=white" alt="Security Notice"></a>
 </p>
 
-<p align="center">
+ <p align="center">
   <strong>Core Technologies & Protocols</strong><br>
 </p>
 
 <p align="center">
-  <a href="docs/features/Memory-Echo.md">
-  <img src="https://img.shields.io/badge/Memory--Echo-Dynamic%20Keys-000000?logo=rss&logoColor=white" alt="Memory Echo"></a>
-  <a href="docs/features/Memory-Sync.md">
-  <img src="https://img.shields.io/badge/Memory--Sync-Archive%20Control-1f1f1f?logo=KeeWeb&logoColor=white" alt="Memory Sync"></a>
-  <a href="docs/features/SML-Seed.md">
-  <img src="https://img.shields.io/badge/SML--Seed-Physical--free%20Crypto-000000?logo=bitcoin&logoColor=white" alt="SML-Seed"></a>
-  <a href="docs/features/NONCE_TIMELOCK.md">
-  <img src="https://img.shields.io/badge/Time--Lock-Computational%20Delay-1f1f1f?logo=clockify&logoColor=white" alt="Time-Lock"></a>
-  <a href="docs/features/Phantom-Step-Cascade.md">
-  <img src="https://img.shields.io/badge/Phantom--Step-Cascade%20Encryption-000000?logo=ghostery&logoColor=white" alt="Phantom-Step"></a> 
-  <a href="docs/features/myLifeEcho.md">
-  <img src="https://img.shields.io/badge/myLifeEcho-Digital%20Legacy%20Map-1f1f1f?logo=mapillary&logoColor=white" alt="myLifeEcho"></a>
-  <a href="docs/features/sml-timelock-transport.md">
-  <img src="https://img.shields.io/badge/Optical--Bridge-Air--Gapped%20Sync-000000?logo=quicklook&logoColor=white" alt="Optical Bridge"></a>
-</p>
 
-> [!WARNING]
-> **Critical Security Notice:** SML operates on a zero-knowledge local entropy model. Before encrypting any production data, please thoroughly read and understand the [Security Notice & Risk Guidelines](https://secretmemorylocker.com/docs/en/security-notice). Lost memory factors cannot be recovered.
+<a href="docs/features/Memory-Echo.md">
+  <img src="https://img.shields.io/badge/Memory--Echo-Dynamic%20Keys-000000?logo=rss&logoColor=white" alt="Memory Echo"></a>
+
+ <a href="docs/features/Memory-Sync.md">
+ <img src="https://img.shields.io/badge/Memory--Sync-Archive%20Control-1f1f1f?logo=KeeWeb&logoColor=white" alt="Memory Sync"></a>
+    
+ <a href="docs/features/SML-Seed.md">
+ <img src="https://img.shields.io/badge/SML--Seed-Physical--free%20Crypto-000000?logo=bitcoin&logoColor=white" alt="SML-Seed"></a>
+
+<a href="docs/features/NONCE_TIMELOCK.md">
+<img src="https://img.shields.io/badge/Time--Lock-Computational%20Delay-1f1f1f?logo=clockify&logoColor=white" alt="Time-Lock"></a>
+    
+<a href="docs/features/Phantom-Step-Cascade.md">
+<img src="https://img.shields.io/badge/Phantom--Step-Cascade%20Encryption-000000?logo=ghostery&logoColor=white" alt="Phantom-Step"></a> 
+
+<a href="docs/features/myLifeEcho.md">
+<img src="https://img.shields.io/badge/myLifeEcho-Digital%20Legacy%20Map-1f1f1f?logo=mapillary&logoColor=white" alt="myLifeEcho"></a>
+
+<a href="docs/features/sml-timelock-transport.md">
+  <img src="https://img.shields.io/badge/Optical--Bridge-Air--Gapped%20Sync-000000?logo=quicklook&logoColor=white" alt="Optical Bridge"></a>
+  
+</p>
 
 ### 🧩 The Philosophy
 
@@ -57,15 +62,21 @@ Access is reconstructed dynamically using:
 - your memory
 - cryptography
 - computational work
-
 > Your secrets, your rules — no data ever leaves your device.
 
 ### SML in Action (v5.+)
 > **What doesn't exist cannot be stolen.**
 
+
+
 https://github.com/user-attachments/assets/99e2a8c5-9d8a-4df6-bf72-02fc6052a977
 
----
+
+
+
+
+
+--- 
 
 <img src="https://github.com/user-attachments/assets/655a0ba9-f1a6-4b44-a815-fa381a20cf62" width="60">
 
