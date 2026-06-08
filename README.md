@@ -11,7 +11,7 @@
   <a href="https://github.com/SecretML/SecretMemoryLocker/blob/main/LICENSE">
   <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
   <a href="https://github.com/SecretML/SecretMemoryLocker/releases">
-  <img src="https://img.shields.io/badge/Version-4.+ -blue.svg" alt="Version"></a>
+  <img src="https://img.shields.io/badge/Version-5.+ -blue.svg" alt="Version"></a>
 <a href="#">
   <img src="https://img.shields.io/badge/OS-Windows%2010%2B-0078D6?logo=windows&logoColor=white" alt="Windows 10+"></a>
 <a href="#">
