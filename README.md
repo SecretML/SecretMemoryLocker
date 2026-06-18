@@ -42,7 +42,11 @@
   <img src="https://img.shields.io/badge/Optical--Bridge-Air--Gapped%20Sync-000000?logo=quicklook&logoColor=white" alt="Optical Bridge"></a>
 </p>
 
-
+<p align="center">
+  <a href="https://apps.microsoft.com/detail/9pc6pks92b0x">
+    <img src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Get it from Microsoft Store" height="50" />
+  </a>
+</p>
 
 ### 🧩 The Philosophy
 
