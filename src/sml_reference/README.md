@@ -2,7 +2,10 @@
 
 # Invisible Key Technology™
 
-### The core cryptographic technology behind **Secret Memory Locker (SML)**
+### Memory-Based Cryptography
+
+
+ The core cryptographic technology behind **Secret Memory Locker (SML)**
 
 This directory contains the standalone reference implementation of the **Secret Memory Locker (SML)** file encryption engine, built around the concept of **Invisible Key Technology™**.
 
