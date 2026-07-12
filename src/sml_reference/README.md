@@ -10,7 +10,7 @@ Unlike conventional encryption software, this engine does **not** generate, stor
 
 The cryptographic key is reconstructed separately by the main Secret Memory Locker application through memory-based authentication, encrypted hint capsules, multi-stage (nested) recovery, and Argon2 key derivation. Until this reconstruction is successfully completed, **the encryption key effectively does not exist**.
 
-Once the user's memory reconstruction is complete, the application deterministically produces a 256-bit **Memory-Derived Key (md_key_v4)**. This reference engine accepts that reconstructed key and performs authenticated file encryption and decryption using **ChaCha20-Poly1305** together with the SML container format.
+Once the user's memory reconstruction is complete, the application deterministically produces a 256-bit **Memory-Derived Key**. This reference engine accepts that reconstructed key and performs authenticated file encryption and decryption using **ChaCha20-Poly1305** together with the SML container format.
 
 The purpose of this code is to provide a minimal, transparent, and independently verifiable implementation of the SML file format, allowing encrypted files to be recovered without requiring the complete Secret Memory Locker application, **provided the same memory-derived key can be reconstructed again**.
 
