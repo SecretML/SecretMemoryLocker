@@ -26,6 +26,8 @@
 </p>
 
 <p align="center">
+  <a href="src/sml_reference/README.md">
+  <img src="https://img.shields.io/badge/Invisible--Key-Technology-1f1f1f?logo=keybase&logoColor=white" alt="Invisible Key Technology"></a>
   <a href="docs/features/Memory-Echo.md">
   <img src="https://img.shields.io/badge/Memory--Echo-Dynamic%20Keys-000000?logo=rss&logoColor=white" alt="Memory Echo"></a>
   <a href="docs/features/Memory-Sync.md">
