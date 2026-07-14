@@ -4,6 +4,10 @@
 
 ### Memory-Based Cryptography
 
+<img width="800"  alt="SML_mylifeecho_window" src="https://github.com/user-attachments/assets/2062c3ef-0144-4cd9-9b38-1a6939a358f0" />
+
+*MyLifeEcho — protecting personal files with Invisible Key Technology™.*
+
 The core cryptographic technology behind **Secret Memory Locker (SML)**.
 
 This directory contains the standalone reference implementation of the **Secret Memory Locker (SML)** file encryption engine, built around the concept of **Invisible Key Technology™**.
