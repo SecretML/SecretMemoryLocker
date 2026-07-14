@@ -27,6 +27,10 @@ It acts as a **digital legacy navigator**, guiding a trusted person directly to 
 
 ## How It Works
 
+<img width="800"  alt="SML_mylifeecho_window" src="https://github.com/user-attachments/assets/2062c3ef-0144-4cd9-9b38-1a6939a358f0" />
+
+*MyLifeEcho Workspace — the integrated environment for memory-based file protection.*
+
 Instead of copying or encrypting large amounts of data, **myLifeEcho** creates a lightweight, encrypted structure describing *where* your important data lives.
 
 ### 1. Collect (Builder phase)
